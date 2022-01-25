@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+html {
+  height: 100%;
+
+}
+
+body {
+  background-image: url("/images/fondometa.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: darken;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.socials a{
+text-decoration: none;
+color: white;
+border: 1px solid #DDDDDD;
+border-radius: 50%;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+margin: 0 5px;
+height: 40px;
+width: 40px;
+}
+
+.socials{
+  display: flex;
+  margin: 20px;
+}
+
+.container {
+    height: 50%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    right: 50px;
+    top: 15rem;
+    margin: 20px;
+    /* padding: 1rem;   */
+    border-radius: 1em;
+    box-shadow: 18px 18px 18px 18px rgb(0 0 0 / 90%);
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: none;
+    background-color: #eee;
+    border-radius: 1rem;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: rgb(255, 255, 255);
+    outline: solid rgb(0, 247, 255);
+  }
+
+
+h1{
+    text-align: center;
+    color: white;
+    
+
+}
+
+.btn1{
+    background-color: magenta;
+    color: whitesmoke;
+    padding: 12px 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1em;
+    margin-top: 50px;
+  }
+  
+  .btn1:hover {
+    background-color: grey;
+  }
+
+  .btn2{
+    background-color: magenta;
+    color: whitesmoke;
+    padding: 12px 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 1em;
+    margin-top: 50px;
+  }
+  
+  .btn2:hover {
+    background-color: grey;
+  }
+
+
+  #sign-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 0px 50px;
+  }
+
+
+ #sign-in{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 0px 50px;
+}
+
+.signUp{
+  background: black; 
+}
