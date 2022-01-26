@@ -10,18 +10,18 @@ app.listen(3080, () => {
     console.log("Servidor corriendo en el puerto 3080")
 });
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/home.html'));
+app.get('/index', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/index.html'));
 })
-app.get('/', (req, res) => {
+app.get('/productDetail', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/productDetail.html'));
 })
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html'));
+app.get('/cart', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/cart.html'));
 })
-app.get('/', (req, res) => {
+app.get('/register', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/register.html'));
 })
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html'));
+app.get('/sesion', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/iniciar-sesion.html'));
 })
