@@ -76,7 +76,7 @@
 
 /* Slideshow container */
 .slideshow {
-  max-width: 1000px;
+  max-width: 800px;
   position: relative;
   margin: auto;
   
@@ -266,5 +266,5 @@
   }
   section{
     background: rgb(175,70,74);
-background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
+    background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
   }
