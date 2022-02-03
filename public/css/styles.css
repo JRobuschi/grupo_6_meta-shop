@@ -9,7 +9,7 @@
    /* items del menu */
    
    #menu ul li {
-    background-color:#2e518b;
+    background-color: black;
    }
    
    /* enlaces del menu */
@@ -217,4 +217,47 @@
   
   .card button:hover {
     opacity: 0.7;
+  }
+
+  .search{
+    display: flex;
+    padding: 5px;
+    justify-content: end;
+    
+  }
+
+  .search input{
+    width: 0px;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: black;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 30px;
+    transition: all 0.6s ease;
+    
+  }
+
+  .btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: black;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    color: white;
+    font-size: 20ox;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .search:hover input {
+    width: 240px;
+  }
+
+  .search input:focus{
+    width: 240;
   }
