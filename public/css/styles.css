@@ -182,11 +182,13 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: black;
+    background-color: rgba(65,2,106,1);
     color: white;
     text-align: center;
     display: flex;
     justify-content: space-around;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 400;
   }
 
 
@@ -198,33 +200,42 @@
   .publicidades {
     display: flex;
     flex-direction: row;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   .card {
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
     text-align: center;
-    font-family: arial;
+    /*font-family: arial;*/
     box-shadow: 0px 0px 10px black;
     padding: 20px;
     border-radius: 20px;
+    color: rgb(153, 0, 255);
+    text-shadow:1px 1px 1px  black;
+    font-weight: 400;
   }
   
   .price {
-    color: grey;
-    font-size: 22px;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: gold;
+    font-size: 30px;
+    font-weight: 400;
   }
   
   .card button {
-    border: none;
+    border: solid 2px gold;
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #000;
+    background-color: rgba(65,2,106,1);
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 18px;
+    font-size: 20px;
+    text-shadow:1px 1px 1px  red;
+    
   }
   
   .card button:hover {
@@ -239,23 +250,27 @@
   }
 
   .search input{
+    position: fixed;
     width: 0px;
     height: 40px;
     padding: 0 20px;
     font-size: 18px;
     color: black;
     outline: none;
-    border: 1px solid silver;
+    border: 1px solid gold;
     border-radius: 30px;
     transition: all 0.6s ease;
+    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    z-index: 1;
     
   }
 
   .btn{
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     top: 0;
     right: 0;
-    background: black;
+    background: rgba(65,2,106,1);
     width: 55px;
     height: 55px;
     line-height: 55px;
@@ -264,6 +279,8 @@
     font-size: 20ox;
     border-radius: 50%;
     cursor: pointer;
+    border: solid 3px gold ;
+    
   }
 
   .search:hover input {
