@@ -86,6 +86,7 @@
   position: relative;
   margin: auto;
   box-shadow: 00px 0px 5px black ;
+  top: 35px;
   /*padding: none;*/
 
   
@@ -215,6 +216,8 @@
     color: rgb(153, 0, 255);
     text-shadow:1px 1px 1px  black;
     font-weight: 400;
+    position: relative;
+    top: 35px;
   }
   
   .price {
