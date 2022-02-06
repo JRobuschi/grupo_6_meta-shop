@@ -7,8 +7,8 @@
   
 }
 main{
-  
-  background: linear-gradient(to right, magenta, cyan);
+  background: rgb(175,70,74);
+    background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
 }
 a{
   text-decoration: none;
@@ -142,12 +142,13 @@ a{
   text-decoration: none;
 }
 .btn-main-pr {
-  background-color: #048af7;
+  background-color: rgba(65,2,106,1);
   color: white;
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   margin: 2px 20px;
+  border:solid 1px black;
 }
 
 @media (min-width: 481px) {
