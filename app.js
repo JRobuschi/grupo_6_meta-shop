@@ -11,17 +11,39 @@ app.listen(3080, () => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/users/home.html'));
+    res.sendFile(path.resolve(__dirname, './views/users/home.ejs'));
 })
 app.get('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/products/products/description.html'));
+    res.sendFile(path.resolve(__dirname, './views//products/productdescription.ejs'));
 })
 app.get('/cart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/products/cart.html'));
+    res.sendFile(path.resolve(__dirname, './views/products/cart.ejs'));
 })
 app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/users/register.html'));
+    res.sendFile(path.resolve(__dirname, './views/users/iniciar-sesion.ejs'));
 })
 app.get('/sesion', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/users/iniciar-sesion.html'));
+    res.sendFile(path.resolve(__dirname, './views/users/iniciar-sesion.ejs'));
 })
+
+
+app.set('view engine', 'ejs');
+
+const homeRoutes = require("./routes/homeRoutes")
+app.use("/", homeRoutes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
