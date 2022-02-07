@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <script src="https://kit.fontawesome.com/10af4158f5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>METASHOP</title>
+</head>
+<body>
+    <section>
+    <!-- start nav -->
+<nav id="menu">
+    <!-- start menu -->
+    <ul>
+     <li><a href="#">HOME</a></li>
+     <li><a href="#">CATEGORIAS</a>
+    <!-- start menu desplegable -->
+     <ul>
+     <li><a href="#">MINERIA</a></li>
+     <li><a href="#">ALMACENAMIENTO</a></li>
+     <li><a href="#">MONITORES</a></li>
+     <li><a href="#">METAVERSO</a></li>
+
+     </ul>
+    <!-- end menu desplegable -->
+     </li>
+     <li><a href="/register">MI CUENTA</a></li>
+     <li><a href="/cart">MIS COMPRAS</a></li>
+     
+    </ul>
+    <!-- end menu -->
+    </nav>
+    <!-- end nav -->
+</section>
+<section>
+<!-- Search-->
+<div class="search">
+  <input type="text" placeholder="Buscar" required>
+  <div class="btn">
+    <i class="fas fa-search icon"></i>
+  </div>
+</div>
+<!-- Slideshow container -->
+<div class="slideshow">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="/images/metashop1.1.jpg" style="width:100%">
+      <div class="textoslides"></div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="/images/metashop2.1.jpg" style="width:100%">
+      <div class="textoslides"></div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="/images/metashop3.1.jpg" style="width:100%">
+      <div class="textoslides"></div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</section>
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+<section class="publicidades">
+<div class="card">
+    <img src="/images/rig1.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>Rig Minero Juancito</h1>
+    <p class="price">U$S499</p>
+    <p>Mineria de ETH</p>
+    <p><button>COMPRAR</button></p>
+  </div>
+  <div class="card">
+    <img src="/images/rig2.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>Rig Minero Juampi</h1>
+    <p class="price">U$S599</p>
+    <p>Mineria BTC</p>
+    <p><button>COMPRAR</button></p>
+  </div>
+  <div class="card">
+    <img src="/images/rig3.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>Rig Minero Araira</h1>
+    <p class="price">U$S699</p>
+    <p>Mineria Multimoneda</p>
+    <p><button>COMPRAR</button></p>
+  </div>
+</section>
+</body>
+
+ <footer class="footer">
+        <p>QUIENES SOMOS</p>
+        <p>POLITICA DE PRIVACIDAD</p>
+        <p>TERMINOS LEGALES</p>
+ </footer>
+
+</html>
