@@ -1,1 +1,0 @@
-Completamos todas las actividades que se plantearon fue un punto a favor, lo que hicimos mal fue los manejos de tiempos y la repartida de tareas. Debemos utilizar las plataformas de trello con mayor eficacia y mejorar la comunicación.
