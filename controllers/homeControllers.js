@@ -3,10 +3,10 @@ const controllers = {
         return res.send('home');
     },
     register: (req, res) => {
-        return res.send('register')
+        return res.send('register');
     },
     cart: (req, res) => {
-        return res.send('cart')
+        return res.send('cart');
     }
 }
 

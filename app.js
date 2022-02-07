@@ -30,7 +30,7 @@ app.get('/sesion', (req, res) => {
 app.set('view engine', 'ejs');
 
 const homeRoutes = require("./routes/homeRoutes");
-app.use("/", homeRoutes);
+app.use("/", homeRoutes.home);
 
 const cartRoutes = require("./routes/cartRoutes");
 app.use("/cart", cartRoutes);
@@ -39,7 +39,7 @@ const iniciarSesionRoutes = require("./routes/iniciarSesionRoutes");
 app.use("/register", iniciarSesionRoutes);
 
 const productDetailRoutes = require ("./routes/productDespriptionRoutes");
-app.use("productDetail", productDetailRoutes);
+app.use("/productDetail", productDetailRoutes);
 
 
 
