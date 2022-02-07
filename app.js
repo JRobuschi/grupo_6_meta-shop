@@ -10,7 +10,7 @@ app.listen(3080, () => {
     console.log("Servidor corriendo en el puerto 3080")
 });
 
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/users/home.ejs'));
 })
 app.get('/productDetail', (req, res) => {
@@ -20,17 +20,26 @@ app.get('/cart', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/products/cart.ejs'));
 })
 app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/users/iniciar-sesion.ejs'));
+    res.sendFile(path.resolve(__dirname, './views/users/iniciarSesion.ejs'));
 })
 app.get('/sesion', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/users/iniciar-sesion.ejs'));
-})
+    res.sendFile(path.resolve(__dirname, './views/users/iniciarSesion.ejs'));
+}) */
 
 
 app.set('view engine', 'ejs');
 
-const homeRoutes = require("./routes/homeRoutes")
+const homeRoutes = require("./routes/homeRoutes");
 app.use("/", homeRoutes);
+
+const cartRoutes = require("./routes/cartRoutes");
+app.use("/cart", cartRoutes);
+
+const iniciarSesionRoutes = require("./routes/iniciarSesionRoutes");
+app.use("/register", iniciarSesionRoutes);
+
+const productDetailRoutes = require ("./routes/productDespriptionRoutes");
+app.use("productDetail", productDetailRoutes);
 
 
 
