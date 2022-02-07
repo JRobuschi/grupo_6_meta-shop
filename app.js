@@ -28,6 +28,8 @@ app.get('/sesion', (req, res) => {
 
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 
 const homeRoutes = require("./routes/homeRoutes");
 app.use("/", homeRoutes.home);
