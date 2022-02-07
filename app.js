@@ -32,16 +32,16 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 const homeRoutes = require("./routes/homeRoutes");
-app.use("/", homeRoutes.home);
+app.use("/", homeRoutes);
 
-const cartRoutes = require("./routes/cartRoutes");
+/*const cartRoutes = require("./routes/cartRoutes");
 app.use("/cart", cartRoutes);
 
 const iniciarSesionRoutes = require("./routes/iniciarSesionRoutes");
 app.use("/register", iniciarSesionRoutes);
 
 const productDetailRoutes = require ("./routes/productDespriptionRoutes");
-app.use("/productDetail", productDetailRoutes);
+app.use("/productDetail", productDetailRoutes);*/
 
 
 

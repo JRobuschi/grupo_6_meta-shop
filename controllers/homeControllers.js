@@ -1,12 +1,12 @@
 const controllers = {
     home: (req, res) => {
-        return res.send('home');
+        return res.render('/users/home');
     },
     register: (req, res) => {
-        return res.send('register');
+        return res.render('register');
     },
     cart: (req, res) => {
-        return res.send('cart');
+        return res.render('cart');
     }
 }
 
