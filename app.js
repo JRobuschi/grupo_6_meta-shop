@@ -38,10 +38,10 @@ app.use("/", homeRoutes);
 app.use("/cart", cartRoutes);
 
 const iniciarSesionRoutes = require("./routes/iniciarSesionRoutes");
-app.use("/register", iniciarSesionRoutes);
+app.use("/register", iniciarSesionRoutes);*/
 
 const productDetailRoutes = require ("./routes/productDespriptionRoutes");
-app.use("/productDetail", productDetailRoutes);*/
+app.use("/productDetail", productDetailRoutes);
 
 
 

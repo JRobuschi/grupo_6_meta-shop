@@ -7,7 +7,11 @@ const controllers = {
     },
     cart: (req, res) => {
         return res.render('cart');
-    }
+    },
+
+    productDetail: (req,res) => {
+        return res.render('prod');
+    }, 
 }
 
 module.exports = controllers;
