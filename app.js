@@ -40,8 +40,8 @@ app.use("/cart", cartRoutes);
 const iniciarSesionRoutes = require("./routes/iniciarSesionRoutes");
 app.use("/register", iniciarSesionRoutes);
 
-const productDetailRoutes = require ("./routes/productDespriptionRoutes");
-app.use("/productDetail", productDetailRoutes);
+const productDescriptionRoutes = require ("./routes/productDespriptionRoutes");
+app.use("/productDetail", productDescriptionRoutes);
 
 
 
