@@ -1,6 +1,6 @@
 const controllers = {
     register: (req, res) => {
-        return res.render('/users/iniciarSesion');
+        return res.render('users/register');
     }
 }
 
