@@ -34,7 +34,7 @@ app.set('views', path.join(__dirname, 'views'));
 const homeRoutes = require("./routes/homeRoutes");
 app.use("/", homeRoutes);
 
-/*const cartRoutes = require("./routes/cartRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 app.use("/cart", cartRoutes);
 
 const iniciarSesionRoutes = require("./routes/iniciarSesionRoutes");
