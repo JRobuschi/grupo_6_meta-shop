@@ -302,5 +302,10 @@
     z-index: -1;
     position: absolute;
     }
-
+    @media (max-width: 769px) {
+      .card{
+        display: flex;
+        width: 100%;
+      }
+    }
  
