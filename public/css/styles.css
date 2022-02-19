@@ -208,7 +208,7 @@
     font-family:'roboto';
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
-    margin: auto;
+    margin: 15px;
     text-align: center;
     /*font-family: arial;*/
     box-shadow: 0px 0px 10px black;
@@ -219,8 +219,14 @@
     font-weight: 400;
     position: relative;
     top: 35px;
+    
   }
   
+  .publicidades .card {
+    justify-content: space-between;
+  }
+
+
   .price {
     font-family:'roboto';
     color: gold;
