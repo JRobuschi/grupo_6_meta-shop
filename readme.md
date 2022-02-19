@@ -4,9 +4,9 @@ Pagina de Ecommerce de productos tecnologicos con hincapie en criptomonedas y mi
 
 ## Grupo 6
 
-# Juan Robuschi
-# Juan Pablo
-# Araira Meza
-# Alfonso Garcia
+ Juan Robuschi
+ Juan Pablo
+ Araira Meza
+ Alfonso Garcia
 
 https://github.com/JRobuschi/grupo_6_meta-shop
