@@ -179,7 +179,7 @@
 }
 
 .footer {
-    position: relative;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -223,8 +223,8 @@
   .price {
     font-family:'roboto';
     color: gold;
-    font-size: 30px;
-    font-weight: 400;
+    font-size: 2em;
+    font-weight: 600;
   }
   
   .card button {
@@ -309,4 +309,4 @@
       }
     }
  
-    
+  
