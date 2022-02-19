@@ -1,17 +1,17 @@
 /* menu */
-#menu {
+.menu {
   position: fixed;
   z-index: 1;
 }
 /* aca empieza el responsive del navbar*/
 /* Hide the link that should open and close the topnav on small screens */
-#menu .icon {
+.menu .icon {
   display: none;
 }
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 400px) {
-  #menu a:not(:first-child) {display: none;}
-  #menu a.icon {
+  .menu a:not(:first-child) {display: none;}
+  .menu a.icon {
     float: right;
     display: block;
   }
@@ -25,7 +25,7 @@
     right: 0;
     top: 0;
   }
-  #menu.responsive a {
+  .menu.responsive a {
     float: none;
     display: block;
     text-align: left;
@@ -35,7 +35,7 @@
 /*aca termina el responsive del navbar*/
 
 
-#menu ul {
+.menu ul {
     list-style:none;
     margin:0;
     padding:0;
@@ -44,14 +44,14 @@
 
    /* items del menu */
    
-   #menu ul li { /*menu de navbar son 4 modulos separados*/
+   .menu ul li { /*menu de navbar son 4 modulos separados*/
     background-color: rgba(65,2,106,1);
     
    }
    
    /* enlaces del menu */
    
-   #menu ul a {
+   .menu ul a {
     display:block;
     color:#fff;
     text-decoration:none;
@@ -65,7 +65,7 @@
    
    /* items del menu */
    
-   #menu ul li {
+   .menu ul li {
     position:relative;
     float:left;
     margin:0;
@@ -74,13 +74,13 @@
    
    /* efecto al pasar el ratón por los items del menu */
    
-   #menu ul li:hover {
+   .menu ul li:hover {
     background:#5b78a7;
    }
 
    /* menu desplegable */
 
-#menu ul ul {
+.menu ul ul {
     display:none;
     position:absolute;
     top:100%;
@@ -91,21 +91,21 @@
    
    /* items del menu desplegable */
    
-   #menu ul ul li {
+   .menu ul ul li {
     float:none;
     width:200px
    }
    
    /* enlaces de los items del menu desplegable */
    
-   #menu ul ul a {
+   .menu ul ul a {
     line-height:120%;
     padding:10px 15px;
    }
    
    /* items del menu desplegable al pasar el ratón */
    
-   #menu ul li:hover > ul {
+   .menu ul li:hover > ul {
     display:block;
    }
 
@@ -342,7 +342,7 @@
     z-index: -1;
     position: absolute;
     }
-    @media (max-width: 769px) {
+   /* @media (max-width: 400px) {
       .card{
         display: flex;
         width: 100%;
@@ -354,5 +354,5 @@
         float: right;
         display: block;
       }
-    }
+    }*/
  

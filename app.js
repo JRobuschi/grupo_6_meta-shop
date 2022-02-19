@@ -43,6 +43,17 @@ app.use("/register", iniciarSesionRoutes);
 const productRoutes = require ("./routes/productRoutes");
 app.use("/productDetail", productRoutes);
 
+const mineriaRoutes = require ("./routes/mineriaRoutes");
+app.use("/mineria", mineriaRoutes);
+
+const almaRoutes = require ("./routes/almaRoutes");
+app.use("/almacenamiento", almaRoutes);
+
+const monitoresRoutes = require ("./routes/monitoresRoutes");
+app.use("/monitores", monitoresRoutes);
+
+const metaRoutes = require ("./routes/metaRoutes");
+app.use("/metaverso", metaRoutes);
 
 
 
