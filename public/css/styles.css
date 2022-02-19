@@ -179,7 +179,7 @@
 }
 
 .footer {
-    position: fixed;
+    /*position: fixed;*/
     left: 0;
     bottom: 0;
     width: 100%;
@@ -187,6 +187,7 @@
     color: white;
     text-align: center;
     display: flex;
+    align-content: flex-end;
     justify-content: space-around;
     font-family:'roboto';
     font-weight: 400;
