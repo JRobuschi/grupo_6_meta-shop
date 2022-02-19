@@ -22,7 +22,8 @@ a{
   color: #444444;
   font-weight: bold;
   background-color: #cfcdcd;
-  padding: 16px;
+  padding: 46px;
+  margin: 0%;
 }
 .cart-collection-pr {
   margin-top: 16px;
@@ -126,7 +127,7 @@ a{
   display: block;
   text-align: center;
   padding: 10px;
-  margin-bottom: 8px;
+  margin-bottom: 60px;
 }
 .cart-action-button-pr {
   display: flex;
