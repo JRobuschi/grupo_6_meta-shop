@@ -203,6 +203,7 @@
     flex-direction: row;
     font-family:'roboto';
     padding: 90px;
+    justify-content: center
   }
   .card {
     font-family:'roboto';
