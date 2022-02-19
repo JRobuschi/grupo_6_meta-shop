@@ -179,7 +179,7 @@
 }
 
 .footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -188,7 +188,7 @@
     text-align: center;
     display: flex;
     justify-content: space-around;
-    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:'roboto';
     font-weight: 400;
   }
 
@@ -201,10 +201,10 @@
   .publicidades {
     display: flex;
     flex-direction: row;
-    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:'roboto';
   }
   .card {
-    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:'roboto';
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
@@ -213,15 +213,15 @@
     box-shadow: 0px 0px 10px black;
     padding: 20px;
     border-radius: 20px;
-    color: rgb(153, 0, 255);
-    text-shadow:1px 1px 1px  black;
+    color: rgb(204, 136, 250);
+    text-shadow:1px 1px 1px  rgb(59, 1, 61);
     font-weight: 400;
     position: relative;
     top: 35px;
   }
   
   .price {
-    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:'roboto';
     color: gold;
     font-size: 30px;
     font-weight: 400;
@@ -263,7 +263,7 @@
     border: 1px solid gold;
     border-radius: 30px;
     transition: all 0.6s ease;
-    font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:'roboto';
     z-index: 1;
     
   }
