@@ -347,5 +347,12 @@
         display: flex;
         width: 100%;
       }
+      .menuNav{
+        display: none;
+      }
+      #menu a.icon {
+        float: right;
+        display: block;
+      }
     }
  
