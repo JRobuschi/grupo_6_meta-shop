@@ -1,7 +1,7 @@
+@import url('https: //fonts.googleapis.com/css2? family= Poppins & display=swap');
 .main {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     padding: 30px;
 }
 p {
@@ -13,14 +13,13 @@ h1 {
     text-align: center;
 }
 
-
-@import url('https: //fonts.googleapis.com/css2? family= Poppins & display=swap');
 body {
     font-family: 'roboto';
     background: rgb(175,70,74);
     background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
     
 }
+/*
 
 h2.title {
     color: #003875;
@@ -32,17 +31,16 @@ h2.title {
     display: block;
     background-repeat: no-repeat;
     border: none;
-}
+}*/
 
 .productshow {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex;  
     flex-direction: row;
+    flex-wrap: wrap;
     font-weight: bold;
     background-position: center;
     justify-content: space-around;
     margin: auto;
-    background-image: url('https://www.insurancethoughtleadership.com/wp-content/uploads/2021/11/uhd-g4b33b1cc6_1280.jpg');
 }
 
 .productinfo {
@@ -62,12 +60,12 @@ img {
     width: auto;
     max-width: 300px;
     border-radius: 20px;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 @media (min-width: 375px) and (max-width: 768px) {
     .productshow {
-        width: 100%;
+       width: 100%;
         margin: 2px;
     }
 }
