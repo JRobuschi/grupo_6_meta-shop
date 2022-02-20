@@ -1,17 +1,9 @@
-.header_top {
-    top: 0;
+.main {
     display: flex;
-    z-index: 100000;
-    background-attachment: scroll;
-    background-color: #44b8fc;
-    background-image: none;
-    background-repeat: repeat;
-    background-position: 0 0;
-    max-height: 50px;
-    width: 100%;
-    position: absolute;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
 }
-
 p {
     font-size: 17px;
 }
@@ -21,13 +13,10 @@ h1 {
     text-align: center;
 }
 
-.home {
-    width: 100vw;
-}
 
 @import url('https: //fonts.googleapis.com/css2? family= Poppins & display=swap');
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'roboto';
     background: rgb(175,70,74);
     background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
     
@@ -35,7 +24,7 @@ body {
 
 h2.title {
     color: #003875;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'roboto';
     font-size: 30px;
     font-weight: 5px;
     position: relative;
@@ -57,6 +46,8 @@ h2.title {
 }
 
 .productinfo {
+    display: flex;
+    flex-direction: row;
     color: white;
     font-size: 18px;
     margin: 15px;

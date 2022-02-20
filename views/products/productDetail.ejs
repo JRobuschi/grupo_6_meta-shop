@@ -5,24 +5,19 @@
     <%- include('../partials/head.ejs') %>
     <%- include('../partials/descriptionproductscss.ejs') %>
 </head>
-
-<%- include('../partials/headerNavbar.ejs') %>
-
-
-<body class="home">
-    <header class="header-top"></header>
-
-
-    <h1 class="title1"></h1>
-
-    <h2 class="title-text-center">Descubrí el metauniverso de productos recomendados para vos!</h2>
+<body>
+    <header>
+        <%- include('../partials/headerNavbar.ejs') %>
+    </header>
+  <!--  <h2 class="title-text-center">Descubrí el metauniverso de productos recomendados para vos!</h2>-->
+<main class="main">
     <div class="productshow">
         <div class="productinfo text-center">
             <div class="img1">
-                <img src="/images/notebooks_desktops.jpeg" alt="Notebooks & Desktops" itemprop="image">
-                <div class="title">Notebooks & Desktops</div>
+                <img src="/images/cloud-storage.jpg" alt="ALMACENAMIENTO" itemprop="image">
+                <div class="title">ALMACENAMIENTO<div>
                 <p>
-                    <span itemprop="Notebooks & Desktops"></span>
+                  <!--  <span itemprop="ALMACENAMIENTO"></span>-->
                 </p>
             </div>
         </div>
@@ -31,10 +26,10 @@
 
         <div class="productinfo text-center">
             <div class="img2">
-                <img src="/images/gamerconsole.jfif" alt="Gamer Console" itemprop="image">
-                <div class="title">Gamer Console</div>
+                <img src="/images/img_monitor_tab_3.png" alt="MONITORES" itemprop="image">
+                <div class="title">MONITORES</div>
                 <p>
-                    <span itemprop="Gamer Console"></span>
+                    <span itemprop="MONITORES"></span>
                 </p>
             </div>
         </div>
@@ -42,37 +37,30 @@
 
         <div class="productinfo text-center">
             <div class="img3">
-                <img src="/images/crypto_miner.jpg" alt="crypto_miner" itemprop="image">
-                <div class="title">Crypto Miner</div>
+                <img src="/images/crypto_miner.jpg" alt="MINERIA" itemprop="image">
+                <div class="title">MINERIA</div>
                 <p>
-                    <span itemprop="Crypto Miner"></span>
+                    <span itemprop="MINERIA"></span>
                 </p>
             </div>
         </div>
 
         <div class="productinfo text-center">
             <div class="img4">
-                <img src="/images/bigdata.jpg" alt="bigdata" itemprop="image">
-                <div class="title">Storage</div>
+                <img src="/images/metaverso.jpg" alt="METAVERSO" itemprop="image">
+                <div class="title">METAVERSO</div>
                 <p>
-                    <span itemprop="Data Storage"></span>
+                    <span itemprop="METAVERSO"></span>
                 </p>
             </div>
         </div>
-
-        <div class="productinfo text-center">
-            <div class="img5">
-                <img src="/images/audioandvideo.jpg" alt="audioandvideo" itemprop="image">
-                <div class="title">Audio & Video</div>
-                <p>
-                    <span itemprop="Audio & Video"></span>
-                </p>
-            </div>
-        </div>
-
+</div>
+</main>
+    
+    <%- include('../partials/footer.ejs') %>
 </body>
 
-<%- include('../partials/footer.ejs') %>
+
 
 
 
