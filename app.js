@@ -55,7 +55,8 @@ app.use("/monitores", monitoresRoutes);
 const metaRoutes = require ("./routes/metaRoutes");
 app.use("/metaverso", metaRoutes);
 
-
+const footRoutes = require ("./routes/footRoutes");
+app.use("/foot", footRoutes);
 
 
 
