@@ -223,8 +223,14 @@
     font-family:'roboto';
     font-weight: 400;
   }
-
-  
+/*lins visitados*/
+  a:visited {
+    color: rgb(240, 135, 240);
+    text-decoration: none;
+  }
+  a:link {
+    text-decoration: none;
+  }
 
   .textoslides {
     font: 15px 'roboto';
