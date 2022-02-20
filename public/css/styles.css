@@ -235,6 +235,7 @@
     flex-direction: row;
     font-family:'roboto';
     padding: 90px;
+    padding-top: 10px;
     justify-content: center
   }
   .card {
