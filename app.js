@@ -58,7 +58,11 @@ app.use("/metaverso", metaRoutes);
 const footRoutes = require ("./routes/footRoutes");
 app.use("/foot", footRoutes);
 
-
+//404//
+app.use((req, res, next) => {
+    res.status(404).render('404-page');
+    next();
+});
 
 
 
