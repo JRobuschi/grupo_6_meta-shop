@@ -4,20 +4,42 @@ main {
 }
 
 .newProducts{   
-    margin: 0% 10% 0% 10%;
+    margin: 0% 20% 0% 20%;
     border: solid black 1px;
     
 }
 p{
     text-align: start;
     margin: 10px;
+    
 }
 
 input{
     text-align: start;
     margin: 10px;
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    border: black solid 1px;
 }
 .categori{
+    text-align: start;   
+}
+.categoriOptions{
+    margin: 10px;
+}
+#chooseFile{
     text-align: start;
-    margin: 10px;    
+    margin: 10px;
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    border: black solid 1px;
+}
+
+@media (min-width=769){
+    .parts{
+        display: flex;
+        width: 45%;
+    }
 }

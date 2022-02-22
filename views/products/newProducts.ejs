@@ -13,17 +13,17 @@
 
     <div class="newProducts">
         <h4 class="page-banner-add">Agregar un Producto</h4>
-        <div>     
+        <div class="parts">     
             <p>Nombre del Producto</p>
             <input type="text" name="nombre-del-producto" >
         </div> 
-        <div> 
+        <div class="parts"> 
             <p>Descripcion</p>
             <input type="text" name="descripcion-del-producto" >
         </div> 
-        <div class="categori"> 
+        <div class="categori" class="parts"> 
             <p>Categoria</p>
-             <select name="categoria-del-producto"  >
+             <select name="categoria-del-producto" class="categoriOptions" >
             <option value="1">Seleccionar categoria</option> 
             <option value="2">Mineria</option> 
             <option value="3">Almacenamiento</option>
@@ -34,14 +34,14 @@
         </div> 
        
        
-        <div> 
+        <div class="parts"> 
             <p>Precio</p>
             <input type="text" name="precio-del-producto" >
         </div> 
 
-        <div> 
+        <div class="parts"> 
             <p>Imagen del Producto</p>
-            <input type="file" name="imagen-del-producto" placeholder="Buscar">
+            <input id="chooseFile" type="file" name="imagen-del-producto" placeholder="Buscar">
         </div> 
 
 
