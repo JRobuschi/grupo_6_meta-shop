@@ -1,0 +1,23 @@
+main {
+    background: rgb(175,70,74);
+    background: linear-gradient(90deg, rgb(139, 32, 160) 0%, rgba(65,2,106,1) 100%);
+}
+
+.newProducts{   
+    margin: 0% 10% 0% 10%;
+    border: solid black 1px;
+    
+}
+p{
+    text-align: start;
+    margin: 10px;
+}
+
+input{
+    text-align: start;
+    margin: 10px;
+}
+.categori{
+    text-align: start;
+    margin: 10px;    
+}
