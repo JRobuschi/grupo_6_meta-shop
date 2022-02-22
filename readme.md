@@ -5,7 +5,7 @@ Pagina de Ecommerce de productos tecnologicos con hincapie en criptomonedas y mi
 ## Grupo 6
 
  Juan Robuschi<br>
- Juan Pablo<br>
+ Juan Pablo Mantegazza<br>
  Araira Meza<br>
  Alfonso Garcia<br>
 
