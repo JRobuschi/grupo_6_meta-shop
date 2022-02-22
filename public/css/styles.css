@@ -225,7 +225,7 @@
   }
 /*lins visitados*/
   a:visited {
-    color: rgb(240, 135, 240);
+    color: rgb(255, 255, 255);
     text-decoration: none;
   }
   a:link {
