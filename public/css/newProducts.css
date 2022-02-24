@@ -1,0 +1,80 @@
+main {
+    background: rgb(175,70,74);
+    background: linear-gradient(90deg, rgb(139, 32, 160) 0%, rgba(65,2,106,1) 100%);
+}
+
+.newProducts{   
+    
+    border: solid black 3px;
+    border-radius: 15px;
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+p{
+    text-align: start;
+    margin: 10px;
+    
+}
+
+input{
+    text-align: start;
+    margin: 10px;
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    border: black solid 1px;
+}
+.categori{
+    text-align: start;   
+}
+.categoriOptions{
+    margin: 10px;
+}
+#chooseFile{
+    text-align: start;
+    margin: 10px;
+    width: 90%;
+    height: 40px;
+    border-radius: 10px;
+    border: black solid 1px;
+}
+.buttons{
+    text-align: center;
+    margin-top: 10px;
+}
+.submit{
+    color: white;
+    background: black;
+    width: 40%;
+    border-radius: 15px;
+    height: 30px;
+}
+.search-edit{
+    display: flex;
+    
+    align-items: center;
+}
+.btn-edit{
+    margin-left: -15%;
+}
+.input-search{
+    width: 100%;
+}
+
+
+@media (min-width: 769px) {
+    .newProducts{
+        margin: 0% 10% 0% 10%;
+        
+    }
+    input{       
+        width: 80%;      
+    }
+    #chooseFile{
+        width: 80%;      
+    }
+    .btn-edit{
+        margin-left: -22%;
+    }
+}
+
