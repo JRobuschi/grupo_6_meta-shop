@@ -8,7 +8,9 @@
   </head>
 
   <body>
-    <%- include('../partials/headerNavbar.ejs') %>
+    <div class="volver">
+      <a href="/"><strong>Volver</strong></a>
+    </div>
     <div class="container">
       <div class="signUp">
         <form action="" id="sign-up" >
@@ -41,10 +43,10 @@
             </div>
 
             <label for="email"></label>
-            <input type="text" placeholder="Ingrese su mail aquí">
+            <input type="email" placeholder="Ingrese su mail aquí" required="true">
 
             <label for="password"></label>
-            <input type="password" placeholder="Ingrese su contraseña aquí" name="psw" required>
+            <input type="password" placeholder="Ingrese su contraseña aquí" name="psw" required="true">
 
             
             <button type="submit" class="btn2">Login</button>
@@ -54,6 +56,6 @@
      
   </body>
   
-  <%- include('../partials/footer.ejs') %>
+
   
 </html>
