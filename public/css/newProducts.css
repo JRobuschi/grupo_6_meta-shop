@@ -4,9 +4,11 @@ main {
 }
 
 .newProducts{   
-    margin: 0% 20% 0% 20%;
-    border: solid black 1px;
     
+    border: solid black 3px;
+    border-radius: 15px;
+    padding-top: 3%;
+    padding-bottom: 5%;
 }
 p{
     text-align: start;
@@ -17,7 +19,7 @@ p{
 input{
     text-align: start;
     margin: 10px;
-    width: 80%;
+    width: 90%;
     height: 40px;
     border-radius: 10px;
     border: black solid 1px;
@@ -31,15 +33,33 @@ input{
 #chooseFile{
     text-align: start;
     margin: 10px;
-    width: 80%;
+    width: 90%;
     height: 40px;
     border-radius: 10px;
     border: black solid 1px;
 }
+.buttons{
+    text-align: center;
+    margin-top: 10px;
+}
+.submit{
+    color: white;
+    background: black;
+    width: 40%;
+    border-radius: 15px;
+    height: 30px;
+}
 
-@media (min-width=769){
-    .parts{
-        display: flex;
-        width: 45%;
+@media (min-width: 769px) {
+    .newProducts{
+        margin: 0% 10% 0% 10%;
+        
+    }
+    input{       
+        width: 80%;      
+    }
+    #chooseFile{
+        width: 80%;      
     }
 }
+
