@@ -61,6 +61,8 @@ app.use("/foot", footRoutes);
 const newProductsRoutes = require ("./routes/newProductsRoutes");
 app.use("/newProducts", newProductsRoutes);
 
+const editProductsRoutes = require ("./routes/editProductsRoutes");
+app.use("/editProducts", editProductsRoutes);
 
 //404//
 app.use((req, res, next) => {
