@@ -6,6 +6,7 @@ const controllers = {
         //logica a implementar
     },
     crearProducto: (req, res) => {
+        console.log("estamos aca")
         return res.render('products/newProducts');
     },
     editarProducto: (req, res) => {
