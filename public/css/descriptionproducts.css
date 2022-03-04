@@ -76,3 +76,8 @@ img {
         margin: 2px;
     }
 }
+
+.editarAgregar {
+    display: flex;
+    flex-direction: column;
+}
