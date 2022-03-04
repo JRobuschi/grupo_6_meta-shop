@@ -6,10 +6,10 @@ const controllers = {
         //logica a implementar
     },
     crearProducto: (req, res) => {
-        //logica a implementar
+        return res.render('products/newProducts');
     },
     editarProducto: (req, res) => {
-        //logica a implementar
+        return res.render('products/editProducts');
     } 
 
 }
