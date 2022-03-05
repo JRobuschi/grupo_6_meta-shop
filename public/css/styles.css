@@ -225,11 +225,14 @@
     font-family:'roboto';
     padding: 90px;
     padding-top: 10px;
-    justify-content: center
+    justify-content: center;
+    align-items: center;
   }
   @media (max-width: 800px) {
     .publicidades {
       flex-direction: column;
+      
+      
     }
   }
 
@@ -340,9 +343,9 @@
     }
 
     @media (max-width:767px) {
-      .slideshow img {
-          max-width: 100%;
-          max-height: 100%;
+      .slideshow  {
+          max-width: 80%;
+          max-height: 80%;
       }
   }
 
@@ -350,4 +353,5 @@
     body {
       font-size: 0.5em; 
     
-    }}
+    }
+  }
