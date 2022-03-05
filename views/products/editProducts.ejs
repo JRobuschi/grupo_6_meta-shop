@@ -11,7 +11,7 @@
 <main>
     
 
-    <form method="POST" action="/productDetail/editar?_method=PUT">
+    <form method="POST" action="/productDetail/editar?_method=PUT" enctype="multipart/form-data">
       <div class="newProducts">  
         <h4 class="page-banner-add">Editar un Producto</h4>
         <div class="search-edit">
@@ -24,15 +24,15 @@
           </div>
         <div class="parts">     
             <p>Nombre del Producto</p>
-            <input type="text" name="nombre-del-producto" >
+            <input type="text" name="nombre-del-producto" id="nombre-del-producto" required>
         </div> 
         <div class="parts"> 
             <p>Descripcion</p>
-            <input type="text" name="descripcion-del-producto" >
+            <input type="text" name="descripcion-del-producto" id="descripcion-del-producto" required>
         </div> 
         <div class="categori" class="parts"> 
             <p>Categoria</p>
-             <select name="categoria-del-producto" class="categoriOptions" >
+             <select name="categoria-del-producto" class="categoriOptions" id="categoria-del-producto" required>
             <option value="1">Seleccionar categoria</option> 
             <option value="2">Mineria</option> 
             <option value="3">Almacenamiento</option>
@@ -45,12 +45,12 @@
        
         <div class="parts"> 
             <p>Precio</p>
-            <input type="text" name="precio-del-producto" >
+            <input type="text" name="precio-del-producto" id="precio-del-producto" required>
         </div> 
 
         <div class="parts"> 
             <p>Imagen del Producto</p>
-            <input id="chooseFile" type="file" name="imagen-del-producto" placeholder="Buscar">
+            <input id="chooseFile" type="file" name="imagen-del-producto" id="imagen-del-producto" placeholder="Buscar" required>
         </div> 
 
         <div class="buttons">
