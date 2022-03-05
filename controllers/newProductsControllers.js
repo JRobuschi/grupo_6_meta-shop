@@ -1,7 +1,7 @@
-//const controllers = {
-//    newProducts: (req,res) => {
-//return res.render('products/newProducts');
-//}
-//}
+const controllers = {
+    newProducts: (req,res) => {
+return res.render('products/newProducts');
+}
+}
 
-//module.exports = controllers;
+module.exports = controllers;
