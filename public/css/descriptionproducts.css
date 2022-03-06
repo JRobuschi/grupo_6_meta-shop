@@ -1,7 +1,5 @@
 @import url('https: //fonts.googleapis.com/css2? family= Poppins & display=swap');
 .main {
-   /* display: flex;
-    flex-direction: row;*/
     padding: 30px;
 }
 
@@ -16,9 +14,9 @@ body {
 .categorias {
     flex-wrap: wrap;
     font-weight: bold;
-    /*background-position: center;*/
+    background-position: center;
     justify-content: space-around;
-    /*margin: auto;*/
+    margin: auto;
     display: flex;
     flex-direction: row;
     color: white;
