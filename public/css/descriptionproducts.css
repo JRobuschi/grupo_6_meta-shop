@@ -28,7 +28,8 @@ body {
 }
 
 img {
-    height: auto;
+   
+    max-height: 300px;
     max-width: 300px;
     border-radius: 20px;
     align-items: center;
