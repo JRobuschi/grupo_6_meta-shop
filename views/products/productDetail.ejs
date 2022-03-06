@@ -3,72 +3,49 @@
 
 <head>
     <%- include('../partials/head.ejs') %>
-    <%- include('../partials/descriptionproductscss.ejs') %>
+        <%- include('../partials/descriptionproductscss.ejs') %>
 </head>
+
 <body>
     <header>
         <%- include('../partials/headerNavbar.ejs') %>
     </header>
-  <!--  <h2 class="title-text-center">Descubrí el metauniverso de productos recomendados para vos!</h2>-->
-<main class="main">
-   <div class="editarAgregar">
-        <div class="productshow">
-        <div class="productinfo text-center">
-            <div class="img1">
-                <img src="/images/cloud-storage.jpg"  alt="ALMACENAMIENTO" itemprop="image" href="/almacenamiento">
-                <div class="title"><a href="/productDetail/newProducts.ejs">CREAR PRODUCTO</a><div>
-            </div>
-        </div>
-        <div class="productshow">
-            <div class="productinfo text-center">
-                <div class="img1">
-                    <img src="/images/cloud-storage.jpg"  alt="ALMACENAMIENTO" itemprop="image" href="/almacenamiento">
-                    <div class="title"><a href="productDetail/editProducts">EDITAR PRODUCTO</a><div>
-                </div>
-            </div>
-        </div>
-        <div class="productshow">
-            <div class="productinfo text-center">
-                <div class="img1">
-                    <img src="/images/cloud-storage.jpg"  alt="ALMACENAMIENTO" itemprop="image" href="/almacenamiento">
-                    <div class="title"><a href="/almacenamiento">ALMACENAMIENTO</a><div>
-                </div>
+    <main class="main">
+
+        <div class="categorias">
+
+            <div>
+                <img src="/images/cloud-storage.jpg" alt="ALMACENAMIENTO" itemprop="image" href="/almacenamiento">
+                <div class="title"><a href="/almacenamiento">AGREGAR PRODUCTO</a></div>
             </div>
 
-
-        <div class="productinfo text-center">
-            <div class="img2">
-                <img src="/images/img_monitor_tab_3.png" alt="MONITORES" itemprop="image">
-                <div class="title"><a href="/monitores">MONITORES</a></div>
-                <p>
-                    <span itemprop="MONITORES"></span>
-                </p>
+            <div>
+                <img src="/images/cloud-storage.jpg" alt="ALMACENAMIENTO" itemprop="image" href="/almacenamiento">
+                <div class="title"><a href="/almacenamiento">EDITAR PRODUCTO</a></div>
             </div>
-        </div>
 
-
-        <div class="productinfo text-center">
-            <div class="img3">
-                <img src="/images/crypto_miner.jpg" alt="MINERIA" itemprop="image">
-                <div class="title"><a href="/mineria">MINERIA</a></div>
-                <p>
-                    <span itemprop="MINERIA"></span>
-                </p>
+            <div>
+            <img src="/images/cloud-storage.jpg" alt="ALMACENAMIENTO" itemprop="image" href="/almacenamiento">
+            <div class="title"><a href="/almacenamiento">ALMACENAMIENTO</a></div>
             </div>
-        </div>
 
-        <div class="productinfo text-center">
-            <div class="img4">
-                <img src="/images/metaverso.jpg" alt="METAVERSO" itemprop="image">
-                <div class="title"><a href="/metaverso">METAVERSO</a></div>
-                <p>
-                    <span itemprop="METAVERSO"></span>
-                </p>
+            <div>        
+            <img src="/images/img_monitor_tab_3.png" alt="MONITORES" itemprop="image">
+            <div class="title"><a href="/monitores">MONITORES</a></div>
             </div>
-        </div>
-</div>
-</main>
-    
+
+            <div>     
+            <img src="/images/crypto_miner.jpg" alt="MINERIA" itemprop="image">
+            <div class="title"><a href="/mineria">MINERIA</a></div>
+            </div>
+
+            <div>    
+            <img src="/images/metaverso.jpg" alt="METAVERSO" itemprop="image">
+            <div class="title"><a href="/metaverso">METAVERSO</a></div>
+            </div>    
+        </div>        
+    </main>
+
     <%- include('../partials/footer.ejs') %>
 </body>
 

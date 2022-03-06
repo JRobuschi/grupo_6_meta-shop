@@ -1,66 +1,39 @@
 @import url('https: //fonts.googleapis.com/css2? family= Poppins & display=swap');
 .main {
-    display: flex;
-    flex-direction: row;
+   /* display: flex;
+    flex-direction: row;*/
     padding: 30px;
 }
-p {
-    font-size: 17px;
-}
 
-h1 {
-    color: darkblue;
-    text-align: center;
-}
 
 body {
     font-family: 'roboto';
     background: rgb(175,70,74);
     background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
-    
+    align-items: center;
 }
-/*
 
-h2.title {
-    color: #003875;
-    font-family: 'roboto';
-    font-size: 30px;
-    font-weight: 5px;
-    position: relative;
-    letter-spacing: 1px;
-    display: block;
-    background-repeat: no-repeat;
-    border: none;
-}*/
-
-.productshow {
-    display: flex;  
-    flex-direction: row;
+.categorias {
     flex-wrap: wrap;
     font-weight: bold;
     /*background-position: center;*/
     justify-content: space-around;
-    margin: auto;
-}
-
-.productinfo {
+    /*margin: auto;*/
     display: flex;
     flex-direction: row;
     color: white;
     font-size: 18px;
     margin: 15px;
-}
-
-.text-center {
     text-align: center;
+
+
 }
 
 img {
     height: auto;
-    width: auto;
     max-width: 300px;
     border-radius: 20px;
-    /*align-items: center;*/
+    align-items: center;
 }
 
 @media (min-width: 375px) and (max-width: 768px) {
@@ -77,7 +50,3 @@ img {
     }
 }
 
-.editarAgregar {
-    display: flex;
-    flex-direction: column;
-}
