@@ -67,7 +67,7 @@ app.use("/foot", footRoutes);
 //app.use("/newProducts", newProductsRoutes);
 
 //const editProductsRoutes = require ("./routes/editProductsRoutes");
-//app.use("/editProducts", editProductsRoutes);
+//rsapp.use("/editProducts", editProductsRoutes);
 
 //404//
 app.use((req, res, next) => {
