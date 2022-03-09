@@ -4,4 +4,4 @@
 
 3)Quedamos en que cada participante realizaria una seccion del sitio, por A o por B, el sitio lo estamos realizando entre Jrobuschi y Alfonso Garcia, en caso puntual Juan Pablo Mategazza realizo la seccion "login" y Araira Meza realizo "productDetail" todo lo demas lo hicimos Jrobuschi y Alfonso Garcia, incluidos todos los ruteos y solucion de problemas.
 
-4)
+4)Seguimos siendo Jrobuschi y Alfonso Garcia
