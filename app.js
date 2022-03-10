@@ -63,6 +63,11 @@ app.use("/metaverso", metaRoutes);
 const footRoutes = require ("./routes/footRoutes");
 app.use("/foot", footRoutes);
 
+// Setup del req.body (deja disponible el contenido de los formularios)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
 //const newProductsRoutes = require ("./routes/newProductsRoutes");
 //app.use("/newProducts", newProductsRoutes);
 
@@ -77,6 +82,7 @@ app.use((req, res, next) => {
 
 // method-Override //
 const methodOverride = require ('method-override');
+const exp = require('constants');
 app.use(methodOverride('_method'));
 
 
