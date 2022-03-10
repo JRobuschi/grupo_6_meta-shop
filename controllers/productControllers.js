@@ -8,7 +8,12 @@ const controllers = {
         return res.render('products/newProducts');
     },
     add: (req, res) => {
-        return res.render('vamos a guardar la info del producto');
+        const pdtName = req.body.pdtName;
+        const pdtDescription = req.body.pdtDescription;
+        const pdtCategori = req.body.pdtCategori;
+        const pdtPrice = req.body.pdtPrice;
+        const pdtImg = req.body.pdtImg;
+        return res.render('vamos a guardar la info del producto'); 
     },
     edit: (req, res) => {
         return res.render('products/editProducts/' + productId);
