@@ -45,7 +45,7 @@ width: 40px;
     flex-wrap: nowrap;
     position: absolute;
     right: 50px;
-    top: 15rem;
+    top: 9rem;
     margin: 20px;
     background-color: rgba(0,0,0,0.3);
     border-radius: 1em;
@@ -143,3 +143,18 @@ h1{
     background-color: rgb(141, 38, 60);
 
 }    
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(65,2,106,1);
+  color: white;
+  text-align: center;
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-around;
+  font-family:'roboto';
+  font-weight: 400;
+}

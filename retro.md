@@ -2,6 +2,7 @@
 
 2) En este sprint repartimos mejor las tareas y nos comunicamos más que la vez anterior, pero sigue faltando algo de organización y coordinación a la hora de realizar el sprint completo.
 
-3)Quedamos en que cada participante realizaria una seccion del sitio, por A o por B, el sitio lo estamos realizando entre Jrobuschi y Alfonso Garcia, en caso puntual Juan Pablo Mategazza realizo la seccion "login" y Araira Meza realizo "productDetail" todo lo demas lo hicimos Jrobuschi y Alfonso Garcia, incluidos todos los ruteos y solucion de problemas.
+3)Cada seccion del sitio sera realizada por uno de los participantes, Alfonso Garcia home.ejs, Jrobuschi cart.ejs, Juan Pablo Mategazza login.ejs,  y Araira Meza realizo productDetail.ejs.
 
-4)Seguimos siendo Jrobuschi y Alfonso Garcia...
+4)Jrobuschi y Alfonso Garcia hicieron toda la funcionalidad del sitio, incluidos ruteos, CSS, todas las demas paginas intermedias y correcciones diarias que hacen q la cosa ande.
+
