@@ -10,7 +10,7 @@ router.get("/", productControllers.browse);
 
 router.get("/crear", productControllers.create);
 
-router.get("/editar/id", productControllers.edit);
+router.get("/editar/:id", productControllers.edit);
 
 router.post('/', productControllers.add)
 

@@ -1,6 +1,8 @@
 al 9/3/22
 desde la presentacion del codigo en clase.
 
+ranking segun commits :)
+
 1) Alfonso Garcia 
 77 commits
 
