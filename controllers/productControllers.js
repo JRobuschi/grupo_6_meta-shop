@@ -21,7 +21,7 @@ const controllers = {
        // const pdtCategori = req.body.pdtCategori;
        // const pdtPrice = req.body.pdtPrice;
        // const pdtImg = req.body.pdtImg;
-
+       console.log(req.body);
         productsArray.push({
         pdtName: req.body.pdtName,
         pdtDescription: req.body.pdtDescription,

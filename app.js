@@ -3,6 +3,9 @@ const path = require('path');
 
 const app = express();
 
+// Setup del req.body (deja disponible el contenido de los formularios)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 
 const publicPath = path.resolve(__dirname, './public');
@@ -62,9 +65,7 @@ app.use("/metaverso", metaRoutes);
 const footRoutes = require ("./routes/footRoutes");
 app.use("/foot", footRoutes);
 
-// Setup del req.body (deja disponible el contenido de los formularios)
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
 
 
 //const newProductsRoutes = require ("./routes/newProductsRoutes");
