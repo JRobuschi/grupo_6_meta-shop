@@ -1,9 +1,11 @@
 const fs = require ('fs');
 const path = require ('path');
 
+//Ubicación del archivo JSON
 const filePath = path.resolve(__dirname,'../data/products.json');
-const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
+//Lectura del archivo JSON y parseado a array
+const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
 
 const controllers = {
@@ -16,12 +18,9 @@ const controllers = {
         return res.render('products/newProducts');
     },
     add: (req, res) => {
-       // const pdtName = req.body.pdtName;
-       // const pdtDescription = req.body.pdtDescription;
-       // const pdtCategori = req.body.pdtCategori;
-       // const pdtPrice = req.body.pdtPrice;
-       // const pdtImg = req.body.pdtImg;
+      
        console.log(req.body);
+       //Inserto el nuevo producto al array de productos existentes
         productsArray.push({
         pdtName: req.body.pdtName,
         pdtDescription: req.body.pdtDescription,
@@ -30,8 +29,10 @@ const controllers = {
         pdtImg: req.body.pdtImg,        
         })
 
+        //Sobreescribo todo el archivo JSON con el nuevo producto
         fs.writeFileSync(filePath, JSON.stringify(productsArray, null, ' '));
 
+        // y luego la redirección 
         res.redirect('/productDetail?saved=true');
     },
     edit: (req, res) => {
