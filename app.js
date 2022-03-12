@@ -12,7 +12,7 @@ const publicPath = path.resolve(__dirname, './public');
 app.use( express.static(publicPath) );
 
 app.listen(3080, () => {
-    console.log("Servidor corriendo")
+    console.log("Servidor corriendo, anda preprandote")
 });
 
 
