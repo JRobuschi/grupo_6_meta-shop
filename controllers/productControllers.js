@@ -19,6 +19,7 @@ const controllers = {
     },
     add: (req, res) => {
       
+        return res.send(req.file);
        console.log(req.body);
        //Inserto el nuevo producto al array de productos existentes
         productsArray.push({
