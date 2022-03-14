@@ -44,7 +44,7 @@ const controllers = {
         pdtPrice: req.body.pdtPrice,
         pdtImg: req.body.pdtImg,        
         })
-
+//DEJO EL VIDEO DE MULTER EN 2:06 HORAS POR QUE TODO LO QUE LE PONGO DESPUES DE ROMPE
         //Sobreescribo todo el archivo JSON con el nuevo producto
         fs.writeFileSync(filePath, JSON.stringify(productsArray, null, ' '));
 
