@@ -34,5 +34,14 @@
     "image": "image-1647225784142-110001108.jpg",
     "discount": null,
     "id": 4
+  },
+  {
+    "pdtName": "daleuancito",
+    "pdtDescription": "ponetemediapila",
+    "pdtCategori": "5",
+    "pdtPrice": 44445555666,
+    "image": "image-1647286800804-571317672.jpg",
+    "discount": null,
+    "id": 5
   }
 ]
