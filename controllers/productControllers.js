@@ -19,7 +19,23 @@ const controllers = {
     },
     add: (req, res) => {
       
-       console.log(req.body);
+        const productToCreate = req.body;
+        
+        productToCreate.pdtPrice = Number(productToCreate.pdtPrice);
+        productToCreate.image = req.file.filename;
+        if (productToCreate.discount == '') {
+            productToCreate.discount = 0;
+
+        }else{
+            productToCreate.discount= Number(productToCreate.discount);
+        }
+        productToCreate.id = productsArray.length +1;
+
+        productsArray.push(productToCreate);
+       //console.log(req.body);
+
+       fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
+        return res.send(productsArray)
        //Inserto el nuevo producto al array de productos existentes
         productsArray.push({
         pdtName: req.body.pdtName,
@@ -28,7 +44,7 @@ const controllers = {
         pdtPrice: req.body.pdtPrice,
         pdtImg: req.body.pdtImg,        
         })
-
+//DEJO EL VIDEO DE MULTER EN 2:06 HORAS POR QUE TODO LO QUE LE PONGO DESPUES DE ROMPE
         //Sobreescribo todo el archivo JSON con el nuevo producto
         fs.writeFileSync(filePath, JSON.stringify(productsArray, null, ' '));
 

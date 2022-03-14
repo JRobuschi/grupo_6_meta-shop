@@ -1,9 +1,38 @@
 [
- {},
- {},
- {},
- {},
- {},
- {},
- {}
+  {
+    "pdtName": "saraza",
+    "pdtDescription": "productounicoraromuyraro1111",
+    "pdtCategori": "4",
+    "pdtPrice": 12121221,
+    "image": "image-1647222482178-660346000.jpg",
+    "discount": null,
+    "id": 6
+  },
+  {
+    "pdtName": "sarazasasasa",
+    "pdtDescription": "productounicoraromsssuyraro1111",
+    "pdtCategori": "4",
+    "pdtPrice": 1212122111,
+    "image": "image-1647222615821-551107667.png",
+    "discount": null,
+    "id": 7
+  },
+  {
+    "pdtName": "sarazasasasaddsds",
+    "pdtDescription": "productounicoraromsssuyrsdsdaro1111",
+    "pdtCategori": "4",
+    "pdtPrice": 1212122111222,
+    "image": "image-1647225265313-295376559.png",
+    "discount": null,
+    "id": 8
+  },
+  {
+    "pdtName": "ototootot",
+    "pdtDescription": "dsjdsajdsadkj",
+    "pdtCategori": "3",
+    "pdtPrice": 23232323,
+    "image": "image-1647225784142-110001108.jpg",
+    "discount": null,
+    "id": 4
+  }
 ]
