@@ -1,7 +1,25 @@
 [
- {},
- {},
- {},
- {},
- {}
+  {},
+  {},
+  {},
+  {},
+  {},
+  {
+    "pdtName": "saraza",
+    "pdtDescription": "productounicoraromuyraro1111",
+    "pdtCategori": "4",
+    "pdtPrice": 12121221,
+    "image": "image-1647222482178-660346000.jpg",
+    "discount": null,
+    "id": 6
+  },
+  {
+    "pdtName": "sarazasasasa",
+    "pdtDescription": "productounicoraromsssuyraro1111",
+    "pdtCategori": "4",
+    "pdtPrice": 1212122111,
+    "image": "image-1647222615821-551107667.png",
+    "discount": null,
+    "id": 7
+  }
 ]

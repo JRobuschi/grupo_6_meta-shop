@@ -19,8 +19,23 @@ const controllers = {
     },
     add: (req, res) => {
       
-        return res.send(req.file);
-       console.log(req.body);
+        const productToCreate = req.body;
+        
+        productToCreate.pdtPrice = Number(productToCreate.pdtPrice);
+        productToCreate.image = req.file.filename;
+        if (productToCreate.discount == '') {
+            productToCreate.discount = 0;
+
+        }else{
+            productToCreate.discount= Number(productToCreate.discount);
+        }
+        productToCreate.id = productsArray.length +1;
+
+        productsArray.push(productToCreate);
+       //console.log(req.body);
+
+       fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
+        return res.send(productsArray)
        //Inserto el nuevo producto al array de productos existentes
         productsArray.push({
         pdtName: req.body.pdtName,
