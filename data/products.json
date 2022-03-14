@@ -1,9 +1,4 @@
 [
-  {},
-  {},
-  {},
-  {},
-  {},
   {
     "pdtName": "saraza",
     "pdtDescription": "productounicoraromuyraro1111",
@@ -30,5 +25,14 @@
     "image": "image-1647225265313-295376559.png",
     "discount": null,
     "id": 8
+  },
+  {
+    "pdtName": "ototootot",
+    "pdtDescription": "dsjdsajdsadkj",
+    "pdtCategori": "3",
+    "pdtPrice": 23232323,
+    "image": "image-1647225784142-110001108.jpg",
+    "discount": null,
+    "id": 4
   }
 ]
