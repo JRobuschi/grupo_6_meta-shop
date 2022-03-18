@@ -26,7 +26,7 @@ router.get("/", productControllers.browse);
 router.get("/crear", productControllers.create);
 
 
-router.get("/editar", productControllers.edit);
+router.get("/editar/:id", productControllers.edit);
 //router.get("/editar/:id", productControllers.edit);
 
 router.post('/', upload.single('image'), productControllers.add)
