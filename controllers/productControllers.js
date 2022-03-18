@@ -52,7 +52,7 @@ const controllers = {
         res.redirect('/productDetail?saved=true');
     },
     edit: (req, res) => {
-        return res.render('editProducts'); //'products/editProducts/' + productId
+        return res.redirect('/products/editProducts'); //'products/editProducts/' + productId
     },
 
     /*read: (req, res) => {
