@@ -52,8 +52,8 @@ const controllers = {
         res.redirect('/productDetail?saved=true');
     },
     edit: (req, res) => {
-        req.params.id
-        if(id != undefined){
+        reqID = req.params.id
+        if(reqId != undefined){
             return res.render('/products/editarProducts/id')
         }
         
