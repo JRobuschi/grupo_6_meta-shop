@@ -24,11 +24,12 @@ router.get("/", productControllers.browse);
 //router.get("/:id", productControllers.read);
 
 router.get("/crear", productControllers.create);
+
+
+router.get("/editar", productControllers.edit);
+//router.get("/editar/:id", productControllers.edit);
+
 router.post('/', upload.single('image'), productControllers.add)
-
-router.get("/editar/:id", productControllers.edit);
-
-
 
 router.put('/:id', productControllers.update)
 
