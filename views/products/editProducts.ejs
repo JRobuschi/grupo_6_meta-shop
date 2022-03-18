@@ -22,17 +22,17 @@
               <i class="fas fa-search icon"></i>
             </div>
           </div>
-        <div class="parts">     
-            <p>Nombre del Producto</p>
-            <input type="text" value="Nombre del Producto" name="nombre-del-producto" id="nombre-del-producto" required>
+          <div class="parts">     
+            <label>Nombre del Producto</label>
+            <input type="text" name="pdtName" id="pdtName" required>
         </div> 
         <div class="parts"> 
-            <p>Descripcion</p>
-            <input type="text" value="Descripcion del Producto" name="descripcion-del-producto" id="descripcion-del-producto" required>
+            <label>Descripcion</label>
+            <input type="text" name="pdtDescription" id="pdtDescription" required>
         </div> 
         <div class="categori" class="parts"> 
-            <p>Categoria</p>
-             <select name="categoria-del-producto" class="categoriOptions" id="categoria-del-producto" required>
+            <label>Categoria</label>
+             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" required>
             <option value="1">Seleccionar categoria</option> 
             <option value="2">Mineria</option> 
             <option value="3">Almacenamiento</option>
@@ -44,13 +44,13 @@
        
        
         <div class="parts"> 
-            <p>Precio</p>
-            <input type="text" name="precio-del-producto" id="precio-del-producto" required>
+            <label>Precio</label>
+            <input type="text" name="pdtPrice" id="pdtPrice" required>
         </div> 
 
-        <div class="parts"> 
-            <p>Imagen del Producto</p>
-            <input id="chooseFile" type="file" name="imagen-del-producto" id="imagen-del-producto" placeholder="Buscar" required>
+        <div class="parts"> <!--multer image archivo-->
+            <label for="image">Imagen del Producto</label>
+             <input  type="file" name="image" id="image" placeholder="Buscar" required>
         </div> 
 
         <div class="buttons">
