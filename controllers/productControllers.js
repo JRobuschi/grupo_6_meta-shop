@@ -52,7 +52,7 @@ const controllers = {
         res.redirect('/productDetail?saved=true');
     },
     edit: (req, res) => {
-        return res.redirect('/products/editProducts'); //'products/editProducts/' + productId
+        return res.render('/products/editarProducts')
     },
 
     /*read: (req, res) => {
@@ -62,7 +62,28 @@ const controllers = {
 
     
     update: (req, res) => {
-        return res.render("vamos a actualizar un producto" + productId);
+        const idToFind = req.params.id
+        const productIndex = products.findIndex(product => product.id == idToFind)
+        const editedProduct = req.body;
+
+        products[productIndex].pdtName = editedProduct.pdtName;
+        products[productIndex].pdtDescription = editedProduct.pdtDescription;
+        products[productIndex].pdtPrice = Number(editedProduct).pdtPrice;
+        if (req.body.pdtCategori == ''){
+            products[productIndex].pdtCategori = products[productIndex].pdtCategori;
+        }else{
+            products[productIndex].pdtCategori = editedProduct.pdtCategori
+        }
+        products[productIndex].pdtDescription = editedProduct.pdtDescription
+        if(req.file) {
+            products[productIndex].pdtImg = req.file.filename;
+        }
+        controller.dbReWrite()
+
+        return res.redirect('/products')
+
+
+        return res.render('/products/editProducts'); //'products/editProducts/' + productId
     },
     delete: (req, res) => {
         const productId = req.params.id
