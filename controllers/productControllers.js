@@ -104,7 +104,7 @@ const controllers = {
 
 		newProduct.id = controller.asignIdToProduct();
 		newProduct.pdtPrice = Number(newProduct.pdtPrice);
-		newProduct.pdtImage = newProductImage.filename;
+		newProduct.image = newProductImage.filename;
 		
 		if (newProduct.discount == '') {
 			newProduct.discount = 0
