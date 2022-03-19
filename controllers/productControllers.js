@@ -56,7 +56,7 @@ const controllers = {
         const productoEncontrado = productsArray.find(p => p.id == productId)
 
         res.send(productoEncontrado)
-
+        //aca empieza la locura de que el menu empieze a iterar sobre la informacion que recibe del JSON.parse, abandono aca
        // return res.render('/productDetail')
     },
 
@@ -90,6 +90,28 @@ const controllers = {
 
         return res.render('/products/editProducts'); //'products/editProducts/' + productId
     },
+    // Create -  Method to store
+	store: (req, res) => {
+		const newProduct =  req.body;
+		const newProductImage = req.file;
+	
+		if (req.file && newProductImage.size < 3145728) {
+			
+		controller.createNewProduct(newProduct,newProductImage)	
+		
+		products.push (newProduct)
+
+		controller.dbReWrite()
+
+		res.redirect ('/products')
+
+	} else if (req.file && newProductImage.size > 3145729) {
+		res.send('El archivo es demasiado pesado')
+	} else {
+		res.send ('No adjuntaste ninguna imagen')
+	}
+	},
+
     delete: (req, res) => {
         const productId = req.params.id
         return res.render('vamos a borrar un producto' + productId);
