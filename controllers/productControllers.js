@@ -16,19 +16,19 @@ const controllers = {
     detail: (req, res) => {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
-        //const discounted = Math.round(product.price - (product.price * product.dicount) / 100)
+        const discounted = Math.round(product.price - (product.price * product.dicount) / 100)
 
-        //return res.render ('detail', {product, discounted})
-        return res.render ('detail', {product})
+        return res.render ('detail', {product, discounted})
+        //return res.render ('detail', {product})
     },
 
     create: (req, res) => {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
-        //const discounted = Math.round(product.pdtPrice - (product.pdtPrice * product.discount) / 100)
+        const discounted = Math.round(product.pdtPrice - (product.pdtPrice * product.discount) / 100)
         
-        //return res.render('products/newProducts', {product, discounted})
-        return res.render('products/newProducts', {product})
+        return res.render('products/newProducts', {product, discounted})
+        //return res.render('products/newProducts', {product})
     },
     store: (req, res) => {
       
@@ -48,7 +48,7 @@ const controllers = {
        
 
        fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
-        //saco el return de esta linea y pongo en 63
+       return res.send(productsArray);//saco el return de esta linea y pongo en 63
        //<!--Inserto el nuevo producto al array de productos existentes
         productsArray.push({
         pdtName: req.body.pdtName,
@@ -63,7 +63,7 @@ const controllers = {
 
         // y luego la redirección 
         res.redirect('/productDetail?saved=true');
-        return res.send(productsArray);
+        
     },
     edit: (req, res) => {
         const idToFind = req.params.id

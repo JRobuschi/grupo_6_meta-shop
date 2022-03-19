@@ -52,5 +52,44 @@
     "image": "image-1647286909404-444464046.jpg",
     "discount": null,
     "id": 6
+  },
+  {
+    "pdtName": "fdsfsdfsdf",
+    "pdtDescription": "dsahdjkasdhjkashdjk",
+    "pdtCategori": "2",
+    "pdtPrice": 1154554,
+    "image": "image-1647732007710-233378783.png",
+    "discount": null,
+    "id": 7
+  },
+  {
+    "pdtName": "fdsfsdfsdf",
+    "pdtDescription": "dsahdjkasdhjkashdjk",
+    "pdtCategori": "2",
+    "pdtPrice": 1154554
+  },
+  {
+    "pdtName": "tuvieja",
+    "pdtDescription": "entangada",
+    "pdtCategori": "4",
+    "pdtPrice": 99,
+    "image": "image-1647732205393-810447577.png",
+    "discount": null,
+    "id": 9
+  },
+  {
+    "pdtName": "tuvieja",
+    "pdtDescription": "entangada",
+    "pdtCategori": "4",
+    "pdtPrice": 99
+  },
+  {
+    "pdtName": "fdsfsdfsdf",
+    "pdtDescription": "fdsfsdfsdf",
+    "pdtCategori": "2",
+    "pdtPrice": 1154554,
+    "image": "image-1647732337824-346046771.png",
+    "discount": null,
+    "id": 11
   }
 ]
