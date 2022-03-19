@@ -10,9 +10,17 @@ const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
 const controllers = {
     index: (req,res) => {
-        return res.render('products/productDetail');
+        res.render('products/productDetail');
     },
-    
+
+    detail: (req, res) => {
+        const idToFind = req.params.id
+        const product = productsArray.find (p => p.id == idToFind)
+        const discounted = Math.round(product.price - (product.price * product.dicount) / 100)
+
+        return res.render ('detail', {product, discounted})
+    },
+
     create: (req, res) => {
         
         return res.render('products/newProducts');
@@ -57,20 +65,6 @@ const controllers = {
         
         return res.render ('product-edit-form', {product})
     },
-
-    /*read: (req, res) => {
-        const productId = req.params.id
-        return res.render('products/' + productId);
-    },*/
-
-    detail: (req, res) => {
-        const idToFind = req.params.id
-        const product = productsArray.find (p => p.id == idToFind)
-        const discounted = Math.round(product.price - (product.price * product.dicount) / 100)
-
-        return res.render ('detail', {product, discounted})
-    },
-
     
     update: (req, res) => {
         const idToFind = req.params.id
