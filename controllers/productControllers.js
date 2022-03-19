@@ -52,7 +52,12 @@ const controllers = {
         res.redirect('/productDetail?saved=true');
     },
     edit: (req, res) => {
-        return res.render('/products/editarProducts')
+        const productId = req.params.productId;
+        const productoEncontrado = productsArray.find(p => p.id == productId)
+
+        res.send(productoEncontrado)
+
+       // return res.render('/productDetail')
     },
 
     /*read: (req, res) => {

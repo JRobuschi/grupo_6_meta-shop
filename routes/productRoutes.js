@@ -26,12 +26,13 @@ router.get("/", productControllers.browse);
 router.get("/crear", productControllers.create);
 
 
-router.get("/editar/:id", productControllers.edit);
+router.get("/edit/:productId", productControllers.edit); //esta ruta nos lleva hacia el formulario de modificar, es solo una vista
 //router.get("/editar/:id", productControllers.edit);
+router.put('/edit/:productId/', productControllers.edit)//esta ruta tiene que llevarnos hacia la modificacion del elemento
 
 router.post('/', upload.single('image'), productControllers.add)
 
-router.put('/:id', productControllers.update)
+
 
 router.delete('/:id', productControllers.delete)
 
