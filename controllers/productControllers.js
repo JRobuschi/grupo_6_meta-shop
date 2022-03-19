@@ -26,6 +26,8 @@ const controllers = {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
         //const discounted = Math.round(product.pdtPrice - (product.pdtPrice * product.discount) / 100)
+        
+        //return res.render('products/newProducts', {product, discounted})
         return res.render('products/newProducts', {product})
     },
     store: (req, res) => {
