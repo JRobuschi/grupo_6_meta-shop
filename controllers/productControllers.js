@@ -48,8 +48,8 @@ const controllers = {
        
 
        fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
-       return res.send(productsArray);//saco el return de esta linea y pongo en 63
-       //<!--Inserto el nuevo producto al array de productos existentes
+       return res.send(productsArray);
+       
         productsArray.push({
         pdtName: req.body.pdtName,
         pdtDescription: req.body.pdtDescription,
@@ -57,7 +57,7 @@ const controllers = {
         pdtPrice: req.body.pdtPrice,
         pdtImg: req.body.pdtImg,        
         })
-//DEJO EL VIDEO DE MULTER EN 2:06 HORAS POR QUE TODO LO QUE LE PONGO DESPUES DE ROMPE
+        //DEJO EL VIDEO DE MULTER EN 2:06 HORAS POR QUE TODO LO QUE LE PONGO DESPUES DE ROMPE
         //Sobreescribo todo el archivo JSON con el nuevo producto
         fs.writeFileSync(filePath, JSON.stringify(productsArray, null, ' '));
 
