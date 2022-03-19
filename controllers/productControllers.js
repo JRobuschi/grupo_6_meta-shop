@@ -52,12 +52,11 @@ const controllers = {
         res.redirect('/productDetail?saved=true');
     },
     edit: (req, res) => {
-        const productId = req.params.productId;
-        const productoEncontrado = productsArray.find(p => p.id == productId)
-
-        res.send(productoEncontrado)
-
-       // return res.render('/productDetail')
+        reqID = req.params.id
+        if(reqId != undefined){
+            return res.render('/products/editarProducts/id')
+        }
+        
     },
 
     /*read: (req, res) => {
@@ -71,17 +70,17 @@ const controllers = {
         const productIndex = products.findIndex(product => product.id == idToFind)
         const editedProduct = req.body;
 
-        products[productIndex].pdtName = editedProduct.pdtName;
-        products[productIndex].pdtDescription = editedProduct.pdtDescription;
-        products[productIndex].pdtPrice = Number(editedProduct).pdtPrice;
+        productsArray[productIndex].pdtName = editedProduct.pdtName;
+        productsArray[productIndex].pdtDescription = editedProduct.pdtDescription;
+        productsArray[productIndex].pdtPrice = Number(editedProduct).pdtPrice;
         if (req.body.pdtCategori == ''){
-            products[productIndex].pdtCategori = products[productIndex].pdtCategori;
+            productsArray[productIndex].pdtCategori = products[productIndex].pdtCategori;
         }else{
-            products[productIndex].pdtCategori = editedProduct.pdtCategori
+            productsArray[productIndex].pdtCategori = editedProduct.pdtCategori
         }
-        products[productIndex].pdtDescription = editedProduct.pdtDescription
+        productsArray[productIndex].pdtDescription = editedProduct.pdtDescription
         if(req.file) {
-            products[productIndex].pdtImg = req.file.filename;
+            productsArray[productIndex].pdtImg = req.file.filename;
         }
         controller.dbReWrite()
 
