@@ -19,21 +19,18 @@ const storage = multer.diskStorage({
 
 
 
-router.get("/", productControllers.browse);
+router.get("/", productControllers.index);
 
 //router.get("/:id", productControllers.read);
 
 router.get("/crear", productControllers.create);
+router.post('/', upload.single('image'), productControllers.store)
 
+router.get('/:id/', productControllers.detail);
 
-router.get("/edit/:productId", productControllers.edit); //esta ruta nos lleva hacia el formulario de modificar, es solo una vista
-//router.get("/editar/:id", productControllers.edit);
-router.put('/edit/:productId/', productControllers.edit)//esta ruta tiene que llevarnos hacia la modificacion del elemento
+router.get("/:id/edit", productControllers.edit); //esta ruta nos lleva hacia el formulario de modificar, es solo una vista
+router.put('/:id',upload.single('image'), productControllers.update);//esta ruta tiene que llevarnos hacia la modificacion del elemento
 
-router.post('/', upload.single('image'), productControllers.add)
-
-
-
-router.delete('/:id', productControllers.delete)
+router.delete('/:id', productControllers.destroy)
 
 module.exports = router;

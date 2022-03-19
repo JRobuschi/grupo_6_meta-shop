@@ -9,7 +9,7 @@ const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
 
 const controllers = {
-    browse: (req,res) => {
+    index: (req,res) => {
         return res.render('products/productDetail');
     },
     
@@ -17,7 +17,7 @@ const controllers = {
         
         return res.render('products/newProducts');
     },
-    add: (req, res) => {
+    store: (req, res) => {
       
         const productToCreate = req.body;
         
@@ -52,17 +52,24 @@ const controllers = {
         res.redirect('/productDetail?saved=true');
     },
     edit: (req, res) => {
-        reqID = req.params.id
-        if(reqId != undefined){
-            return res.render('/products/editarProducts/id')
-        }
+        const idToFind = req.params.id
+        const product = productsArray.find (p => p.id == idToFind)
         
+        return res.render ('product-edit-form', {product})
     },
 
     /*read: (req, res) => {
         const productId = req.params.id
         return res.render('products/' + productId);
     },*/
+
+    detail: (req, res) => {
+        const idToFind = req.params.id
+        const product = productsArray.find (p => p.id == idToFind)
+        const discounted = Math.round(product.price - (product.price * product.dicount) / 100)
+
+        return res.render ('detail', {product, discounted})
+    },
 
     
     update: (req, res) => {
@@ -89,7 +96,7 @@ const controllers = {
 
         return res.render('/products/editProducts'); //'products/editProducts/' + productId
     },
-    delete: (req, res) => {
+    destroy: (req, res) => {
         const productId = req.params.id
         return res.render('vamos a borrar un producto' + productId);
     }
