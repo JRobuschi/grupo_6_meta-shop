@@ -16,16 +16,17 @@ const controllers = {
     detail: (req, res) => {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
-        const discounted = Math.round(product.price - (product.price * product.dicount) / 100)
+        //const discounted = Math.round(product.price - (product.price * product.dicount) / 100)
 
-        return res.render ('detail', {product, discounted})
+        //return res.render ('detail', {product, discounted})
+        return res.render ('detail', {product})
     },
 
     create: (req, res) => {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
-        const discounted = Math.round(product.pdtPrice - (product.pdtPrice * product.discount) / 100)
-        return res.render('products/newProducts', {product,discounted})
+        //const discounted = Math.round(product.pdtPrice - (product.pdtPrice * product.discount) / 100)
+        return res.render('products/newProducts', {product})
     },
     store: (req, res) => {
       
