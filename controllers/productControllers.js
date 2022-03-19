@@ -42,11 +42,11 @@ const controllers = {
         productToCreate.id = productsArray.length +1;
 
         productsArray.push(productToCreate);
-       //console.log(req.body);
+       
 
        fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
-        return res.send(productsArray)
-       //Inserto el nuevo producto al array de productos existentes
+        //saco el return de esta linea y pongo en 63
+       //<!--Inserto el nuevo producto al array de productos existentes
         productsArray.push({
         pdtName: req.body.pdtName,
         pdtDescription: req.body.pdtDescription,
@@ -60,12 +60,13 @@ const controllers = {
 
         // y luego la redirección 
         res.redirect('/productDetail?saved=true');
+        return res.send(productsArray);
     },
     edit: (req, res) => {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
         
-        return res.render ('product-edit-form', {product})
+        return res.render ('productDetail/:id/edit/', {product})
     },
     
     update: (req, res) => {
