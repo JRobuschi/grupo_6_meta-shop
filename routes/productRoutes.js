@@ -23,6 +23,7 @@ router.get("/", productControllers.index);
 
 //router.get("/:id", productControllers.read);
 
+
 router.get("/crear", productControllers.create);
 router.post('/', upload.single('image'), productControllers.store)
 
