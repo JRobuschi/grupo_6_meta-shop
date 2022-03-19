@@ -95,7 +95,26 @@ const controllers = {
     destroy: (req, res) => {
         const productId = req.params.id
         return res.render('vamos a borrar un producto' + productId);
-    }
-}
+    },
+
+    dbReWrite() { 
+		fs.writeFileSync(productsFilePath, JSON.stringify(productsArray, null, 2))
+	},
+	createNewProduct: function (newProduct,newProductImage) {
+
+		newProduct.id = controller.asignIdToProduct();
+		newProduct.pdtPrice = Number(newProduct.pdtPrice);
+		newProduct.pdtImage = newProductImage.filename;
+		
+		if (newProduct.discount == '') {
+			newProduct.discount = 0
+		} else {
+			newProduct.discount = Number(newProduct.discount)
+		}
+	},
+	asignIdToProduct: function () {
+		return productsArray[productsArray.length -1].id +1;
+	}
+};
 
 module.exports = controllers;
