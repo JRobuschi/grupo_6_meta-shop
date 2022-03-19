@@ -91,5 +91,14 @@
     "image": "image-1647732337824-346046771.png",
     "discount": null,
     "id": 11
+  },
+  {
+    "pdtName": "adsads",
+    "pdtDescription": "loreimput lalala",
+    "pdtCategori": "3",
+    "pdtPrice": 987456,
+    "image": "image-1647732699802-43835795.jpeg",
+    "discount": null,
+    "id": 12
   }
 ]
