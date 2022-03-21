@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const upload = require ("../../middlewares/multer");
+const upload = require ("../middlewares/multer");
 
 //CONTROLADOR//
-const productsController = require('../controllers/productsController');
+const productsController = require('../controllers/productControllers');
 
 //TODOS LOS PRODUCOTS//
 router.get('/', productsController.index);
