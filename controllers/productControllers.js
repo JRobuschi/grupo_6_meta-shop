@@ -2,7 +2,7 @@ const fs = require ('fs');
 const path = require ('path');
 
 //Ubicación del archivo JSON
-const filePath = path.resolve(__dirname,'../data/products.json');
+const filePath = path.join(__dirname,'../data/products.json');
 
 //Lectura del archivo JSON y parseado a array
 const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -10,7 +10,7 @@ const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
 const controllers = {
     index: (req,res) => {
-        res.render('products/productDetail');
+        res.render('products', {productsArray})
     },
 
     detail: (req, res) => {
@@ -25,45 +25,29 @@ const controllers = {
     create: (req, res) => {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
-        const discounted = Math.round(product.pdtPrice - (product.pdtPrice * product.discount) / 100)
         
-        return res.render('products/newProducts', {product, discounted})
+        return res.render('products/newProducts', {product})
         //return res.render('products/newProducts', {product})
     },
     store: (req, res) => {
-      
-        const productToCreate = req.body;
-        
-        productToCreate.pdtPrice = Number(productToCreate.pdtPrice);
-        productToCreate.image = req.file.filename;
-        if (productToCreate.discount == '') {
-            productToCreate.discount = 0;
+        const newProduct =  req.body;
+		const newProductImage = req.file;
+	
+		if (req.file && newProductImage.size < 3145728) {
+			
+		controller.createNewProduct(newProduct,newProductImage)	
+		
+		products.push (newProduct)
 
-        }else{
-            productToCreate.discount= Number(productToCreate.discount);
-        }
-        productToCreate.id = productsArray.length +1;
+		controller.dbReWrite()
 
-        productsArray.push(productToCreate);
-       
+		res.redirect ('/products')
 
-       fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
-       return res.send(productsArray);
-       
-        productsArray.push({
-        pdtName: req.body.pdtName,
-        pdtDescription: req.body.pdtDescription,
-        pdtCategori: req.body.pdtCategori,
-        pdtPrice: req.body.pdtPrice,
-        pdtImg: req.body.pdtImg,        
-        })
-        //DEJO EL VIDEO DE MULTER EN 2:06 HORAS POR QUE TODO LO QUE LE PONGO DESPUES DE ROMPE
-        //Sobreescribo todo el archivo JSON con el nuevo producto
-        fs.writeFileSync(filePath, JSON.stringify(productsArray, null, ' '));
-
-        // y luego la redirección 
-        res.redirect('/productDetail?saved=true');
-        
+	} else if (req.file && newProductImage.size > 3145729) {
+		res.send('El archivo es demasiado pesado')
+	} else {
+		res.send ('No adjuntaste ninguna imagen')
+	}
     },
     edit: (req, res) => {
         const idToFind = req.params.id
@@ -94,15 +78,19 @@ const controllers = {
         return res.redirect('/products')
 
 
-        return res.render('/products/editProducts'); //'products/editProducts/' + productId
+       // return res.render('/products/editProducts'); //'products/editProducts/' + productId
     },
     destroy: (req, res) => {
+    
         const productId = req.params.id
+        const deletedProducts = productsArray.filter (p => p.id != idToFind)
+
+        fs.writeFileSync(filePath, JSON.stringify(deletedProducts, null, 2))
         return res.render('vamos a borrar un producto' + productId);
     },
 
     dbReWrite() { 
-		fs.writeFileSync(productsFilePath, JSON.stringify(productsArray, null, 2))
+		fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
 	},
 	createNewProduct: function (newProduct,newProductImage) {
 
