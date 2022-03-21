@@ -1,37 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const productControllers = require("../controllers/productControllers");
-const path = require("path");//para cargar multer
+const upload = require ("../../middlewares/multer");
 
-const multer = require('multer')
-//configurar la logica para almacenar archivos
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.resolve('public/images/products')); //resolver desde ruta base esta carpeta
-    },
-    filename: function (req, file, cb) {//nombre del archivo
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname))
-    }
-  });
-  //intancia de logica donde se almacena
-  const upload = multer({ storage: storage })
+//CONTROLADOR//
+const productsController = require('../controllers/productsController');
 
+//TODOS LOS PRODUCOTS//
+router.get('/', productsController.index);
 
+//CREATE//
+router.get('/create', productsController.create);
+router.post('/', upload.single('image'), productsController.store);
 
-router.get("/", productControllers.index);
+//GET//
+router.get('/:id/', productsController.detail);
 
-//router.get("/:id", productControllers.read);
+//EDIT//
+router.get('/:id/edit', productsController.edit);
+router.put('/:id', upload.single('image'), productsController.update);
 
+//DELETE//
+router.delete('/:id', productsController.destroy);
 
-router.get("/crear", productControllers.create);
-router.post('/', upload.single('image'), productControllers.store)
-
-router.get('/:id/', productControllers.detail);
-
-router.get("/:id/edit", productControllers.edit); //esta ruta nos lleva hacia el formulario de modificar, es solo una vista
-router.put('/:id',upload.single('image'), productControllers.update);//esta ruta tiene que llevarnos hacia la modificacion del elemento
-
-router.delete('/:id', productControllers.destroy)
 
 module.exports = router;
