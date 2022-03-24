@@ -18,7 +18,7 @@ const controllers = {
         const product = productsArray.find (p => p.id == idToFind)
         const discounted = Math.round(product.ptdPrice - (product.ptdPrice * product.dicount) / 100)
 
-        return res.render ('productDetail', {product, discounted})
+        return res.render ('products/detalleProducto', {product, discounted})
         //return res.render ('detail', {product})
     },
 
