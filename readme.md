@@ -10,3 +10,4 @@ Pagina de Ecommerce de productos tecnologicos con hincapie en criptomonedas y mi
  Alfonso Garcia<br>
 
 https://github.com/JRobuschi/grupo_6_meta-shop
+# metashopRama2

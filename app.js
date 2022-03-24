@@ -34,7 +34,7 @@ const iniciarSesionRoutes = require("./routes/iniciarSesionRoutes");
 app.use("/register", iniciarSesionRoutes);
 
 const productRoutes = require ("./routes/productRoutes");
-app.use("/productDetail", productRoutes);
+app.use("/products", productRoutes);
 
 const mineriaRoutes = require ("./routes/mineriaRoutes");
 app.use("/mineria", mineriaRoutes);

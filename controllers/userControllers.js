@@ -8,7 +8,7 @@ let userController = {
         res.render('login')
     },
     'list': function(req, res) {
-      let archivoJSON = fs.readFileSync('usuarios.json', {encoding: 'utf-8'});
+      let archivoJSON = fs.readFileSync('users.json', {encoding: 'utf-8'});
       //para leer el archivo es el readfilesync
       let users = JSON.parse(archivoJSON);//para descomprimir la info
 

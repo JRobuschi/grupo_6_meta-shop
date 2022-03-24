@@ -7,7 +7,7 @@ const filePath = path.join(__dirname,'../data/products.json');
 //Lectura del archivo JSON y parseado a array
 const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-
+//lista de productos
 const controllers = {
     index: (req,res) => {
         res.render('products', {productsArray})
@@ -16,9 +16,9 @@ const controllers = {
     detail: (req, res) => {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
-        const discounted = Math.round(product.price - (product.price * product.dicount) / 100)
+        const discounted = Math.round(product.ptdPrice - (product.ptdPrice * product.dicount) / 100)
 
-        return res.render ('detail', {product, discounted})
+        return res.render ('productDetail', {product, discounted})
         //return res.render ('detail', {product})
     },
 
@@ -53,7 +53,7 @@ const controllers = {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
         
-        return res.render ('productDetail/:id/edit/', {product})
+        return res.render ('products/:id/edit/', {product})
     },
     
     update: (req, res) => {
