@@ -53,7 +53,7 @@ const controllers = {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
         
-        return res.render ('products/:id/edit/', {product})
+        return res.render ('products/editProducts', {product})
     },
     
     update: (req, res) => {

@@ -11,28 +11,21 @@
 <main>
     
 
-    <form method="POST" action="/productDetail/__/edit?_method=PUT" enctype="multipart/form-data">
+    <form method="POST" action="/product/:id/edit?_method=PUT" enctype="multipart/form-data">
       <div class="newProducts">  
         <h4 class="page-banner-add">Editar un Producto</h4>
-        <div class="search-edit">
-            <div class="input-search">
-            <input type="text" placeholder="Id del Producto a Editar" required>
-            </div>
-            <div class="btn-edit">
-              <i class="fas fa-search icon"></i>
-            </div>
-          </div>
+        
           <div class="parts">     
             <label>Nombre del Producto</label>
-            <input type="text" name="pdtName" id="pdtName" required>
+            <input type="text" name="pdtName" id="pdtName" value="<%=product.pdtName %>" required>
         </div> 
         <div class="parts"> 
             <label>Descripcion</label>
-            <input type="text" name="pdtDescription" id="pdtDescription" required>
+            <input type="text" name="pdtDescription" id="pdtDescription" value="<%=product.pdtDescription%>" required>
         </div> 
         <div class="categori" class="parts"> 
             <label>Categoria</label>
-             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" required>
+             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" value="<%=product.pdtCategori%>" required>
             <option value="1">Seleccionar categoria</option> 
             <option value="2">Mineria</option> 
             <option value="3">Almacenamiento</option>
@@ -45,12 +38,12 @@
        
         <div class="parts"> 
             <label>Precio</label>
-            <input type="text" name="pdtPrice" id="pdtPrice" required>
+            <input type="text" name="pdtPrice" id="pdtPrice" value="<%=product.pdtPrice%>" required>
         </div> 
 
         <div class="parts"> <!--multer image archivo-->
             <label for="image">Imagen del Producto</label>
-             <input  type="file" name="image" id="image" placeholder="Buscar" required>
+             <input  type="file" name="image" id="image" placeholder="Buscar" value="<%=product.image%>" required>
         </div> 
 
         <div class="buttons">
