@@ -1,23 +1,5 @@
 [
   {
-    "pdtName": "saraza",
-    "pdtDescription": "productounicoraromuyraro1111",
-    "pdtCategori": "4",
-    "pdtPrice": 12121221,
-    "image": "image-1647222482178-660346000.jpg",
-    "discount": null,
-    "id": 6
-  },
-  {
-    "pdtName": "sarazasasasa",
-    "pdtDescription": "productounicoraromsssuyraro1111",
-    "pdtCategori": "4",
-    "pdtPrice": 1212122111,
-    "image": "image-1647222615821-551107667.png",
-    "discount": null,
-    "id": 7
-  },
-  {
     "pdtName": "sarazasasasaddsds",
     "pdtDescription": "productounicoraromsssuyrsdsdaro1111",
     "pdtCategori": "4",
@@ -34,33 +16,6 @@
     "image": "image-1647225784142-110001108.jpg",
     "discount": null,
     "id": 4
-  },
-  {
-    "pdtName": "daleuancito",
-    "pdtDescription": "ponetemediapila",
-    "pdtCategori": "5",
-    "pdtPrice": 44445555666,
-    "image": "image-1647286800804-571317672.jpg",
-    "discount": null,
-    "id": 5
-  },
-  {
-    "pdtName": "daleuanddddcito",
-    "pdtDescription": "ponetemediapila111111",
-    "pdtCategori": "5",
-    "pdtPrice": null,
-    "image": "image-1647286909404-444464046.jpg",
-    "discount": null,
-    "id": 6
-  },
-  {
-    "pdtName": "fdsfsdfsdf",
-    "pdtDescription": "dsahdjkasdhjkashdjk",
-    "pdtCategori": "2",
-    "pdtPrice": 1154554,
-    "image": "image-1647732007710-233378783.png",
-    "discount": null,
-    "id": 7
   },
   {
     "pdtName": "fdsfsdfsdf",

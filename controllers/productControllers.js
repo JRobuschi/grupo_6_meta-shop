@@ -83,10 +83,11 @@ const controllers = {
     destroy: (req, res) => {
     
         const productId = req.params.id
-        const deletedProducts = productsArray.filter (p => p.id != idToFind)
+        const deletedProducts = productsArray.filter (p => p.id != productId)
+        
 
         fs.writeFileSync(filePath, JSON.stringify(deletedProducts, null, 2))
-        return res.render('vamos a borrar un producto' + productId);
+        return res.redirect('/products')
     },
 
     dbReWrite() { 
