@@ -352,3 +352,19 @@
     
     }
   }
+
+  .col-12 {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+  }
+
+  .product-detail-img{
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+  }
