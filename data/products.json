@@ -1,14 +1,5 @@
 [
   {
-    "pdtName": "ototootot",
-    "pdtDescription": "dsjdsajdsadkj",
-    "pdtCategori": "3",
-    "pdtPrice": 23232323,
-    "image": "image-1647225784142-110001108.jpg",
-    "discount": null,
-    "id": 4
-  },
-  {
     "pdtName": "fdsfsdfsdf",
     "pdtDescription": "dsahdjkasdhjkashdjk",
     "pdtCategori": "2",
@@ -37,14 +28,5 @@
     "image": "image-1647732337824-346046771.png",
     "discount": null,
     "id": 11
-  },
-  {
-    "pdtName": "adsads",
-    "pdtDescription": "loreimput lalala",
-    "pdtCategori": "3",
-    "pdtPrice": 987456,
-    "image": "image-1647732699802-43835795.jpeg",
-    "discount": null,
-    "id": 12
   }
 ]
