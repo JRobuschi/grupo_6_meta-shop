@@ -4,17 +4,17 @@
     "pdtDescription": "MICROPROCESADOR INTEL CORE I5 9400 COFFEELAKE 4.1GHZ 9MB LGA1151",
     "pdtCategori": "3",
     "pdtPrice": 25000,
-    "id": 12,
-    "image": "image-1648237600147.jpeg",
+    "id": 14,
+    "image": "image-1648240019746.jpeg",
     "discount": null
   },
   {
     "pdtName": "Rig Minero x6 3070ti",
     "pdtDescription": "Rig Mineria Ethereum X6 3070ti 360 Mh/s",
-    "pdtCategori": "2",
+    "pdtCategori": "1",
     "pdtPrice": 1650000,
-    "id": 13,
-    "image": "image-1648238103259.jpg",
+    "id": 15,
+    "image": "image-1648240278721.jpg",
     "discount": null
   }
 ]
