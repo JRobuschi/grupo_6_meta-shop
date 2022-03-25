@@ -35,11 +35,11 @@ const controllers = {
 	
 		if (req.file && newProductImage.size < 3145728) {
 			
-		controller.createNewProduct(newProduct,newProductImage)	
+		controllers.createNewProduct(newProduct,newProductImage)	
 		
-		products.push (newProduct)
+		productsArray.push (newProduct)
 
-		controller.dbReWrite()
+		controllers.dbReWrite()
 
 		res.redirect ('/products')
 
@@ -73,7 +73,7 @@ const controllers = {
         if(req.file) {
             productsArray[productIndex].pdtImg = req.file.filename;
         }
-        controller.dbReWrite()
+        controllers.dbReWrite()
 
         return res.redirect('/products')
 
@@ -95,7 +95,7 @@ const controllers = {
 	},
 	createNewProduct: function (newProduct,newProductImage) {
 
-		newProduct.id = controller.asignIdToProduct();
+		newProduct.id = controllers.asignIdToProduct();
 		newProduct.pdtPrice = Number(newProduct.pdtPrice);
 		newProduct.image = newProductImage.filename;
 		

@@ -19,5 +19,14 @@
     "image": "image-1647732337824-346046771.png",
     "discount": null,
     "id": 11
+  },
+  {
+    "pdtName": "Procesador I5",
+    "pdtDescription": "MICROPROCESADOR INTEL CORE I5 9400 COFFEELAKE 4.1GHZ 9MB LGA1151",
+    "pdtCategori": "3",
+    "pdtPrice": 25000,
+    "id": 12,
+    "image": "image-1648237600147.jpeg",
+    "discount": null
   }
 ]
