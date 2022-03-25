@@ -28,5 +28,32 @@
     "id": 12,
     "image": "image-1648237600147.jpeg",
     "discount": null
+  },
+  {
+    "pdtName": "sarazasasasaddsds",
+    "pdtDescription": "fff",
+    "pdtCategori": "2",
+    "pdtPrice": 121212,
+    "id": 13,
+    "image": "image-1648239407443.jpg",
+    "discount": null
+  },
+  {
+    "pdtName": "hghgfh",
+    "pdtDescription": "fhgfhgfh",
+    "pdtCategori": "1",
+    "pdtPrice": 1154554,
+    "id": 14,
+    "image": "image-1648239567382.png",
+    "discount": null
+  },
+  {
+    "pdtName": "jhjghj",
+    "pdtDescription": "jghjghjghj",
+    "pdtCategori": "3",
+    "pdtPrice": 666644,
+    "id": 15,
+    "image": "image-1648239726607.gif",
+    "discount": null
   }
 ]
