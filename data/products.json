@@ -1,32 +1,20 @@
 [
   {
-    "pdtName": "fdsfsdfsdf",
-    "pdtDescription": "dsahdjkasdhjkashdjk",
-    "pdtCategori": "2",
-    "pdtPrice": 1154554
-  },
-  {
-    "pdtName": "tuvieja",
-    "pdtDescription": "entangada",
-    "pdtCategori": "4",
-    "pdtPrice": 99
-  },
-  {
-    "pdtName": "fdsfsdfsdf",
-    "pdtDescription": "fdsfsdfsdf",
-    "pdtCategori": "2",
-    "pdtPrice": 1154554,
-    "image": "image-1647732337824-346046771.png",
-    "discount": null,
-    "id": 11
-  },
-  {
     "pdtName": "Procesador I5",
     "pdtDescription": "MICROPROCESADOR INTEL CORE I5 9400 COFFEELAKE 4.1GHZ 9MB LGA1151",
     "pdtCategori": "3",
     "pdtPrice": 25000,
     "id": 12,
     "image": "image-1648237600147.jpeg",
+    "discount": null
+  },
+  {
+    "pdtName": "Rig Minero x6 3070ti",
+    "pdtDescription": "Rig Mineria Ethereum X6 3070ti 360 Mh/s",
+    "pdtCategori": "2",
+    "pdtPrice": 1650000,
+    "id": 13,
+    "image": "image-1648238103259.jpg",
     "discount": null
   }
 ]

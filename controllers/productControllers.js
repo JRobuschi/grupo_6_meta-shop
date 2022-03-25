@@ -87,7 +87,7 @@ const controllers = {
         
 
         fs.writeFileSync(filePath, JSON.stringify(deletedProducts, null, 2))
-        return res.render('/products')
+        return res.redirect('/products')
     },
 
     dbReWrite() { 
