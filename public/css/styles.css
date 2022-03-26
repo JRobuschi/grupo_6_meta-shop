@@ -233,7 +233,7 @@
     }
   }
 
-  .card {
+  .cards {
     font-family:'roboto';
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
@@ -251,7 +251,7 @@
     
   }
   
-  .publicidades .card {
+  .publicidades .cards {
     justify-content: space-between;
   }
 
@@ -263,7 +263,7 @@
     font-weight: 600;
   }
   
-  .card button {
+  .cards button {
     border: solid 2px gold;
     outline: 0;
     padding: 12px;
@@ -277,7 +277,7 @@
     
   }
   
-  .card button:hover {
+  .cards button:hover {
     opacity: 0.7;
   }
 
