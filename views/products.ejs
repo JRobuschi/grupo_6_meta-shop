@@ -24,36 +24,7 @@
 			</div>
 	
 	
-</div><!--
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Todos los productos</h2>
-			</div>
-			<%#  productsArray.forEach(product => { %>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/products/<%#= product.id %>">
-						<figure class="product-box_image">
-								
-						</figure>
-						<article class="product-box_data">
-							<h2>$<%#= product.pdtPrice %> </h2>
-							<%# if (product.discount) { %>
-							<span> <%#= product.discount %> OFF</span>
-							<%# } %>
-							<p><%#= product.pdtName %></p>
-							
-							<i class="fas fa-truck"></i>
-						</article>
-					</a>
-				</section>
-			</div>
-		<%# }) %>
-		</div>
-		
-	</div>-->
-	
+</div>
 	<%  productsArray.forEach(product => { %>
 		<div class="card">
 		  <a href="/products/<%= product.id %>">
