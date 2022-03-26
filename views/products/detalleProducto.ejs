@@ -3,6 +3,8 @@
 <!-- Include Head -->
 <head>
 	<%- include('../partials/head', {title: ''}) %>
+
+	<%- include('../partials/detalleProducto.ejs') %>
 </head>
 
 <body>
@@ -14,61 +16,81 @@
 <br>
 <br>
 <br>
-
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Detalle del producto: <%= product.pdtName %> </h2> 
+<div class="col-12">
+	<h2 class="products-title">Detalle del producto: <%= product.pdtName %> </h2> 
+</div>
+<div class="cart-item-pr">
+	<a href="/productDetail">
+	<form action="">
+		<div class="cart-product-pr">
+			<div class="img-info-pr">
+				<div><img class="imgProd" src="/images/products/<%=product.image %>" alt="product image" class="product-detail-img"></div>
+			</div>
+			<div class="cart-product-info-pr">
+				<p class="product-detail-description">
+					<%= product.pdtDescription %>
+				</p>
+				<p class="product-detail-price small">
+					<span>$<%= product.pdtPrice%></span>
+					
+					<b><%= product.discount%></b>
+				</p>
 			</div>
 		</div>
-		<div class="product-detail">
-			<div class="row">
-				<div class="col-12 col-lg-8">
-					<img src="/images/products/<%=product.image %>" alt="product image" class="product-detail-img">
-					<p class="product-detail-description">
-						<%= product.pdtDescription %>
-					</p>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="product-detail-info">
-						
-						
-							<p class="product-detail-price small">
-								<span>$<%= product.pdtPrice%></span>
-								
-								<b><%= product.discount%></b>
-							</p>
-							<p class="product-detail-price">
-								$<%= discounted%>
-							</p>
-							
-
-						<ul class="actions-list">
-							<li>
-								<i class="fas fa-credit-card"></i>
-								<p>Pagá en 12 cuotas sin interes</p>
-							</li>
-							<li>
-								<i class="fas fa-store"></i>
-								<p>Retiro gratis en locales del vendedor</p>
-							</li>
-						</ul>
-
-						<a href="#" class="buy-now-button">COMPRAR AHORA</a>
-						<hr>
-
-						<!--a href="/products/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a-->
-						<form action="/products/<%= product.id %>/edit" method="GET" style="display: inline-flex">
-							<button type="submit" class="action-button edit">EDITAR PRODUCTO</button>
-						</form>
-							<form action="/products/<%=product.id%>/delete" method="POST" style="display: inline-flex">
-							<button type="submit" class="action-button delete">ELIMINAR</button>
-						</form>
-					</article>
-				</div>
+		<div class="cart-product-total-pr">
+			<h5> Valor por unidad </h5>
+		</div>
+		<div class="cart-controls-pr">
+			<div class="remove-pr">
+				<span class="fas fa-trash" id="trash"></span>
+				<button class="btn-remove-pr"> Remover </button>
+			</div>
+			<div class="cart-quantity-controls-pr">
+				<button>-</button>
+				<input type="number" value="1" readonly>
+				<button>+</button>
 			</div>
 		</div>
-	</div>
+	</form>
+</a>
+</div>
+<article class="product-detail-info">
+						
+						
+	<p class="product-detail-price small">
+		<span>$<%= product.pdtPrice%></span>
+		
+		<b><%= product.discount%></b>
+	</p>
+	<p class="product-detail-price">
+		$<%= discounted%>
+	</p>
+	
+
+<ul class="actions-list">
+	<li>
+		<i class="fas fa-credit-card"></i>
+		<p>Pagá en 12 cuotas sin interes</p>
+	</li>
+	<li>
+		<i class="fas fa-store"></i>
+		<p>Retiro gratis en locales del vendedor</p>
+	</li>
+</ul>
+
+<a href="#" class="buy-now-button">COMPRAR AHORA</a>
+<hr>
+
+<!--a href="/products/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a-->
+<form action="/products/<%= product.id %>/edit" method="GET" style="display: inline-flex">
+	<button type="submit" class="action-button edit">EDITAR PRODUCTO</button>
+</form>
+	<form action="/products/<%=product.id%>/delete" method="POST" style="display: inline-flex">
+	<button type="submit" class="action-button delete">ELIMINAR</button>
+</form>
+</article>
+
+	
 	<!-- /product detail -->
 
 	<!-- footer -->
