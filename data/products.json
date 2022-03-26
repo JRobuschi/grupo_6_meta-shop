@@ -16,5 +16,14 @@
     "id": 15,
     "image": "image-1648240278721.jpg",
     "discount": null
+  },
+  {
+    "pdtName": "Diamond Monster 3Dfx Voodoo II",
+    "pdtDescription": "Built on the 350 nm process, and based on the SST2 graphics processor, in its 500-0009-01 variant, the card supports DirectX 6.0. ",
+    "pdtCategori": "5",
+    "pdtPrice": 25000,
+    "id": 16,
+    "image": "image-1648261041913.jfif",
+    "discount": null
   }
 ]
