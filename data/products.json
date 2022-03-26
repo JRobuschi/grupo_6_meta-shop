@@ -25,5 +25,14 @@
     "id": 16,
     "image": "image-1648261041913.jfif",
     "discount": null
+  },
+  {
+    "pdtName": "Rig Minetia x4 3090",
+    "pdtDescription": "Rig Minería 4 Rtx 3090,ethereum 460/480mhz, Listo Para Mina",
+    "pdtCategori": "1",
+    "pdtPrice": 2800000,
+    "id": 17,
+    "image": "image-1648323420979.jpg",
+    "discount": null
   }
 ]

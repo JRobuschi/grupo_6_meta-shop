@@ -27,7 +27,8 @@
 </div>
 <div class="row">
 	<%  productsArray.forEach(product => { %>
-		<div class="card">
+		<div class="card" >
+			<div class="infoPdt">
 		  <a href="/products/<%= product.id %>">
 			<figure class="imagenDeProducto" >
 			<img src="/images/products/<%= product.image %>" alt="imagen de producto" style="width:100%">
@@ -35,17 +36,14 @@
 		  <article class="infoDeProducto">
 			<h1><%= product.pdtName %></h1>
 			<h2 class="price">$<%= product.pdtPrice %> </h2>
+		</div>
 			 <p><button>COMPRAR</button></p>
 		</article>
 		</div>
 	  <% }) %>
 	</div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 
 	<!-- /todos los productos -->
 
