@@ -1,30 +1,27 @@
-<head><link href="css/navbar.css" rel="stylesheet"></head>
+<head>
+	<%- include('../partials/headerNavbarcss.ejs') %>
+</head>
 
-<section class="topnav">
+
     <!-- start nav -->
-<nav class="topnav" id="myTopnav">
+<div class="topnav" id="myTopnav">
     <!-- start menu -->
-    <ul>
-     <li><a href="/">HOME</a></li>
-     <li><a href="/products">CATEGORIAS</a>
+   
+    <a href="/" class="active">HOME</a>
+    <a href="/products">CATEGORIAS</a>
     <!-- start menu desplegable -->
-     <ul>
-     <li><a href="/mineria">MINERIA</a></li>
-     <li><a href="/almacenamiento">ALMACENAMIENTO</a></li>
-     <li><a href="/monitores">MONITORES</a></li>
-     <li><a href="/metaverso">METAVERSO</a></li>
-
-     </ul>
-    <!-- end menu desplegable -->
-     </li>
-     <li><a href="/register">MI CUENTA</a></li>
-     <li><a href="/cart">MIS COMPRAS</a></li>
-     <li><a href="javascript:void(0);" class="icon" onclick="myFunction()"> 
-        <i class="fa fa-bars"></i></li>
-    </ul>
-    <!-- end menu -->
     
-    </nav>
+     <a href="/mineria">MINERIA</a>
+     <a href="/almacenamiento">ALMACENAMIENTO</a>
+     <a href="/monitores">MONITORES</a>
+     <a href="/metaverso">METAVERSO</a>
+     <a href="/register">MI CUENTA</a>   
+     <a href="/cart">MIS COMPRAS</a> 
+     <a href="javascript:void(0);" class="icon" onclick="myFunction()"> 
+        <i class="fa fa-bars"></i>  
+        <!-- end menu -->
+    
+</div>
     
     <!-- end nav -->
 
@@ -38,4 +35,3 @@ function myFunction() {
     }
   }
 </script>
-</section>

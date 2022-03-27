@@ -1,19 +1,12 @@
-@import url(normalize.css);
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
-* {
+{
   box-sizing: border-box;
   font-family: "roboto", sans-serif;
   color: #ff009d;
-  
 }
-
-
 .body{
   background: rgb(175,70,74);
     background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
- 
-}
+ }
 a{
   text-decoration: none;
   color: inherit;
@@ -37,8 +30,6 @@ a{
   grid-template-columns: 100%;
   border: 1px solid #444444;
 }
-
-
 
 .imgProd  {
   border: 1px solid #ddd;
