@@ -1,36 +1,36 @@
-/* menu */
-.menu {
+/* topnav */
+.topnav {
     position: fixed;
     z-index: 1;
   }
-  .menu .icon{
+  .topnav .icon{
    display: none; 
   }
   @media only screen and (max-width: 768px) {
     
-  .menu .icon{
+  .topnav .icon{
      /*makes the button visible*/
      display: block;
     }
   }
   
-  .menu ul {
+  .topnav ul {
       list-style:none;
       margin:0;
       padding:0;
      }
      
   
-     /* items del menu */
+     /* items del topnav */
      
-     .menu ul li { /*menu de navbar son 4 modulos separados*/
+     .topnav ul li { /*topnav de navbar son 4 modulos separados*/
       background-color: rgba(65,2,106,1);
       
      }
      
-     /* enlaces del menu */
+     /* enlaces del topnav */
      
-     .menu ul a {
+     .topnav ul a {
       display:block;
       color:#fff;
       text-decoration:none;
@@ -42,24 +42,24 @@
       letter-spacing:1px;
      }
      
-     /* items del menu */
+     /* items del topnav */
      
-     .menu ul li {
+     .topnav ul li {
       position:relative;
       float:left;
       margin:0;
       padding:0;
      }
      
-     /* efecto al pasar el ratón por los items del menu */
+     /* efecto al pasar el ratón por los items del topnav */
      
-     .menu ul li:hover {
+     .topnav ul li:hover {
       background:#5b78a7;
      }
   
-     /* menu desplegable */
+     /* topnav desplegable */
   
-  .menu ul ul {
+  .topnav ul ul {
       display:none;
       position:absolute;
       top:100%;
@@ -68,23 +68,23 @@
       padding:0;
      }
      
-     /* items del menu desplegable */
+     /* items del topnav desplegable */
      
-     .menu ul ul li {
+     .topnav ul ul li {
       float:none;
       width:200px
      }
      
-     /* enlaces de los items del menu desplegable */
+     /* enlaces de los items del topnav desplegable */
      
-     .menu ul ul a {
+     .topnav ul ul a {
       line-height:120%;
       padding:10px 15px;
      }
      
-     /* items del menu desplegable al pasar el ratón */
+     /* items del topnav desplegable al pasar el ratón */
      
-     .menu ul li:hover > ul {
+     .topnav ul li:hover > ul {
       display:block;
      }
   

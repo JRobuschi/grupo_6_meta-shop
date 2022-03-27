@@ -1,6 +1,8 @@
-<section class="navbar">
+<head><link href="css/navbar.css" rel="stylesheet"></head>
+
+<section class="topnav">
     <!-- start nav -->
-<nav class="menu">
+<nav class="topnav" id="myTopnav">
     <!-- start menu -->
     <ul>
      <li><a href="/">HOME</a></li>
@@ -17,8 +19,8 @@
      </li>
      <li><a href="/register">MI CUENTA</a></li>
      <li><a href="/cart">MIS COMPRAS</a></li>
-     <!--<li><a href="javascript:void(0);" class="icon" onclick="myFunction()"> 
-        <i class="fa fa-bars"></i></li>-->
+     <li><a href="javascript:void(0);" class="icon" onclick="myFunction()"> 
+        <i class="fa fa-bars"></i></li>
     </ul>
     <!-- end menu -->
     
@@ -26,5 +28,14 @@
     
     <!-- end nav -->
 
-    
+   <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+</script>
 </section>
