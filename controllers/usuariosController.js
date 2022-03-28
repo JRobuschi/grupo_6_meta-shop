@@ -7,7 +7,7 @@ const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
 
 const usuariosControllers = {
     register: (req,res) => {
-        res.render('iniciarSesion');  	
+        res.render('users/iniciarSesion');  	
     },
     create: (req,res) => {
         
