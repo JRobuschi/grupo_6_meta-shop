@@ -30,9 +30,6 @@ app.use("/", homeRoutes);
 const cartRoutes = require("./routes/cartRoutes");
 app.use("/cart", cartRoutes);
 
-const iniciarSesionRoutes = require("./routes/iniciarSesionRoutes");
-app.use("/register", iniciarSesionRoutes);
-
 const productRoutes = require ("./routes/productRoutes");
 app.use("/products", productRoutes);
 
@@ -50,6 +47,9 @@ app.use("/metaverso", metaRoutes);
 
 const footRoutes = require ("./routes/footRoutes");
 app.use("/foot", footRoutes);
+
+const userRoutes = require("./routes/users");
+app.use("/users", userRoutes);
 
 
 

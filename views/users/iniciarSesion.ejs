@@ -18,17 +18,22 @@
     </div>
     <div class="container">
       <div class="signUp">
-        <form action="" id="sign-up" >
+        <form action="/users/iniciarSesion" id="sign-up" method="POST" >
           <h1>Crear cuenta</h1>
-
+          <label for="Nombre"></label>
+          <input type="text" placeholder="Ingrese su nombre aquí" name="nombre">
+          
           <label for="email"></label>
-          <input type="email" placeholder="Ingrese su mail aquí" required="true">
+          <input type="text" placeholder="Ingrese su apellido aquí" name="apellido">
+      
+          <label for="email"></label>
+          <input type="email" placeholder="Ingrese su mail aquí" name="email">
 
           <label for="password"></label>
-          <input type="password" placeholder="Ingrese su contraseña aquí" name="psw" required="true">
+          <input type="password" placeholder="Ingrese su contraseña aquí" name="password">
 
           <label for="password"></label>
-          <input type="password" placeholder="Ingrese nuevamente su contraseña aquí" name="psw" required="true">
+          <input type="password" placeholder="Ingrese nuevamente su contraseña aquí" name="password">
 
           <button type="submit" class="btn1">Registrar</button>
       </form>
