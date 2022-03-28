@@ -6,7 +6,7 @@
 }
 
 .topnav {
-    background-color: #333;
+    background-color: rgb(58, 2, 80);
     overflow: hidden;
   }
   
@@ -29,7 +29,7 @@
   
   /* Add an active class to highlight the current page */
   .topnav a.active {
-    background-color: #04AA6D;
+    background-color: #6e07f5;
     color: white;
   }
   
