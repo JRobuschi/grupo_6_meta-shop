@@ -7,7 +7,7 @@ const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
 
 const usuariosControllers = {
     register: (req,res) => {
-        res.render('users/iniciarSesion');  	
+        return res.render('users/iniciarSesion');  	
     },
     create: (req,res) => {
         
@@ -18,12 +18,15 @@ const usuariosControllers = {
             email: req.body.email,
             password: req.body.password
         }
-        let userJson = JSON.stringify(user);
-        fs.appendFileSync(filePath, userJson);
+        
+        
+        users.push(user);
+        let userJson = JSON.stringify(users);
+        fs.writeFileSync(filePath, userJson);
 
-        res.redirect('/users/iniciarSesion');
+        return res.redirect('/users/register')
         // res.send(nombre,apellido,email, password);
-
+        
 
        
 

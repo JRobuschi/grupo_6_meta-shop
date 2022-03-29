@@ -1,7 +1,1 @@
-[
-    {
-    "id": 1,
-    "email": "asdasd@gmail.com",
-    "password": "asdasd"
-    }
-]
+[{"id":1,"email":"asdasd@gmail.com","password":"asdasd"},{"nombre":"asdasd","apellido":"asdasd","email":"juampi.mantegazza@gmail.com","password":["1234","1234"]},{"nombre":"asdasd","apellido":"asdasd","email":"juampi.mantegazza@gmail.com","password":["1234","1234"]},{"nombre":"asdasd","apellido":"asdasd","email":"juampi.mantegazza@gmail.com","password":["",""]},{"nombre":"","apellido":"","email":"","password":["",""]},{"nombre":"","apellido":"","email":"","password":["",""]},{"nombre":"","apellido":"","email":"","password":["",""]},{"nombre":"","apellido":"","email":"","password":["",""]},{"nombre":"","apellido":"","email":"","password":["",""]},{"nombre":"","apellido":"","email":"","password":["",""]}]
