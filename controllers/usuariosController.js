@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const filePath = path.join(__dirname,'../data/users.json');
 const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
+const bcrypt = require('bcryptjs');
 
 
 
@@ -16,7 +17,7 @@ const usuariosControllers = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
-            password: req.body.password
+            password: bcrypt.hashSync(req.body.password, 10)
         }
         
         
@@ -24,7 +25,7 @@ const usuariosControllers = {
         let userJson = JSON.stringify(users);
         fs.writeFileSync(filePath, userJson);
 
-        return res.redirect('/users/register')
+        res.redirect('/users/register')
         // res.send(nombre,apellido,email, password);
         
 
