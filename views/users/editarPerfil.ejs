@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/addProductcss.ejs') %>
+</head>
+
+<body>
+    <header>
+        <section>
+    <%- include('../partials/headerNavbar.ejs') %>
+</section>
+</header>
+<main class="main">
+    
+
+    <form method="get" action="/products" enctype="multipart/form-data">
+     <div class="user">
+        <h4 class="page-banner-add">Editar  Usuario</h4>
+        <br>
+        <div class="parts">     
+            <label>Nombre</label>
+            <input type="text" name="nombre" id="nombre" required>
+        </div> 
+        <div class="parts"> 
+            <label>Apellido</label>
+            <input type="text" name="apellido" id="apellido" required>
+        </div> 
+        <div class="email">
+        <label for="email">Tu email</label>
+        <input type="email" id="email" name="email" required>> 
+        </div> 
+
+        <div class="parts"> <!--multer image archivo-->
+            <label for="image">Imagen de Perfil</label>
+             <input  type="file" name="image" id="image" placeholder="Buscar" required>
+        </div>
+
+        <!--<div class="parts">  // multer image archivo
+            <label for="discount">Descuento del producto</label>
+             <input  type="text" name="discount" id="discount" placeholder="Descuento">
+        </div>-->
+
+        <div class="buttons">
+            <button class="submit" type="submit"> Enviar</button>
+            
+                       
+        </div>
+     </div>
+    </form>
+  
+</main>
+
+
+
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>
