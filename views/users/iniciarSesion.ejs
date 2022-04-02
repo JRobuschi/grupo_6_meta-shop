@@ -20,20 +20,32 @@
       <div class="signUp">
         <form action="/users/guardar" id="sign-up" method="POST" >
           <h1>Crear cuenta</h1>
+
+          <div>
           <label for="Nombre"></label>
           <input type="text" placeholder="Ingrese su nombre aquí" name="nombre">
-          
+          </div>
+
+          <div>
           <label for="email"></label>
           <input type="text" placeholder="Ingrese su apellido aquí" name="apellido">
-      
+          </div>
+
+          <div>
           <label for="email"></label>
           <input type="email" placeholder="Ingrese su mail aquí" name="email">
+          </div>
 
+          <div>
           <label for="password"></label>
           <input type="password" placeholder="Ingrese su contraseña aquí" name="password">
+          </div>
 
-          <label for="password"></label>
-          <input type="password" placeholder="Ingrese nuevamente su contraseña aquí" name="password">
+          <div>
+          <label for="image"></label>
+          <input type="file" placeholder="Buscar" name="image">
+          </div>
+
 
           <button type="submit" class="btn1">Registrar</button>
       </form>
