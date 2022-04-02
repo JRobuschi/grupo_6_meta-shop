@@ -3,11 +3,19 @@ const usuariosControllers = require('../controllers/usuariosController');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', usuariosControllers.index);
 
-router.get('/register', usuariosControllers.register);
-router.post('/guardar', usuariosControllers.create);
+//CREATE
+router.post('/', usuariosControllers.create);
+
+//GET
+router.get('/:id/', usuariosControllers.profile);
+
+//EDIT
+router.get('/:id/edit', usuariosControllers.edit);
+router.put('/:id', usuariosControllers.update);
+
+//LOGOUT(hay que configurarlo con cookies)
+router.get('/logout', usuariosControllers.logout);
 
 module.exports = router;

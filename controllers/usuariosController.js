@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs');
 
 
 const usuariosControllers = {
-    register: (req,res) => {
+    index: (req,res) => {
         return res.render('users/iniciarSesion');  	
     },
     create: (req,res) => {
@@ -32,7 +32,22 @@ const usuariosControllers = {
        
 
         
+    },
+    profile: (req,res) =>{
+
+    },
+    edit: (req,res) =>{
+
+    },
+    update: (req,res) =>{
+
+    },
+    logout: (req,res) =>{
+        res.clearCookie('email');
+        req.session.destroy();
+        return res.redirect("/users")
     }
+    
 
     
 
