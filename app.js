@@ -61,6 +61,15 @@ app.use("/users", userRoutes);
 //const editProductsRoutes = require ("./routes/editProductsRoutes");
 //rsapp.use("/editProducts", editProductsRoutes);
 
+//midelwere de aplicacion 
+
+app.use(cookieParser());
+app.use(session({
+    secret: 'secret word!',
+    resave: false,
+    saveUninitialized: true,
+}));
+
 //404//
 app.use((req, res, next) => {
     res.status(404).render('404-page');
