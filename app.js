@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 var session = require ('express-session');
 const app = express();
-
+const cookieParser = require('cookie-parser');
+const session = require ('express-session');
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -60,6 +61,15 @@ app.use("/users", userRoutes);
 
 //const editProductsRoutes = require ("./routes/editProductsRoutes");
 //rsapp.use("/editProducts", editProductsRoutes);
+
+//midelwere de aplicacion 
+
+app.use(cookieParser());
+app.use(session({
+    secret: 'secret word!',
+    resave: false,
+    saveUninitialized: true,
+}));
 
 //404//
 app.use((req, res, next) => {
