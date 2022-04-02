@@ -34,10 +34,16 @@ const usuariosControllers = {
         
     },
     profile: (req,res) =>{
+        const idToFind = req.params.id
+        const user = users.find (p => p.id == idToFind)
 
+        return res.render ('users/perfil', {user})
     },
     edit: (req,res) =>{
-
+        const idToFind = req.params.id
+        const usuario = users.find (p => p.id == idToFind)
+        
+         res.render ('users/editarPerfil', {usuario})
     },
     update: (req,res) =>{
 
