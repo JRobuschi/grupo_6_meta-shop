@@ -18,7 +18,7 @@
     </div>
     <div class="container">
       <div class="signUp">
-        <form action="/users" id="sign-up" method="POST" >
+        <form action="/users" id="sign-up" method="POST" enctype="multipart/form-data">
           <h1>Crear cuenta</h1>
 
           <div>
@@ -46,8 +46,9 @@
           <input type="file" placeholder="image" name="image" id="image" required>
           </div>
 
-
+          <div>
           <button type="submit" class="btn1">Registrar</button>
+          </div>
       </form>
       
       </div>

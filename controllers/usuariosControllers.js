@@ -16,11 +16,11 @@ const usuariosControllers = {
 	
 		if (req.file && newUserImage.size < 3145728) {
 			
-		controllers.createNewUser(newUser,newUserImage)	
+		usuariosControllers.createNewUser(newUser,newUserImage)	
 		
-		user.push (newUser)
+		users.push (newUser)
 
-		controllers.dbReWrite()
+		usuariosControllers.dbReWrite()
 
 		res.redirect ('/users')
 
@@ -80,7 +80,7 @@ const usuariosControllers = {
 	},
     createNewUser: function (newUser,newUserImage) {
 
-		newUser.id = controllers.asignIdToUser();
+		newUser.id = usuariosControllers.asignIdToUser();
 		newUser.image = newUserImage.filename;
 		
 		
