@@ -46,14 +46,35 @@ const usuariosControllers = {
          res.render ('users/editarPerfil', {usuario})
     },
     update: (req,res) =>{
+        const idToFind = req.params.id
+        const productIndex = users.findIndex(user => user.id == idToFind)
+        const editedProduct = req.body;
 
+        users[productIndex].nombre = editedProduct.nombre;
+        users[productIndex].apellido = editedProduct.apellido;
+        users[productIndex].email = editedProduct.email;
+        if (req.body.pdtCategori == ''){
+            users[productIndex].pdtCategori = users[productIndex].pdtCategori;
+        }else{
+            users[productIndex].pdtCategori = editedProduct.pdtCategori
+        }
+        users[productIndex].pdtDescription = editedProduct.pdtDescription
+        if(req.file) {
+            users[productIndex].pdtImg = req.file.filename;
+        }
+        controllers.dbReWrite()
+
+        return res.redirect('/users')
     },
     logout: (req,res) =>{
         res.clearCookie('email');
         req.session.destroy();
         return res.redirect("/users")
-    }
-    
+    },
+
+    dbReWrite() { 
+		fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
+	},
 
     
 
