@@ -11,22 +11,25 @@ const usuariosControllers = {
         return res.render('users/iniciarSesion');  	
     },
     create: (req,res) => {
-        
-        // res.send(req.body);
-        let user = {
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10)
-        }
-        
-        
-        users.push(user);
-        let userJson = JSON.stringify(users);
-        fs.writeFileSync(filePath, userJson);
+        const newUser =  req.body;
+		const newUserImage = req.file;
+	
+		if (req.file && newUserImage.size < 3145728) {
+			
+		controllers.createNewUser(newUser,newUserImage)	
+		
+		user.push (newUser)
 
-        res.redirect('/users/register')
-        // res.send(nombre,apellido,email, password);
+		controllers.dbReWrite()
+
+		res.redirect ('/users')
+
+	} else if (req.file && newUserImage.size > 3145729) {
+		res.send('El archivo es demasiado pesado')
+	} else {
+		res.send ('No adjuntaste ninguna imagen')
+	}
+       
         
 
        
@@ -73,9 +76,18 @@ const usuariosControllers = {
     },
 
     dbReWrite() { 
-		fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
+		fs.writeFileSync(filePath, JSON.stringify(users, null, 2))
 	},
+    createNewUser: function (newUser,newUserImage) {
 
+		newUser.id = controllers.asignIdToUser();
+		newUser.image = newUserImage.filename;
+		
+		
+	},
+	asignIdToUser: function () {
+		return users[users.length -1].id +1;
+	}
     
 
 }
