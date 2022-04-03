@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
     let filename = `${Date.now()}_img${path.extname(file.originalname)}`;
     cb(null, filename);
 }
-})
+}) 
 
 const uploadFile = multer ({ storage});
 

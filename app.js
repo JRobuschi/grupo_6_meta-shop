@@ -4,6 +4,7 @@ var session = require ('express-session');
 const app = express();
 const cookieParser = require('cookie-parser');
 
+
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
 app.use(express.json());
@@ -12,7 +13,7 @@ app.use(express.json());
 
 const publicPath = path.resolve(__dirname, './public');
 app.use( express.static(publicPath) );
-app.use (session({secret: 'secreto!1'}));
+
 
 app.listen(3080, () => {
     console.log("Servidor Corriendo")
