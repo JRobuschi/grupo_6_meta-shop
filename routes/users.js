@@ -8,6 +8,9 @@ const uploadUser = require('../middlewares/multerUser');
 const validationResult = require('express-validator').validationResult;
 const check = require('express-validator').check;
 
+//let {check, validationResult, body } = require('express-validator').validationResult; min 21.16
+
+let guestMiddleware = require('../middlewares/guestMiddleware');
 
 /* GET users listing. */
 router.get('/', usuariosControllers.index);
@@ -32,6 +35,8 @@ router.post('/', upload.single('image'), usuariosControllers.create);
 
 //GET
 router.get('/:id/', usuariosControllers.profile);
+
+//router.get('/register', guestMiddleware, usuariosControllers.register)
 
 //EDIT
 router.get('/:id/edit', usuariosControllers.edit);
