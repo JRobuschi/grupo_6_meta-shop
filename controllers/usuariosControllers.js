@@ -3,7 +3,7 @@ const path = require('path');
 const filePath = path.join(__dirname,'../data/users.json');
 const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
 const bcrypt = require('bcryptjs');
-const validationResult = require('express-validator').validationResult;
+const { validationResult } = require('express-validator');
 const check = require('express-validator').check;
 
 
@@ -13,7 +13,22 @@ const usuariosControllers = {
     },
 
     login: (req, res) => {
-        return res.render ('users/login') //vista del login
+        return res.render ('users/login'); //vista del login
+    },
+
+    register: (req, res) => {
+        return res.render ('users/register');
+    },
+
+    processRegister: (req, res) => {
+       const resultValidation = validationResult(req);
+        
+       if (resultValidation.errors.length > 0 ) {
+            return res.render('./users/register', { //nombre de la vista de registro
+                errors: resultValidation.mapped(),
+            });
+        }
+       
     },
     processLogin: (req, res) => {//13.58 minutos hay algo q no entiendo
         let errors = validationResult(req);
@@ -51,7 +66,7 @@ const usuariosControllers = {
     },
 
 
-
+    
 
     create: (req,res) => {
         const newUser =  req.body;
@@ -79,12 +94,12 @@ const usuariosControllers = {
 
         
     },
-    profile: (req,res) =>{
+    /*profile: (req,res) =>{
         const idToFind = req.params.id
         const user = users.find (p => p.id == idToFind)
 
         return res.render ('users/perfil', {user})
-    },
+    },*/
 
     
 
