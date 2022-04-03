@@ -3,13 +3,71 @@ const path = require('path');
 const filePath = path.join(__dirname,'../data/users.json');
 const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
 const bcrypt = require('bcryptjs');
-
+const { validationResult } = require('express-validator');
+const check = require('express-validator').check;
 
 
 const usuariosControllers = {
     index: (req,res) => {
         return res.render('users/iniciarSesion');  	
     },
+
+    login: (req, res) => {
+        return res.render ('users/login'); //vista del login
+    },
+
+    register: (req, res) => {
+        return res.render ('users/register');
+    },
+
+    processRegister: (req, res) => {
+       const resultValidation = validationResult(req);
+        
+       if (resultValidation.errors.length > 0 ) {
+            return res.render('./users/register', { //nombre de la vista de registro
+                errors: resultValidation.mapped(),
+            });
+        }
+       
+    },
+    processLogin: (req, res) => {//13.58 minutos hay algo q no entiendo
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()){
+            let usersJSON = fs.readFileSync('data/users.json', {encoding:'utf-8'});
+            let users;
+            if (usersJSON == '') {
+                users = [];
+            } else {
+                users = JSON.parse(usersJSON);
+            }
+
+            for (let i = 0; i < users.length; i++ ) {
+                if (users [i].email == req.body.email) {
+                    if(bcrypt.compareSync(req.body.password, users[i].password)) {
+                        let usuarioALoguearse = users[i];
+                        break;
+                    }
+                }
+            }
+
+            if (usuarioALoguearse == undefined) {
+                return res.render('login', {errors: [
+                    {msg: 'credenciales invalidas'}                  
+                ]});
+
+            }
+
+            req.session.usuarioLogueado = usuarioALoguearse;
+            res.render('logueado ok');
+        } else {
+            return res.render('login', {errors: errors.errors});
+        }
+    },
+
+
+    
+
     create: (req,res) => {
         const newUser =  req.body;
 		const newUserImage = req.file;
@@ -36,12 +94,15 @@ const usuariosControllers = {
 
         
     },
-    profile: (req,res) =>{
+    /*profile: (req,res) =>{
         const idToFind = req.params.id
         const user = users.find (p => p.id == idToFind)
 
         return res.render ('users/perfil', {user})
-    },
+    },*/
+
+    
+
     edit: (req,res) =>{
         const idToFind = req.params.id
         const usuario = users.find (p => p.id == idToFind)
