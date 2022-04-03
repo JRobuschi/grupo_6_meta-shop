@@ -3,10 +3,11 @@ const path = require('path');
 var session = require ('express-session');
 const app = express();
 const cookieParser = require('cookie-parser');
-const session = require ('express-session');
+
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 
 const publicPath = path.resolve(__dirname, './public');

@@ -13,5 +13,9 @@ router.get('/pruebaSession', function (req, res){
 res.send('session tiene el numero: ' + req.session.numeroVisitas)
 });
 
+router.get('/mostrarNumeroSession', function(req, res){
+    res.send('session tiene el numero: ' + req.session.numeroVisitas)
+})
+
 
 module.exports = router;
