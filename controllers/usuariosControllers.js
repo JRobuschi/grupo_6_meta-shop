@@ -26,15 +26,11 @@ const usuariosControllers = {
        if (resultValidation.errors.length > 0 ) {
              res.render('./users/register', { //nombre de la vista de registro
                 errors: resultValidation.mapped(),
-                oldData: req.body,
-                
+                oldData: req.body
             });
             
         }
-        
-          return  res.send('OK Datos')
-        
-       
+        return res.send('ok las validaciones se pasaron ok')
     },
     processLogin: (req, res) => {//13.58 minutos hay algo q no entiendo
         let errors = validationResult(req);
