@@ -4,6 +4,7 @@ var session = require ('express-session');
 const app = express();
 const cookieParser = require('cookie-parser');
 
+
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
 app.use(express.json());
