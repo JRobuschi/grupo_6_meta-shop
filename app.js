@@ -12,7 +12,7 @@ app.use(express.json());
 
 const publicPath = path.resolve(__dirname, './public');
 app.use( express.static(publicPath) );
-app.use (session({secret: 'secreto!1'}));
+
 
 app.listen(3080, () => {
     console.log("Servidor Corriendo")

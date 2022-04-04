@@ -3,14 +3,28 @@ var router = express.Router();
 const upload = require ("../middlewares/multerUser");
 
 
-const path = require('path');
+const path = require('path');   
 const multer = require ('multer')
 
 const { body } = require ('express-validator'); // la variable body de validator en otros videos se llama check
 const validations = [ //campos a validar y metodo de validacion// estos formularios no pueden estar vacios
-    body ('email').notEmpty().withMessage('debe ingresar un mail'),
+    body ('email').notEmpty().withMessage('debe ingresar un mail').bail().isEmail().withMessage('debe ser fromato email'),
     body ('password').notEmpty().withMessage('debe ingresar un password'),
-   // body ('usuarios').notEmpty(),
+    body ('usuarios').custom((value, { req })=> {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+        
+        if (!file) {
+            throw new Error('debes subir una imagen')
+        } else {
+            let fileExtension = path.extname(file.originalname);
+        if (!acceptedExtensions.includes(fileExtension)){
+            throw new Error (`las extensiones permitidas son ${acceptedExtensions.join(',')}`);
+        }
+    }
+        return true;
+    }),
+   
 ];
 const storage = multer.diskStorage({
     destination: (req, file, cb)=> {
