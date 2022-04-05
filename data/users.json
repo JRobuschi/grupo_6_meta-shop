@@ -1,6 +1,8 @@
 [
   {
     "id": 1,
+    "nombre": "asdasd",
+    "apellido": "asdasd",
     "email": "asdasd@gmail.com",
     "password": "asdasd"
   },

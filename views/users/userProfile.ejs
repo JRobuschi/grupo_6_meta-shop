@@ -15,26 +15,26 @@
 <main class="main">
     
 
-    <form method="get" action="/products" enctype="multipart/form-data">
+    <form method="get" action="/users/userProfile" enctype="multipart/form-data">
      <div class="user">
         <h4 class="page-banner-add">Mi Perfil</h4>
         <br>
         <div class="parts">     
             <label>Nombre:</label>
-            <p><%=users.nombre%></p>
+            <p><%= users.nombre %></p>
         </div> 
         <div class="parts"> 
             <label>Apellido:</label>
-           <p><%= product.apellido%></p>
+           <p><%= users.apellido%></p>
         </div> 
         <div class="email">
         <label for="email">Tu email</label>
-        <p><%= product.email%>"</p>
+        <p><%= users.email%>"</p>
         </div> 
 
         <div class="parts"> <!--multer image archivo-->
             <label for="image">Imagen de Perfil</label>
-            <p><%= product.image%></p>
+            <p><%= users.image%></p>
         </div>
 
      </div>

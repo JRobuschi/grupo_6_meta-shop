@@ -111,7 +111,7 @@ const usuariosControllers = {
         const idToFind = req.params.id
         const usuario = users.find (p => p.id == idToFind)
         
-         res.render ('users/editarPerfil', {usuario})
+         res.render ('users/userProfile', {usuario})
     },
     update: (req,res) =>{
         const idToFind = req.params.id
