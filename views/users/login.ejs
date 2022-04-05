@@ -8,6 +8,16 @@
   </head>
 
   <body>
+     <% if (typeof errors != 'undefined') { %>
+              <p style='color: blue'>ERROR</p>
+              <ul>
+                  <% for (let i = 0; i < errors.length; i++) { %>
+                  <li>
+                      <%=errors[i].msg%>
+                  </li>
+              <% } %>
+              </ul>
+          <%    } %>
     <header>
       <section>    
        <%- include('../partials/headerNavbar.ejs') %>
@@ -30,6 +40,8 @@
               <a href="https://twitter.com"><i class="fab fa-google-plus-g"></i></a>
               <a href="https://instagram.com"><i class="fab fa-linkedin-in"></i></a>
             </div>
+
+           
 
             <label for="email"></label>
             <input type="email" placeholder="Ingrese su mail aquí" required="true">
