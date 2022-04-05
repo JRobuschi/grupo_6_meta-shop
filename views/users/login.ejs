@@ -1,18 +1,15 @@
 <html>
     <body>
-        <% if (typeof errors != 'undefined') { %>
-        <p style='color: red'>ERROR</p>
-        <ul>
-            <% for (let i = 0; i < errors.length; i++) { %>
-            <li>
-                <%=errors[i].msg%>
-            </li>
-        <% } %>
-        </ul>
-    <%    } %>
+        
         <form action="/users/login" method="post">
             <label for="">EMAIL</label>
-            <input type="email" name="email"><br>
+            <input type="email" name="email" class="form-control"><br>
+            <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                    <%= errors.email.msg %> 
+                </div>
+             
+            <% } %>
 
             <label for="">password</label>
             <input type="password" name="password"><br>

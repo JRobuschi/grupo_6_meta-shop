@@ -61,6 +61,9 @@ router.post('/login', [
     check('password').isLength({min: 4}).withMessage('minimo 4 digitos')
 ], usuariosControllers.processLogin);
 
+
+
+
 router.get('/chek', function (req,res){
     if(req.session.usuarioLogueado == undefined) {
         res.send('no estas logueado, bo');
