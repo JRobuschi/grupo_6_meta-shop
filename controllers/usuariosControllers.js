@@ -5,7 +5,7 @@ const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
 const bcrypt = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
-
+const User = require ('../models/User');
 
 const usuariosControllers = {
     index: (req,res) => {
@@ -30,7 +30,9 @@ const usuariosControllers = {
             });
             
         }
-        return res.send('ok las validaciones se pasaron ok')
+
+        User.create(req.body);
+        return res.send('ok las validaciones han sido exitosas y el usuario ha sido creado')
     },
     processLogin: (req, res) => {//13.58 minutos hay algo q no entiendo
         let errors = validationResult(req);
