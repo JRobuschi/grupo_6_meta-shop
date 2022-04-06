@@ -16,5 +16,11 @@
   "email": "1234@gmail.com",
   "password": "$2a$10$9U/utxkA50D0Mx/USRyqeOBgqJ5V4zd1P1rcQIU2RYF1JdQvVde/6",
   "avatar": "1649200475897_img.jpg"
+ },
+ {
+  "id": 20,
+  "email": "123456@gmail.com",
+  "password": "$2a$10$eE0xd8O5TeV/ERyogWLNlOzpagm1dMcwEyST/ErEKcmUjozH4Z7q.",
+  "avatar": "1649205313963_img.jpg"
  }
 ]
