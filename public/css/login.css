@@ -52,8 +52,17 @@ width: 40px;
     box-shadow: 18px 18px 18px 18px rgb(0 0 0 / 90%);
 }
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], input[type=file] {
     /*width: 100%;*/
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: none;
+    background-color: #eee;
+    border-radius: 1rem;
+  }
+
+ input[type=file] {
+    width: 70%;
     padding: 12px 15px;
     margin: 8px 0;
     border: none;
@@ -132,6 +141,7 @@ h1{
 
 .signUp{
   height: 100%;
+  width: 80%;
 }
 .volver a{
     font-size: 22px;
