@@ -1,160 +1,32 @@
 [
-  {
-    "id": 1,
-    "nombre": "asdasd",
-    "apellido": "asdasd",
-    "email": "asdasd@gmail.com",
-    "password": "asdasd"
-  },
-  {
-    "nombre": "asdasd",
-    "apellido": "asdasd",
-    "email": "juampi.mantegazza@gmail.com",
-    "password": [
-      "1234",
-      "1234"
-    ]
-  },
-  {
-    "nombre": "asdasd",
-    "apellido": "asdasd",
-    "email": "juampi.mantegazza@gmail.com",
-    "password": [
-      "1234",
-      "1234"
-    ]
-  },
-  {
-    "nombre": "asdasd",
-    "apellido": "asdasd",
-    "email": "juampi.mantegazza@gmail.com",
-    "password": [
-      "",
-      ""
-    ]
-  },
-  {
-    "nombre": "",
-    "apellido": "",
-    "email": "",
-    "password": [
-      "",
-      ""
-    ]
-  },
-  {
-    "nombre": "",
-    "apellido": "",
-    "email": "",
-    "password": [
-      "",
-      ""
-    ]
-  },
-  {
-    "nombre": "",
-    "apellido": "",
-    "email": "",
-    "password": [
-      "",
-      ""
-    ]
-  },
-  {
-    "nombre": "",
-    "apellido": "",
-    "email": "",
-    "password": [
-      "",
-      ""
-    ]
-  },
-  {
-    "nombre": "",
-    "apellido": "",
-    "email": "",
-    "password": [
-      "",
-      ""
-    ]
-  },
-  {
-    "nombre": "",
-    "apellido": "",
-    "email": "",
-    "password": [
-      "",
-      ""
-    ]
-  },
-  {
-    "nombre": "lalala",
-    "apellido": "lola",
-    "email": "lolala@gmail.com",
-    "password": [
-      "asdf",
-      "asdf"
-    ]
-  },
-  {
-    "nombre": "juan",
-    "apellido": "juan",
-    "email": "juan@juan",
-    "password": [
-      "juan",
-      "juan"
-    ]
-  },
-  {
-    "nombre": "fghj",
-    "apellido": "ghj",
-    "email": "gfhj@asd",
-    "password": "asdasd",
-    "id": null,
-    "image": "image-1648931777962.jpeg"
-  },
-  {
-    "id": 10,
-    "fullName": "Javi",
-    "email": "javi@dh.com"
-  },
-  {
-    "id": 11,
-    "name": "jave",
-    "email": "jave@dh.com"
-  },
-  {
-    "id": 14,
-    "name": "pedro",
-    "email": "pedro@dh.com"
-  },
-  {
-    "id": 15,
-    "email": "electronic.circus@gmail.com",
-    "password": "trolas"
-  },
-  {
-    "nombre": "palo",
-    "apellido": "palo",
-    "email": "",
-    "password": "asdf",
-    "id": 16,
-    "image": "image-1649188012564.jpeg"
-  },
-  {
-    "nombre": "",
-    "apellido": "",
-    "email": "",
-    "password": "",
-    "id": 17,
-    "image": "image-1649188031796.jpeg"
-  },
-  {
-    "nombre": "laura",
-    "apellido": "laura",
-    "email": "laura@ura",
-    "password": "lauraaaaaaaaaa",
-    "id": 18,
-    "image": "image-1649189365348.jpeg"
-  }
+ {
+  "id": 17,
+  "email": "electronic.circus@gmail.com",
+  "password": "saraza",
+  "avatar": "1649189566240_img.jpg"
+ },
+ {
+  "id": 18,
+  "email": "123@gmail.com",
+  "password": "$2a$10$NrAq.dWs9WKO2Rnd/MS/mu5c7hcPCpylcIE/TnE2ZXym0ZsxeuAzC",
+  "avatar": "1649199617617_img.jpg"
+ },
+ {
+  "id": 19,
+  "email": "1234@gmail.com",
+  "password": "$2a$10$9U/utxkA50D0Mx/USRyqeOBgqJ5V4zd1P1rcQIU2RYF1JdQvVde/6",
+  "avatar": "1649200475897_img.jpg"
+ },
+ {
+  "id": 20,
+  "email": "123456@gmail.com",
+  "password": "$2a$10$eE0xd8O5TeV/ERyogWLNlOzpagm1dMcwEyST/ErEKcmUjozH4Z7q.",
+  "avatar": "1649205313963_img.jpg"
+ },
+ {
+  "id": 21,
+  "email": "1234567@gmail.com",
+  "password": "$2a$10$UzNb9XLP79wh6qdHKT8MWeMBeNkJkpNb4V2UEZwa.JnMZ/JUV/jbK",
+  "avatar": "1649205531451_img.jpg"
+ }
 ]

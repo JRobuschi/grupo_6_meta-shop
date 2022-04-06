@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const filePath = path.join(__dirname,'../data/users.json');
 const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
 const User = require ('../models/User');
@@ -31,42 +31,62 @@ const usuariosControllers = {
             
         }
 
-        User.create(req.body);
-        return res.send('ok las validaciones han sido exitosas y el usuario ha sido creado')
+        let userInDB = User.findByField('email', req.body.email);
+
+        if (userInDB) {
+            res.render('./users/register', {
+            errors: {
+                email: {
+                    msg: 'este mail ya esta registrado'
+                }
+            },
+            oldData: req.body
+        });
+
+        }
+
+        
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.file.filename
+        }
+
+        
+        let userCreated = User.create(userToCreate); //crea y redirije a login
+        return res.redirect('/users/login')
     },
-    processLogin: (req, res) => {//13.58 minutos hay algo q no entiendo
-        let errors = validationResult(req);
 
-        if (errors.isEmpty()){
-            let usersJSON = fs.readFileSync('data/users.json', {encoding:'utf-8'});
-            let users;
-            if (usersJSON == '') {
-                users = [];
-            } else {
-                users = JSON.parse(usersJSON);
+
+    login: (req, res) => {
+        return res.render('users/login');
+    },
+
+    processLogin: (req, res) => {
+        let userToLogin = User.findByField('email', req.body.email);
+        
+        if (userToLogin){
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            if(isOkThePassword) {
+                return res.redirect ('/users/userProfile')
             }
-
-            for (let i = 0; i < users.length; i++ ) {
-                if (users [i].email == req.body.email) {
-                    if(bcrypt.compareSync(req.body.password, users[i].password)) {
-                        let usuarioALoguearse = users[i];
-                        break;
+            return res.render('users/login', {
+                errors: {
+                    email:{
+                        msg: 'los datos son incorrectos'
                     }
                 }
-            }
-
-            if (usuarioALoguearse == undefined) {
-                return res.render('login', {errors: [
-                    {msg: 'credenciales invalidas'}                  
-                ]});
-
-            }
-
-            req.session.usuarioLogueado = usuarioALoguearse;
-            res.render('logueado ok');
-        } else {
-            return res.render('login', {errors: errors.errors});
+            })
         }
+        
+        return res.render('users/login', {
+            errors: {
+                email:{
+                    msg: 'no se encuentra el usuario'
+                }
+            }
+        })
+    
     },
 
 

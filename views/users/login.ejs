@@ -1,6 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+    <body>
+        
+        <form action="/users/login" method="post">
+            <label for="">EMAIL</label>
+            <input type="email" name="email" class="form-control"><br>
+            <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                    <%= errors.email.msg %> 
+                </div>
+             
+            <% } %>
 
     <%- include('../partials/head.ejs') %>
     <%- include('../partials/logincss.ejs') %>
