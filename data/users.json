@@ -28,5 +28,23 @@
   "email": "1234567@gmail.com",
   "password": "$2a$10$UzNb9XLP79wh6qdHKT8MWeMBeNkJkpNb4V2UEZwa.JnMZ/JUV/jbK",
   "avatar": "1649205531451_img.jpg"
+ },
+ {
+  "id": 22,
+  "email": "electronic.circus@gmail.com",
+  "password": "$2a$10$ZTVvzfP2b/6YUJQERbNlkeMFgzAcbtNRS0AYgQ6ZgpFR82iWpQt/O",
+  "avatar": "1649292102346_img.jfif"
+ },
+ {
+  "id": 23,
+  "email": "electronic.circus@gmail.com",
+  "password": "$2a$10$jI0tyhbAOSchcTi6PtG5nufF4BOPeDj17Q7xMaCmcAkXtnuEKk0OK",
+  "avatar": "1649292124296_img.jpg"
+ },
+ {
+  "id": 24,
+  "email": "123456789@1.com",
+  "password": "$2a$10$4nDSO9TxuVTDfefcxe38Vumfvlx2JlYwnDaVvtCDTU1H5KfnzuQHu",
+  "avatar": "1649292142876_img.jpg"
  }
 ]
