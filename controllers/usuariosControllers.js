@@ -68,6 +68,8 @@ const usuariosControllers = {
         if (userToLogin){
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword) {
+                delete userToLogin.password; //saca el password de las recurrencias en vistas de session
+                req.session.userLogged = userToLogin;
                 return res.redirect ('/users/userProfile')
             }
             return res.render('users/login', {
@@ -118,12 +120,16 @@ const usuariosControllers = {
 
         
     },
-    /*profile: (req,res) =>{
-        const idToFind = req.params.id
-        const user = users.find (p => p.id == idToFind)
+    profile: (req,res) =>{
+        //const idToFind = req.params.id
+        //const user = users.find (p => p.id == idToFind)
+       console.log('estas en profile');
+       console.log(req.session);
 
-        return res.render ('users/perfil', {user})
-    },*/
+        return res.render ('/users/userProfile', {
+            user: req.session.userLogged
+        });
+    },
 
     
 
