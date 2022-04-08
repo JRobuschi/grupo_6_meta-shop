@@ -1,10 +1,14 @@
-var express = require('express');
-var router = express.Router();
-const upload = require ("../middlewares/multerUser");
-
-
+const express = require('express');
+const router = express.Router();
+const upload = require("../middlewares/multerUser");
 const path = require('path');   
-const multer = require ('multer')
+const multer = require('multer')
+
+
+
+
+
+
 
 const { body } = require ('express-validator'); // la variable body de validator en otros videos se llama check
 const validations = [ //campos a validar y metodo de validacion// estos formularios no pueden estar vacios
@@ -79,7 +83,6 @@ router.get('/chek', function (req,res){
 router.post('/', upload.single('image'), usuariosControllers.create);
 
 //GET
-//router.get('/:id/', usuariosControllers.profile); // lo saque x q me rompía el register
 
 router.get('/register', usuariosControllers.register) //min 21:19
 
@@ -90,11 +93,12 @@ router.post('/register', uploadFile.single('usuarios'), validations, usuariosCon
 //EDIT
 router.get('/:id/edit', usuariosControllers.edit);
 //router.put('/:id', usuariosControllers.update);
-router.put('/:id', uploadUser.single('image'), usuariosControllers.update);
 
 //LOGOUT(hay que configurarlo con cookies)
 router.get('/logout', usuariosControllers.logout);
 
+//GET
+router.put('/:id', uploadUser.single('image'), usuariosControllers.update);
 
 
 

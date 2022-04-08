@@ -46,5 +46,21 @@
   "email": "123456789@1.com",
   "password": "$2a$10$4nDSO9TxuVTDfefcxe38Vumfvlx2JlYwnDaVvtCDTU1H5KfnzuQHu",
   "avatar": "1649292142876_img.jpg"
+ },
+ {
+  "id": 25,
+  "nombre": " asdasd",
+  "apellido": " asdasd",
+  "email": "LOLA@gmail.com",
+  "password": "$2a$10$tjBdCmOdQ1ksictRTXacL.DZn4ZOMkli8x39OzWB7HSJ4T8YoWKtq",
+  "avatar": "1649375506491_img.jpeg"
+ },
+ {
+  "id": 26,
+  "nombre": " juan",
+  "apellido": "juan",
+  "email": "juan@juan.com",
+  "password": "$2a$10$mdtQVD0hH1iPQUiNqUj7RuV3KtUA1waBkSbEJZhzUBZtpOJRcDkUW",
+  "avatar": "1649375730736_img.jpeg"
  }
 ]
