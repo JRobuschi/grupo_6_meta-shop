@@ -69,7 +69,7 @@ const usuariosControllers = {
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword) {
                 delete userToLogin.password; //saca el password de las recurrencias en vistas de session
-                req.session.usuarioLogueado = userToLogin;
+                req.session.userLogged = userToLogin;
                 return res.redirect ('/users/userProfile')
             }
             return res.render('users/login', {
@@ -97,7 +97,7 @@ const usuariosControllers = {
     
     profile: (req,res) =>{
        return res.render ('/users/userProfile', {
-            user: req.session.usuarioLogueado
+            user: req.session.userLogged
         });
     },
 

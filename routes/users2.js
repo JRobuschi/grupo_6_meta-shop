@@ -64,15 +64,15 @@ router.post('/login', [
 
 
 
-/*router.get('/chek', function (req,res){
-    if(req.session.usuarioLogueado == undefined) {
+router.get('/chek', function (req,res){
+    if(req.session.userLogged == undefined) {
         res.send('no estas logueado, bo');
     } else {
-        res.send('el usuario logueado es' + req.session.usuarioLogueado.email);
+        res.send('el usuario logueado es' + req.session.userLogged.email);
 
     }
 })
-*/
+
 
 //CREATE
 //router.get('/', usuariosControllers.create);

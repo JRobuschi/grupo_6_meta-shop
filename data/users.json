@@ -6,5 +6,29 @@
   "email": "electronic.circus@gmail.com",
   "password": "$2a$10$4ut10sBYhGXxx/skZesdBO6EYM/wO0oJufaayUgS7nnOANZ.fF3ue",
   "avatar": "1649377731612_img.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": " diego",
+  "apellido": "fernandez",
+  "email": "1@1.com",
+  "password": "$2a$10$MJKVyImxyi4j49Qp2UM30OCcSUD4/dkA5paRntCTPjveXbBrQeq3e",
+  "avatar": "1649447513614_img.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "diego",
+  "apellido": "gomez",
+  "email": "2222@2.com",
+  "password": "$2a$10$Uxla19loKMJX9hlzaXeqpuR5pM8xmqbwVLdaBXvB2QTTDQ0uNVJTi",
+  "avatar": "1649448006696_img.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": " fede",
+  "apellido": "tiragoma",
+  "email": "4444@4.com",
+  "password": "$2a$10$CbYMyNqXYCSKO1OGcFSxxuKEFOkIDooI2j5ZMWF4SETnJcTIVJjru",
+  "avatar": "1649448272387_img.jpg"
  }
 ]
