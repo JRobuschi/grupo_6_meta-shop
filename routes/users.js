@@ -84,8 +84,6 @@ router.post('/', upload.single('image'), usuariosControllers.create);
 
 //GET
 
-//GET
-
 router.get('/register', usuariosControllers.register) //min 21:19
 
 router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.processRegister) //min 21:19
