@@ -1,19 +1,50 @@
-<html>
-    <body>
-        
-        <form action="/users/login" method="post">
-            <label for="">EMAIL</label>
-            <input type="email" name="email" class="form-control"><br>
-            <% if (locals.errors && errors.email) { %>
-                <div class="text-danger">
-                    <%= errors.email.msg %> 
-                </div>
-             
-            <% } %>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
 
-            <label for="">password</label>
-            <input type="password" name="password"><br>
-            <input type="submit" value="Login">
-        </form>
+        <%- include('../partials/head.ejs') %>
+        <%- include('../partials/logincss.ejs') %>
+        
+      </head>
+
+
+    <body>
+        <div class="volver">
+         <a href="/"><strong>Volver</strong></a>
+        </div>
+        
+        <div class="container">
+                       
+            <div class="signIn">
+              
+              <form form action="/users/login" method="post" id="sign-in" >
+                  <h1>Login</h1>
+      
+                  <div class="socials">
+                    <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="https://instagram.com"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+      
+                  <label for="email"></label>
+                  <input type="email" placeholder="Ingrese su mail aquí" required="true" class="form-control" name="email">
+                  <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %> 
+                    </div>
+                  <% } %>
+      
+                  <label for="password"></label>
+                  <input type="password" placeholder="Ingrese su contraseña aquí" name="password" required="true">
+                  
+                  <button type="submit" class="btn2">Login</button>
+              </form>
+            </div>
+          </div>
+
+        
+            
+        
+            
     </body>
 </html>
