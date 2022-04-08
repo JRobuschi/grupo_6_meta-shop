@@ -78,5 +78,21 @@
   "email": "8@8.com",
   "password": "$2a$10$/W3yH8dgF.kAgXmgqKNIMeB4aYIyHY6iLXI9mIthYQkkfLt3GYT4.",
   "avatar": "1649450866168_img.jpg"
+ },
+ {
+  "id": 11,
+  "nombre": " alfonso",
+  "apellido": " garcia",
+  "email": "5454@5.com",
+  "password": "$2a$10$p44WQvo6xrV0yufiyhD9Oe.wc6UrlBlMbvKapq3HDOdQakTCjAlh2",
+  "avatar": "1649450944472_img.jpg"
+ },
+ {
+  "id": 12,
+  "nombre": "sssss",
+  "apellido": "ssssss",
+  "email": "88@8.com",
+  "password": "$2a$10$ajLIMoUmB3e8lfXLi.AGw.g1Ywichvn2q/Ch02EKGrO/K.i9OLo6q",
+  "avatar": "1649451379239_img.jpg"
  }
 ]
