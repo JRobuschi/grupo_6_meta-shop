@@ -14,29 +14,46 @@
 </header>
 <main class="main">
     
+<div class="container" style="margin-top: 40px;">
+<div class="row">
+    <div class="col-md-3">
+        <h2>hola <%= user.nombre %>  </h2>
+        <img src="/images/usuarios/ <%= user.avatar %> ">
+        <br>
+        <br>
+        <div class="alert alert-success"><%= user.email %> </div>
+    </div>
+</div>
 
-    <form method="get" action="/users/userProfile" enctype="multipart/form-data">
+</div>
+
+
+
+
+
+
+    <!--<form method="get" action="/users/userProfile" enctype="multipart/form-data">
      <div class="user">
         <h4 class="page-banner-add">Mi Perfil</h4>
         <br>
         <div class="parts">     
             <label>Nombre:</label>
-            <p><%= users.nombre %></p>
+            <p> %= users.nombre %></p>
         </div> 
         <div class="parts"> 
             <label>Apellido:</label>
-           <p><%= users.apellido%></p>
+           <p> %= users.apellido%></p>
         </div> 
         <div class="email">
         <label for="email">Tu email</label>
-        <p><%= users.email%>"</p>
+        <p> %= users.email%>"</p>
         </div> 
 
-        <div class="parts"> <!--multer image archivo-->
+        <div class="parts">multer image archivo
             <label for="image">Imagen de Perfil</label>
-            <p><%= users.image%></p>
+            <p> %= users.image%></p>
         </div>
-
+    -->
      </div>
     </form>
   

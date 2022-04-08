@@ -100,6 +100,7 @@ router.get('/logout', usuariosControllers.logout);
 //GET
 router.put('/:id', uploadUser.single('image'), usuariosControllers.update);
 
+router.get('/:id/', usuariosControllers.profile); // lo saque x q me rompía el register
 
 
 module.exports = router;

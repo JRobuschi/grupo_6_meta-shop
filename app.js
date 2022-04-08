@@ -78,18 +78,7 @@ app.use((req, res, next) => {
     res.status(404).render('404-page');
     next();
 });
-
 // method-Override //
 const methodOverride = require ('method-override');
 const exp = require('constants');
 app.use(methodOverride('_method'));
-
-
-
-
-
-
-
-
-
-
