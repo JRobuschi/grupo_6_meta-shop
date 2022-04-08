@@ -30,5 +30,13 @@
   "email": "4444@4.com",
   "password": "$2a$10$CbYMyNqXYCSKO1OGcFSxxuKEFOkIDooI2j5ZMWF4SETnJcTIVJjru",
   "avatar": "1649448272387_img.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "diego",
+  "apellido": "gomez",
+  "email": "3333@3.com",
+  "password": "$2a$10$gYATlW6rYvIa9nscDnOrQOdTR6qbYDKm0uoXhLpvC0ZRWh238c3Xe",
+  "avatar": "1649449035791_img.jpg"
  }
 ]
