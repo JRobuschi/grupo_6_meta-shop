@@ -4,6 +4,8 @@ var session = require ('express-session');
 const app = express();
 const cookieParser = require('cookie-parser');
 
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
 
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
@@ -69,9 +71,10 @@ app.use("/users", userRoutes);
 app.use(cookieParser());
 app.use(session({
     secret: 'secret word!',
-    resave: false,
+    resave: true,
     saveUninitialized: true,
-}));
+})); //el video 1hr 4 minutos dice q va todo false, pravata dice q va true
+app.use(userLoggedMiddleware);
 
 //404//
 app.use((req, res, next) => {

@@ -1,9 +1,9 @@
 function guestMiddleware(req, res, next) {
-if( req.session.usuarioLogueado == undefined) {
-    next();
-} else {
-    res.send('Ud. esta navegando como invitado');
-}
+if( req.session.usuarioLogueado)  {
+    return res.redirect('/users/userProfile');
+} 
+next();
+
 }
 
 module.exports = guestMiddleware; 

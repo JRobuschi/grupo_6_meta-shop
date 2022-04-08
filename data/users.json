@@ -1,66 +1,10 @@
 [
  {
-  "id": 17,
+  "id": 1,
+  "nombre": " alfonso",
+  "apellido": " garcia",
   "email": "electronic.circus@gmail.com",
-  "password": "saraza",
-  "avatar": "1649189566240_img.jpg"
- },
- {
-  "id": 18,
-  "email": "123@gmail.com",
-  "password": "$2a$10$NrAq.dWs9WKO2Rnd/MS/mu5c7hcPCpylcIE/TnE2ZXym0ZsxeuAzC",
-  "avatar": "1649199617617_img.jpg"
- },
- {
-  "id": 19,
-  "email": "1234@gmail.com",
-  "password": "$2a$10$9U/utxkA50D0Mx/USRyqeOBgqJ5V4zd1P1rcQIU2RYF1JdQvVde/6",
-  "avatar": "1649200475897_img.jpg"
- },
- {
-  "id": 20,
-  "email": "123456@gmail.com",
-  "password": "$2a$10$eE0xd8O5TeV/ERyogWLNlOzpagm1dMcwEyST/ErEKcmUjozH4Z7q.",
-  "avatar": "1649205313963_img.jpg"
- },
- {
-  "id": 21,
-  "email": "1234567@gmail.com",
-  "password": "$2a$10$UzNb9XLP79wh6qdHKT8MWeMBeNkJkpNb4V2UEZwa.JnMZ/JUV/jbK",
-  "avatar": "1649205531451_img.jpg"
- },
- {
-  "id": 22,
-  "email": "electronic.circus@gmail.com",
-  "password": "$2a$10$ZTVvzfP2b/6YUJQERbNlkeMFgzAcbtNRS0AYgQ6ZgpFR82iWpQt/O",
-  "avatar": "1649292102346_img.jfif"
- },
- {
-  "id": 23,
-  "email": "electronic.circus@gmail.com",
-  "password": "$2a$10$jI0tyhbAOSchcTi6PtG5nufF4BOPeDj17Q7xMaCmcAkXtnuEKk0OK",
-  "avatar": "1649292124296_img.jpg"
- },
- {
-  "id": 24,
-  "email": "123456789@1.com",
-  "password": "$2a$10$4nDSO9TxuVTDfefcxe38Vumfvlx2JlYwnDaVvtCDTU1H5KfnzuQHu",
-  "avatar": "1649292142876_img.jpg"
- },
- {
-  "id": 25,
-  "nombre": " asdasd",
-  "apellido": " asdasd",
-  "email": "LOLA@gmail.com",
-  "password": "$2a$10$tjBdCmOdQ1ksictRTXacL.DZn4ZOMkli8x39OzWB7HSJ4T8YoWKtq",
-  "avatar": "1649375506491_img.jpeg"
- },
- {
-  "id": 26,
-  "nombre": " juan",
-  "apellido": "juan",
-  "email": "juan@juan.com",
-  "password": "$2a$10$mdtQVD0hH1iPQUiNqUj7RuV3KtUA1waBkSbEJZhzUBZtpOJRcDkUW",
-  "avatar": "1649375730736_img.jpeg"
+  "password": "$2a$10$4ut10sBYhGXxx/skZesdBO6EYM/wO0oJufaayUgS7nnOANZ.fF3ue",
+  "avatar": "1649377731612_img.jpg"
  }
 ]

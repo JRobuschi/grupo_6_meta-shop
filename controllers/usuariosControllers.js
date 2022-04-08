@@ -13,7 +13,7 @@ const usuariosControllers = {
     },
 
     login: (req, res) => {
-        return res.render ('users/login'); //vista del login
+       return res.render ('users/login'); //vista del login
     },
 
     register: (req, res) => {
@@ -69,7 +69,7 @@ const usuariosControllers = {
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword) {
                 delete userToLogin.password; //saca el password de las recurrencias en vistas de session
-                req.session.userLogged = userToLogin;
+                req.session.usuarioLogueado = userToLogin;
                 return res.redirect ('/users/userProfile')
             }
             return res.render('users/login', {
@@ -93,6 +93,13 @@ const usuariosControllers = {
 
 
     
+
+    
+    profile: (req,res) =>{
+       return res.render ('/users/userProfile', {
+            user: req.session.usuarioLogueado
+        });
+    },
 
     create: (req,res) => {
         const newUser =  req.body;
@@ -120,18 +127,6 @@ const usuariosControllers = {
 
         
     },
-    profile: (req,res) =>{
-        //const idToFind = req.params.id
-        //const user = users.find (p => p.id == idToFind)
-       console.log('estas en profile');
-       console.log(req.session);
-
-        return res.render ('/users/userProfile', {
-            user: req.session.userLogged
-        });
-    },
-
-    
 
     edit: (req,res) =>{
         const idToFind = req.params.id
@@ -161,9 +156,9 @@ const usuariosControllers = {
         return res.redirect('/users')
     },
     logout: (req,res) =>{
-        res.clearCookie('email');
+        //res.clearCookie('email');
         req.session.destroy();
-        return res.redirect("/users")
+        return res.redirect("/")
     },
 
     dbReWrite() { 

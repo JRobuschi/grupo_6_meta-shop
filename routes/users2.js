@@ -64,7 +64,7 @@ router.post('/login', [
 
 
 
-router.get('/chek', function (req,res){
+/*router.get('/chek', function (req,res){
     if(req.session.usuarioLogueado == undefined) {
         res.send('no estas logueado, bo');
     } else {
@@ -72,7 +72,7 @@ router.get('/chek', function (req,res){
 
     }
 })
-
+*/
 
 //CREATE
 //router.get('/', usuariosControllers.create);
