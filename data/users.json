@@ -6,5 +6,13 @@
   "email": "88@8.com",
   "password": "$2a$10$gG1NYsOeddWnWgWk.O7b4eyO2G2pZ6jWMoMPrOmS5954WRWgYSCmC",
   "avatar": "1649451610144_img.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": " alfonso",
+  "apellido": " garcia",
+  "email": "321@321.com",
+  "password": "$2a$10$sZKbp2jpH5cwONPDsTdrB.IAep6dC1WuPB9/uVS7mba1Pgo34YkHC",
+  "avatar": "1649452097388_img.jpg"
  }
 ]
