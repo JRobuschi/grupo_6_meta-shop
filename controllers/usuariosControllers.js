@@ -97,7 +97,7 @@ const usuariosControllers = {
     
     profile: (req,res) =>{
        return res.render ('/users/userProfile', {
-            user: req.session.userLogged
+            user: req.session.usuarioLogueado
         });
     },
 

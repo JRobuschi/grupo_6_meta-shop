@@ -11,11 +11,16 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
 app.use(express.json());
 
+app.use(session({
+    secret: 'secret word!',
+    resave: true,
+    saveUninitialized: true,
+})); //el video 1hr 4 minutos dice q va todo false, pravata dice q va true
 
 
 const publicPath = path.resolve(__dirname, './public');
 app.use( express.static(publicPath) );
-
+app.use(userLoggedMiddleware);
 
 app.listen(3080, () => {
     console.log("Servidor Corriendo")
@@ -69,12 +74,8 @@ app.use("/users", userRoutes);
 //midelwere de aplicacion 
 
 app.use(cookieParser());
-app.use(session({
-    secret: 'secret word!',
-    resave: true,
-    saveUninitialized: true,
-})); //el video 1hr 4 minutos dice q va todo false, pravata dice q va true
-app.use(userLoggedMiddleware);
+
+
 
 //404//
 app.use((req, res, next) => {

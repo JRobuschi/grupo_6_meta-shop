@@ -38,5 +38,45 @@
   "email": "3333@3.com",
   "password": "$2a$10$gYATlW6rYvIa9nscDnOrQOdTR6qbYDKm0uoXhLpvC0ZRWh238c3Xe",
   "avatar": "1649449035791_img.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Diego",
+  "apellido": "gomez",
+  "email": "4@3.com",
+  "password": "$2a$10$haSA9MKsUEzFVHMqYscNze9irEZPECUchEe9za.IgjIhCWE7srcgC",
+  "avatar": "1649449152551_img.jpg"
+ },
+ {
+  "id": 7,
+  "nombre": " aaaa",
+  "apellido": "sssss",
+  "email": "777@7.com",
+  "password": "$2a$10$WS0.sIJc8BKmuMsu7rXz/.sne0vpLogvCWob6liLwfHWaqTxOPFQW",
+  "avatar": "1649449963085_img.jpg"
+ },
+ {
+  "id": 8,
+  "nombre": " aaaa",
+  "apellido": "bbbb",
+  "email": "1@1.com",
+  "password": "$2a$10$Fmhq5go0eSUfMUNzCVYHcetT6rsQ/cnPN79xkmZZepwf8ZmyqeXxS",
+  "avatar": "1649450720130_img.jpg"
+ },
+ {
+  "id": 9,
+  "nombre": " alfonso",
+  "apellido": "garcia",
+  "email": "9@9.com",
+  "password": "$2a$10$XPCv9sE0gmrI4WfLOeO4zOfakM6QSlVOLXsVifTgs2gVJBQhtPKnO",
+  "avatar": "1649450779569_img.jpg"
+ },
+ {
+  "id": 10,
+  "nombre": " alfonso",
+  "apellido": "garcia",
+  "email": "8@8.com",
+  "password": "$2a$10$/W3yH8dgF.kAgXmgqKNIMeB4aYIyHY6iLXI9mIthYQkkfLt3GYT4.",
+  "avatar": "1649450866168_img.jpg"
  }
 ]
