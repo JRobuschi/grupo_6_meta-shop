@@ -134,5 +134,37 @@
   "email": "zxcv@zxcv.com",
   "password": "$2a$10$n94p7CTvKRXemosZk72jyudND0oMCtw.fJvH.noXLGZ4FWedt4hFa",
   "avatar": "1649451018117_img.jpeg"
+ },
+ {
+  "id": 18,
+  "nombre": " ana",
+  "apellido": " ana",
+  "email": "ana@ana.com",
+  "password": "$2a$10$fdM8XmRdjoa.Nw3w2wSKo.S4zM4r2nu22tOTmM6k6n5T4TEo7Bc86",
+  "avatar": "1649451186428_img.jpeg"
+ },
+ {
+  "id": 19,
+  "nombre": " ana ",
+  "apellido": " ana ",
+  "email": "ana@ana.com",
+  "password": "$2a$10$mDoJYgIOynAJmlnx5205U.XnQHDBbMNlxPPHAtSOywCGAbxxAqkiu",
+  "avatar": "1649451258325_img.jpg"
+ },
+ {
+  "id": 20,
+  "nombre": " ana  ",
+  "apellido": " ana  ",
+  "email": "ana@ana.com",
+  "password": "$2a$10$0J7ZRoTEtpxOFPmGOdvoLu6KtLskUy27DLHwgcPaz9GPAF25UxSfi",
+  "avatar": "1649451271912_img.jpg"
+ },
+ {
+  "id": 21,
+  "nombre": " ana   ",
+  "apellido": " ana   ",
+  "email": "banana@banana",
+  "password": "$2a$10$oAlxFFLCpsotnvZgIeZyLuWhZ/kUUt5j22P8Kz5N.pFpjyElgrvjG",
+  "avatar": "1649451295658_img.jpg"
  }
 ]
