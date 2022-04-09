@@ -100,7 +100,7 @@ router.get('/:id/edit', usuariosControllers.edit);
 //GET
 router.put('/:id', upload.single('image'), usuariosControllers.update);
 
-router.get('/profile/', authMiddleware, usuariosControllers.profile); // lo saque x q me rompía el register
+router.get('/profile', authMiddleware, usuariosControllers.profile); // lo saque x q me rompía el register
 
 //router.get('/logout', usuariosControllers.logout);
 

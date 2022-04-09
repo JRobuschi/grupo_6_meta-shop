@@ -72,7 +72,7 @@ const usuariosControllers = {
             if  (req.session){
                 req.session.userLogged = userToLogin}
                 
-                return res.redirect ('/users/userProfile')
+                return res.redirect ('/users/userProfile');
             //};
                 
             }

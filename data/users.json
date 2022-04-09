@@ -1,1 +1,42 @@
-[]
+[
+ {
+  "id": 1,
+  "nombre": " zaza",
+  "apellido": " zaza",
+  "email": "zaza@zaza",
+  "password": "$2a$10$xS74WNVl8ygn46d0TGCeUuF27/YEGDcqIQ.w1DPluMcGGGneK9J4y",
+  "avatar": "1649540293887_img.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": " zaza ",
+  "apellido": " zaza ",
+  "email": "zaza@gmail.com",
+  "password": "$2a$10$QqCDCqIA8Bacfe4EKfZObOUa9CfyU7haPDjAQ4//dl2ItPGNlKWcy",
+  "avatar": "1649540322816_img.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": " zaza ",
+  "apellido": " zaza ",
+  "email": "zaza@zaza.com",
+  "password": "$2a$10$9Ez/sMxSJkYDgZRDHEh0b.hGtgKuobsmMIf8OuzgUu9HdfRyoaj7a",
+  "avatar": "1649540576226_img.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": " zaza",
+  "apellido": " zaza",
+  "email": "zaza@zaza",
+  "password": "$2a$10$jpl3R2gqRECkOv/D8yQrkefjRa9P4w8EQ5Zec5o84UKH3kAbhnH5W",
+  "avatar": "1649540636264_img.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": " falopa",
+  "apellido": " falopa",
+  "email": "falopa@falopa.com",
+  "password": "$2a$10$IT9wJPH9OBkJJg91q503tucp14Ki.W1Lq.hqjX2JRryxkqRY.XjKS",
+  "avatar": "1649540665792_img.jpg"
+ }
+]
