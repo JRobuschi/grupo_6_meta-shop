@@ -23,7 +23,7 @@ app.use( express.static(publicPath) );
 app.use(userLoggedMiddleware);
 
 app.listen(3080, () => {
-    console.log("Servidor Corriendo")
+    console.log("Servidor haciendo un wireframe")
 });
 
 

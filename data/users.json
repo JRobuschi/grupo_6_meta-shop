@@ -14,5 +14,37 @@
   "email": "321@321.com",
   "password": "$2a$10$sZKbp2jpH5cwONPDsTdrB.IAep6dC1WuPB9/uVS7mba1Pgo34YkHC",
   "avatar": "1649452097388_img.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": " alfonso",
+  "apellido": " garcia",
+  "email": "9999@9999.com",
+  "password": "$2a$10$Bd533hGmFTuEgv2CPTtG7ekEiPo9C5rciMnHNpeWEuASCFtQuxezG",
+  "avatar": "1649455679282_img.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": " alfonso",
+  "apellido": "Garcia ",
+  "email": "5656@5656.com",
+  "password": "$2a$10$FrmWZ4tTO.5F4enWxrsaR.GQMkYO.gdrzyZ5.V51P9jtZZwy/C0xO",
+  "avatar": "1649455991849_img.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": " diego",
+  "apellido": "alfonso",
+  "email": "electronic.circus@gmail.com",
+  "password": "$2a$10$6m8c/fmYtMvvBcE8sn0g9up/cQD46MbcNA0Jixpr7He6C/Q5sq156",
+  "avatar": "1649464316405_img.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "diego",
+  "apellido": "garcia",
+  "email": "2222@2.com",
+  "password": "$2a$10$Z4icWImnFifW8UbkX0vuI.2Fz7FSU.koPGGDhlkCr.Br9nrB8fkP.",
+  "avatar": "1649514050798_img.jpg"
  }
 ]
