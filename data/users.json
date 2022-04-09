@@ -70,5 +70,21 @@
   "email": "lala@lala.com",
   "password": "$2a$10$R8S3efxdcqCC8i/wgzUV0uYuc1WdjBx5OaAHQmoPOuFxOTEbFGWuO",
   "avatar": "1649519322044_img.jpg"
+ },
+ {
+  "id": 10,
+  "nombre": " juli",
+  "apellido": " juli",
+  "email": "juli@juli",
+  "password": "$2a$10$VgdfHStaO3oJmYi213WcA.XH2htBLa96pY1PkJVljXAV9STeMddcG",
+  "avatar": "1649538915417_img.jpg"
+ },
+ {
+  "id": 11,
+  "nombre": " tita  ",
+  "apellido": "tita  ",
+  "email": "tita@tita",
+  "password": "$2a$10$MaqVI8549Ex2Wg6xykfbP.g0rt2D0mBAxfcSFyuAI7hhMeaQaD0Ii",
+  "avatar": "1649539529275_img.jpg"
  }
 ]
