@@ -1,4 +1,4 @@
-const multer = require('multer');
+/*const multer = require('multer');
 const path = require('path');
 
 const storage = multer.diskStorage ( {
@@ -13,4 +13,4 @@ const storage = multer.diskStorage ( {
 
 const uploadUser = multer({ storage})
 
-module.exports = uploadUser;
+module.exports = uploadUser;*/

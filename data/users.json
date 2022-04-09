@@ -46,5 +46,29 @@
   "email": "2222@2.com",
   "password": "$2a$10$Z4icWImnFifW8UbkX0vuI.2Fz7FSU.koPGGDhlkCr.Br9nrB8fkP.",
   "avatar": "1649514050798_img.jpg"
+ },
+ {
+  "id": 7,
+  "nombre": " alejo",
+  "apellido": "sambrana",
+  "email": "ale@sambrana.com",
+  "password": "$2a$10$C1wruLsVKz9hVQRS3Fray..R1e2po5pO.1AHKZXQtZroo2oqb/0BW",
+  "avatar": "1649518691915_img.jpg"
+ },
+ {
+  "id": 8,
+  "nombre": " nieto",
+  "apellido": "lamas",
+  "email": "nieto@lamas.com",
+  "password": "$2a$10$4wvHiFlbeqYSEqQtRGw31eYw3AKMmgBE/NdN5qz34fQqgNhZ7/Ci6",
+  "avatar": "1649518906831_img.jpg"
+ },
+ {
+  "id": 9,
+  "nombre": " lala",
+  "apellido": "lala",
+  "email": "lala@lala.com",
+  "password": "$2a$10$R8S3efxdcqCC8i/wgzUV0uYuc1WdjBx5OaAHQmoPOuFxOTEbFGWuO",
+  "avatar": "1649519322044_img.jpg"
  }
 ]

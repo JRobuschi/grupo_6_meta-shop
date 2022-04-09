@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const upload = require("../middlewares/multerUser");
+const upload = require("../middlewares/multer");
 const path = require('path');   
 const multer = require('multer')
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const { body } = require ('express-validator');// la variable body de validator en otros videos se llama check
+//campos a validar y metodo de validacion// estos formularios no pueden estar vacios
 
 
 
-
-
-const { body } = require ('express-validator'); // la variable body de validator en otros videos se llama check
-const validations = [ //campos a validar y metodo de validacion// estos formularios no pueden estar vacios
+ 
+const validations = [ 
     body ('email').notEmpty().withMessage('debe ingresar un mail').bail().isEmail().withMessage('debe ser fromato email'),
     body ('password').notEmpty().withMessage('debe ingresar un password'),
     body ('usuarios').custom((value, { req })=> {
@@ -44,7 +44,7 @@ const uploadFile = multer ({ storage});
 
 const usuariosControllers = require('../controllers/usuariosControllers');
 
-const uploadUser = require('../middlewares/multerUser');
+//const uploadUser = require('../middlewares/multerUser');
 
 
 
@@ -61,21 +61,21 @@ router.get('/', usuariosControllers.index);
 
 router.get('/login', guestMiddleware, usuariosControllers.login);
 router.post('/login', [
-    check('email').isEmail().withMessage('Email invalido'),
-    check('password').isLength({min: 4}).withMessage('minimo 4 digitos')
+    body('email').isEmail().withMessage('Email invalido'),
+    body('password').isLength({min: 4}).withMessage('minimo 4 digitos')
 ], usuariosControllers.processLogin);
 
 
 
 
-router.get('/chek', function (req,res){
+/*router.get('/chek', function (req,res){
     if(req.session.userLogged == undefined) {
         res.send('no estas logueado, bo');
     } else {
         res.send('el usuario logueado es' + req.session.userLogged.email);
 
     }
-})
+})*/
 
 
 //CREATE
@@ -98,7 +98,7 @@ router.get('/:id/edit', usuariosControllers.edit);
 
 
 //GET
-router.put('/:id', uploadUser.single('image'), usuariosControllers.update);
+router.put('/:id', upload.single('image'), usuariosControllers.update);
 
 router.get('/profile/', authMiddleware, usuariosControllers.profile); // lo saque x q me rompía el register
 

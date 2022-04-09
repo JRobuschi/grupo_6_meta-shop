@@ -157,7 +157,7 @@ const usuariosControllers = {
         }
         controllers.dbReWrite()
 
-        return res.redirect('/users')
+        return res.redirect('/users/userProfile')
     },
     logout: (req,res) =>{
         //res.clearCookie('email');
