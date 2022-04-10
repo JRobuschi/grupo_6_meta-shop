@@ -8,7 +8,7 @@ const User = {
         return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
     },
 
-    generateId: function () {
+    generateId: function () {//genera un id de user
         let allUsers = this.findAll();
         let lastUser = allUsers.pop();
         if (lastUser){

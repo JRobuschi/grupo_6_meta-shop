@@ -31,7 +31,7 @@ const usuariosControllers = {
             
         }
 
-        let userInDB = User.findByField('email', req.body.email);
+        let userInDB = User.findByField('email', req.body.email);//buscaen la base el mail para no dejarte registrar 2 veces el mismo mail
 
         if (userInDB) {
             res.render('./users/register', {
@@ -48,8 +48,8 @@ const usuariosControllers = {
         
         let userToCreate = {
             ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.file.filename
+            password: bcryptjs.hashSync(req.body.password, 10), //encirptador del pas
+            avatar: req.file.filename //renombra la imagen
         }
 
         
@@ -64,18 +64,19 @@ const usuariosControllers = {
 
     processLogin: (req, res) => {
         let userToLogin = User.findByField('email', req.body.email);
-        
+        //busca en el modelo si esta registrado el email
         if (userToLogin){
-            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //el metodo modulo bycript y el metodo comparesyn para validar el
             if(isOkThePassword) {
                 delete userToLogin.password; //saca el password de las recurrencias en vistas de session
             if  (req.session){
                 req.session.userLogged = userToLogin}
                 
-                return res.redirect ('/users/userProfile')
+                return res.redirect ('/users/userProfile');
+                //return res.redirect ('/users/userProfile')
             //};
                 
-            }
+            }//desde el IF en caso q el email no se encuentre
             return res.render('users/login', {
                 errors: {
                     email:{
@@ -100,8 +101,8 @@ const usuariosControllers = {
 
     
     profile: (req,res) =>{
-       return res.render ('/users/userProfile', {
-            user: req.session.usuarioLogueado
+       return res.render ('userProfile', {
+            user: req.session.userLogged
         });
     },
 

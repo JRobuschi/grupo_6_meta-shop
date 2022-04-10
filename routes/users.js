@@ -7,7 +7,7 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const { body } = require ('express-validator');// la variable body de validator en otros videos se llama check
 //campos a validar y metodo de validacion// estos formularios no pueden estar vacios
-
+const usuariosControllers = require('../controllers/usuariosControllers');
 
 
  
@@ -42,7 +42,7 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer ({ storage});
 
-const usuariosControllers = require('../controllers/usuariosControllers');
+
 
 //const uploadUser = require('../middlewares/multerUser');
 
@@ -50,7 +50,7 @@ const usuariosControllers = require('../controllers/usuariosControllers');
 
 
 //const validationResult = require('express-validator').validationResult;
-const check = require('express-validator').check;
+//const check = require('express-validator').check;
 
 //let {check, validationResult, body } = require('express-validator').validationResult; min 21.16
 
@@ -58,6 +58,11 @@ const check = require('express-validator').check;
 
 /* GET users listing. */
 router.get('/', usuariosControllers.index);
+
+router.get('/register', guestMiddleware, usuariosControllers.register); // no te deja re registrrar cuando ya te logueaste
+
+router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.processRegister) //min 21:19
+
 
 router.get('/login', guestMiddleware, usuariosControllers.login);
 router.post('/login', [
@@ -84,9 +89,6 @@ router.post('/', upload.single('image'), usuariosControllers.create);
 
 //GET
 
-router.get('/register', guestMiddleware, usuariosControllers.register) //min 21:19
-
-router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.processRegister) //min 21:19
 
 
 
@@ -98,10 +100,10 @@ router.get('/:id/edit', usuariosControllers.edit);
 
 
 //GET
-router.put('/:id', upload.single('image'), usuariosControllers.update);
+//router.put('/:id', upload.single('image'), usuariosControllers.update);
 
-router.get('/profile/', authMiddleware, usuariosControllers.profile); // lo saque x q me rompía el register
-
-//router.get('/logout', usuariosControllers.logout);
+router.get('/profile/', authMiddleware, usuariosControllers.profile); //1:01 en la hora y 1 minuto saca el id y dice q no lo necesita
+//si hay alguien en session sigue hacia profile
+router.get('/logout', usuariosControllers.logout);
 
 module.exports = router;

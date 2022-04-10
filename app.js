@@ -7,15 +7,17 @@ const cookieParser = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 
-// Setup del req.body (deja disponible el contenido de los formularios)
-app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
-app.use(express.json());
-
 app.use(session({
     secret: 'secret word!',
     resave: true,
     saveUninitialized: true,
-})); //el video 1hr 4 minutos dice q va todo false, pravata dice q va true
+}));
+
+// Setup del req.body (deja disponible el contenido de los formularios)
+app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
+app.use(express.json());
+
+ //el video 1hr 4 minutos dice q va todo false, pravata dice q va true
 
 
 const publicPath = path.resolve(__dirname, './public');
