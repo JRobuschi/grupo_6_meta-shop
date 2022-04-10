@@ -106,4 +106,4 @@ router.get('/profile/', authMiddleware, usuariosControllers.profile); //1:01 en 
 //si hay alguien en session sigue hacia profile
 router.get('/logout', usuariosControllers.logout);
 
-module.exports = router;
+module.exports = router; //abandono en 1hs20minutos
