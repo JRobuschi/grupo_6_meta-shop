@@ -102,7 +102,7 @@ router.get('/:id/edit', usuariosControllers.edit);
 //GET
 //router.put('/:id', upload.single('image'), usuariosControllers.update);
 
-router.get('/profile/', authMiddleware, usuariosControllers.profile); //1:01 en la hora y 1 minuto saca el id y dice q no lo necesita
+router.get('/profile', authMiddleware, usuariosControllers.profile); //1:01 en la hora y 1 minuto saca el id y dice q no lo necesita
 //si hay alguien en session sigue hacia profile
 router.get('/logout', usuariosControllers.logout);
 
