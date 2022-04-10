@@ -72,8 +72,8 @@ const usuariosControllers = {
             if  (req.session){
                 req.session.userLogged = userToLogin}
                 
-                return res.redirect ('/users/userProfile');
-                //return res.redirect ('/users/userProfile')
+                return res.redirect ('profile');
+               
             //};
                 
             }//desde el IF en caso q el email no se encuentre
@@ -101,11 +101,11 @@ const usuariosControllers = {
 
     
     profile: (req,res) =>{
-       return res.render ('userProfile', {
+       return res.render ('users/userProfile', {
             user: req.session.userLogged
         });
     },
-
+/*
     create: (req,res) => {
         const newUser =  req.body;
 		const newUserImage = req.file;
@@ -159,7 +159,7 @@ const usuariosControllers = {
         controllers.dbReWrite()
 
         return res.redirect('/users/userProfile')
-    },
+    },*/
     logout: (req,res) =>{
         //res.clearCookie('email');
         req.session.destroy();

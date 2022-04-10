@@ -3,9 +3,9 @@ const path = require('path');
 const session = require ('express-session');
 const app = express();
 const cookieParser = require('cookie-parser');
-
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
+app.use(userLoggedMiddleware);
 
 app.use(session({
     secret: 'secret word!',
@@ -22,7 +22,6 @@ app.use(express.json());
 
 const publicPath = path.resolve(__dirname, './public');
 app.use( express.static(publicPath) );
-app.use(userLoggedMiddleware);
 
 app.listen(3080, () => {
     console.log("Servidor haciendo un wireframe")
