@@ -3,7 +3,7 @@ function userLoggedMiddleware(req, res, next) {
 //esta variable se comparte en toda la aplicacion.
     if (req.session && req.session.userLogged) {
         res.locals.isLogged = true;
-        res.locals.userLogged = req.session.userLogged
+        res.locals.userLogged = req.session.userLogged;
 
     }
 
