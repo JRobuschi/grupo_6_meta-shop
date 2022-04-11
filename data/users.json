@@ -1,1 +1,10 @@
-[]
+[
+ {
+  "id": 1,
+  "nombre": "alfonso",
+  "apellido": "garcia",
+  "email": "electronic.circus@gmail.com",
+  "password": "$2a$10$0DTRj.XhdYZfF5bGkSbjQ.WgfLrGsLBk38wbFT3tTfQ76Dts4OZzO",
+  "avatar": "1649634500297_img.jpg"
+ }
+]

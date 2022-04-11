@@ -5,13 +5,14 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
-app.use(userLoggedMiddleware);
 
 app.use(session({
     secret: 'secret word!',
     resave: true,
     saveUninitialized: true,
 }));
+
+app.use(userLoggedMiddleware);
 
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
