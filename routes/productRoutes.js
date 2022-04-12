@@ -2,6 +2,18 @@ const express = require("express");
 const router = express.Router();
 const upload = require ("../middlewares/multer");
 
+
+//Sequelize
+const db = require ('../db/models');
+
+const ModeloProduct = db.Product;
+
+//router.get('/', async (req, res, next) => {
+//    const producto = await ModeloProduct.findAll(); 
+//    return res.send(producto);
+//})
+
+
 //CONTROLADOR//
 const productsController = require('../controllers/productControllers');
 

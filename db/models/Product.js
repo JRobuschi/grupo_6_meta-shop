@@ -2,12 +2,27 @@ const sequelize = require('sequelize');
 
 const alias = 'Product';
 
-const columnas = {
-    id: {type: sequelize.DataTypes.INTEGER,
-    primaryKey: true,
-    allowNull: false},
-    pdtPrice: sequelize.DataTypes.INTEGER,
 
+
+const configuracion = {
+    timestamps: false,
+    tableName: 'productos'
 }
 
-const Product = sequelize.define(alias, caolumnas, configuracion);
+
+
+module.exports = (sequelize, DataTypes) => {
+    const columnas = {
+        id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+    },
+     pdtPrice: DataTypes.INTEGER,
+     pdtName: DataTypes.STRING
+    
+}
+
+    const Product = sequelize.define(alias, columnas, configuracion);
+    return Product
+};
