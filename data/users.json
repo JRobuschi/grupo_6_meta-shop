@@ -6,5 +6,21 @@
   "email": "electronic.circus@gmail.com",
   "password": "$2a$10$0DTRj.XhdYZfF5bGkSbjQ.WgfLrGsLBk38wbFT3tTfQ76Dts4OZzO",
   "avatar": "1649634500297_img.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": " juan",
+  "apellido": " juan",
+  "email": "juan@juan.com",
+  "password": "$2a$10$o/Xxb4fd0oenFdx.hSCmK.1j3nAQg0sFN6dbREMXvOTW9GHLlwiJC",
+  "avatar": "1649802585186_img.jpeg"
+ },
+ {
+  "id": 3,
+  "nombre": " juan ",
+  "apellido": " juan ",
+  "email": "juan@juan.com",
+  "password": "$2a$10$C.StEwPuWYGlbcft0vQCkOeJxHzZKhroszuCVXDzSvI8ZCR/rSLF6",
+  "avatar": "1649802780933_img.jpg"
  }
 ]
