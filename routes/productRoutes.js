@@ -4,14 +4,14 @@ const upload = require ("../middlewares/multer");
 
 
 //Sequelize
-//const db = require ('../db/models');
+// const db = require ('../db/models');
 
-//const ModeloProduct = db.Product;
+// const ModeloProduct = db.Product;
 
-//router.get('/', async (req, res, next) => {
- //   const producto = await ModeloProduct.findAll();
- //   return res.send(producto);
-//})
+// router.get('/', async (req, res, next) => {
+//    const producto = await ModeloProduct.findAll();
+//    return res.send(producto);
+// })
 
 
 //CONTROLADOR//
