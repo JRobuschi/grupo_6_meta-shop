@@ -100,16 +100,16 @@ h1{
   }
 
   .btn2:hover {
-    box-shadow: inset 172px 0 0 0 rgb(255, 255, 255);
+    box-shadow: inset 172px 0 0 0 rgb(249, 2, 2);
   }
   .btn2{
-    color: black;
+    color: rgb(0, 0, 0);
     padding: 12px 50px;
-    border: none;
+    border: white solid;
     cursor: pointer;
     border-radius: 1em;
-    margin-top: 50px;
-    background-color: transparent;
+    margin-top: 20px;
+    background-color: solid grey;
     box-shadow: inset 0 0 0 0 rgb(85, 24, 37);
     transition: ease-out 0.3s;
   }
