@@ -60,7 +60,7 @@ const usuariosControllers = {
 
 
     login: (req, res) => {//formulario de login
-        console.log(req.cookies);
+        //console.log(req.cookies);
         //console.log(req.cookies.testing) del request llegan cookies, yo quiero la testing
         return res.render('users/login');
     },
