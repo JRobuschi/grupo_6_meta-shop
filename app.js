@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require ('express-session');
 const app = express();
-const cookieParser = require('cookie-parser');
+const cookies = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 
@@ -12,7 +12,10 @@ app.use(session({
     saveUninitialized: true,
 }));
 
+app.use(cookies());
+
 app.use(userLoggedMiddleware);
+
 
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
@@ -75,7 +78,7 @@ app.use("/users", userRoutes);
 
 //midelwere de aplicacion 
 
-app.use(cookieParser());
+
 
 
 

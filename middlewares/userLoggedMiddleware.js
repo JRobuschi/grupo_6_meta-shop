@@ -1,13 +1,26 @@
+const User = require('../models/User'); //tengo que traer la base de datos para buscar el usuario q me va a dejaar usar la cookie
+
 function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = false;
-//esta variable se comparte en toda la aplicacion.
-    if (req.session && req.session.userLogged) {
-        res.locals.isLogged = true;
-        res.locals.userLogged = req.session.userLogged;
+
+    let emailInCookie = req.cookies.userEmail;
+    let userFromCookie = User.findByField('email', emailInCookie)
+
+console.log(userFromCookie);
+
+if (userFromCookie) {// si tengo el usuario de la cookie quiero ese usuario en session
+    req.session.userLogged = userFromCookie; 
+}
+//cuando se ejecute el if
+//locals dice q esta variable se comparte en toda la aplicacion.
+    if (req.session && req.session.userLogged) { //tengo alguien en session?
+        res.locals.isLogged = true; //si, entonces alguien esta loggueado
+        res.locals.userLogged = req.session.userLogged;//entonces puedo loguear a alguien automatico
 
     }
+    
 
-
+    console.log(userFromCookie);
 
     next();
 }

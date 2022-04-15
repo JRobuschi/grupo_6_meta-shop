@@ -17,6 +17,7 @@ const usuariosControllers = {
     },
 
     register: (req, res) => {
+       // res.cookie('testing', 'hola mundo', { maxAge: 1000* 30}) metodo del response para guardar algo en el navegador
         return res.render ('users/register');
     },
 
@@ -58,11 +59,16 @@ const usuariosControllers = {
     },
 
 
-    login: (req, res) => {
+    login: (req, res) => {//formulario de login
+        console.log(req.cookies);
+        //console.log(req.cookies.testing) del request llegan cookies, yo quiero la testing
         return res.render('users/login');
     },
 
     processLogin: (req, res) => {
+        
+        
+        //return res.send(req.body);mostrame en response de send el request del body
         let userToLogin = User.findByField('email', req.body.email);
         //busca en el modelo si esta registrado el email
         if (userToLogin){
@@ -71,8 +77,14 @@ const usuariosControllers = {
                 delete userToLogin.password; //saca el password de las recurrencias en vistas de session
             if  (req.session){
                 req.session.userLogged = userToLogin}
+
+            if (req.body.remember_user){//si en el request del body vino remember user
+                res.cookie('userEmail', req.body.email, {maxAge: (1000* 60)*2})
+                //en el response voy a setear una cookie q se llama userEmail y guarda el valor de lo que viene en el body del request la propiedad email y esa cookie dura 1 segundo x 1 minuto x 2 minutos
+            }  
                 
-                return res.redirect ('profile');
+            
+            return res.redirect ('profile');
                
             //};
                 
@@ -101,6 +113,7 @@ const usuariosControllers = {
 
     
     profile: (req,res) =>{
+        //console.log(req.cookies.userEmail);
        return res.render ('users/userProfile', {
             user: req.session.userLogged
         });
@@ -161,7 +174,7 @@ const usuariosControllers = {
         return res.redirect('/users/userProfile')
     },*/
     logout: (req,res) =>{
-        //res.clearCookie('email');
+        res.clearCookie('userEmail');//si no destruis la cookie quedas logueado por el tiempo de ejecucion de maxage
         req.session.destroy();
         return res.redirect("/")
     },
