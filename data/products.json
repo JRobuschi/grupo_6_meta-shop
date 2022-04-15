@@ -43,5 +43,14 @@
     "id": 18,
     "image": "image-1649638969169.jpg",
     "discount": null
+  },
+  {
+    "pdtName": "Disco solido samsung",
+    "pdtDescription": "Disco Sólido Interno Samsung Qvo 870 Mz-77q1t0b 1tb Negro",
+    "pdtCategori": "3",
+    "pdtPrice": 30000,
+    "id": 19,
+    "image": "image-1650057178826.jpg",
+    "discount": null
   }
 ]
