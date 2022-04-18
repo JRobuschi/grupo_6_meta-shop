@@ -24,3 +24,7 @@ var slideIndex = 1;
       slides[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " active";
     }
+
+window.addEventListener("click", function() {
+    this.alert('cuidado con lo q haces funciona todo perfecto no rompas nada');
+})
