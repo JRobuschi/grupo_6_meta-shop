@@ -2,19 +2,21 @@ const fs = require ('fs');
 const path = require ('path');
 
 //Sequalize
-//const db = require("../db/models/index");
-//const sequelize = db.sequelize;
+const db = require("../db/models/index");
+const sequelize = db.sequelize;
 
 //Ubicación del archivo JSON
 const filePath = path.join(__dirname,'../data/products.json');
 
 //Lectura del archivo JSON y parseado a array
-const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+//const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
 //lista de productos
 const controllers = {
     index: (req,res) => {
-        res.render('products', {productsArray})
+        db.Product.findAll()
+        .then(productsArray => res.render('products', {productsArray}))
+        
     },
 
     detail: (req, res) => {

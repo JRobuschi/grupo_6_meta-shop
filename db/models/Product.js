@@ -6,7 +6,7 @@ const alias = 'Product';
 
 const configuracion = {
     timestamps: false,
-    tableName: 'productos'
+    tableName: 'products'
 }
 
 
