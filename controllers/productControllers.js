@@ -1,6 +1,10 @@
 const fs = require ('fs');
 const path = require ('path');
 
+//Sequalize
+//const db = require("../db/models/index");
+//const sequelize = db.sequelize;
+
 //Ubicación del archivo JSON
 const filePath = path.join(__dirname,'../data/products.json');
 
@@ -51,7 +55,7 @@ const controllers = {
     },
     edit: (req, res) => {
         const idToFind = req.params.id
-        const product = productsArray.find (p => p.id == idToFind)
+        const product = db.find (p => p.id == idToFind)
         
         return res.render ('products/editProducts', {product})
     },
@@ -83,7 +87,7 @@ const controllers = {
     destroy: (req, res) => {
     
         const productId = req.params.id
-        const deletedProducts = productsArray.filter (p => p.id != productId)
+        const deletedProducts = db.filter (p => p.id != productId)
         
 
         fs.writeFileSync(filePath, JSON.stringify(deletedProducts, null, 2))
