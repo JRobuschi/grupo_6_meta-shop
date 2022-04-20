@@ -22,6 +22,15 @@ module.exports = (sequelize, DataTypes) => {
      pdtName: DataTypes.STRING
     
 }
+Product.associate = function(models){
+    Product.belongsTo(models.Category,{
+        as: "relCategoryProduct", 
+        through: "categoryproduct",
+        foreignKey: "idCategories",
+        otherKey: "idProduct",
+
+    })
+};
 
     const Product = sequelize.define(alias, columnas, configuracion);
     return Product

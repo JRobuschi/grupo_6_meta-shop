@@ -28,13 +28,25 @@ const controllers = {
         //return res.render ('detail', {product})
     },
 
-    create: (req, res) => {
-        const idToFind = req.params.id
-        const product = productsArray.find (p => p.id == idToFind)
-        
-        return res.render('products/newProducts', {product})
-        //return res.render('products/newProducts', {product})
+    create: async (req, res) => {
+        try {
+            let categories = await db.Category.findAll({});
+            return res.render("products/newProducts", { categories });
+        }
+        catch (error) {
+            console.log(error);
+        }
     },
+    //create: (req, res) => {
+    //    const idToFind = req.params.id
+    //    const product = productsArray.find (p => p.id == idToFind)
+        
+    //    return res.render('products/newProducts', {product})
+        //return res.render('products/newProducts', {product})
+
+    //    db.Product.create()
+    //    .then()
+    
     store: (req, res) => {
         const newProduct =  req.body;
 		const newProductImage = req.file;
