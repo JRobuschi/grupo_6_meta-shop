@@ -2,24 +2,24 @@ module.exports = (sequelize, DataTypes) => {
 
     const Category = sequelize.define("Category",
         {
-            idCategoryProduct:{
+            id:{
                 type:DataTypes.INTEGER,
                 primaryKey:true,
                 autoIncrement:true
+                
             },
-            typeOfCategory: DataTypes.STRING
+            name:DataTypes.STRING
         },
          {  
             tableName: "categories",
+            timestamps: false
             
          });
 
          Category.associate = function(models){
-            Category.belongsToMany(models.Product,{
-                as: "relCategoryProduct", 
-                through: "categoryproduct",
-                foreignKey: "idProduct",
-                otherKey: "idCategoriesProduct",
+            Category.hasMany(models.Product,{
+                as: "products", 
+                foreignKey: "idCategory",
     
             })
          };

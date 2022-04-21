@@ -14,7 +14,9 @@ const filePath = path.join(__dirname,'../data/products.json');
 //lista de productos
 const controllers = {
     index: (req,res) => {
-        db.Product.findAll()
+        db.Product.findAll({
+            include:["category"]
+        })
         .then(productsArray => res.render('products', {productsArray}))
         
     },

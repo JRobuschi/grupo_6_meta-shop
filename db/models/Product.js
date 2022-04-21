@@ -18,20 +18,20 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         allowNull: false,
     },
+     idCategory: DataTypes.INTEGER,
      pdtPrice: DataTypes.INTEGER,
      pdtName: DataTypes.STRING
     
 }
+ const Product = sequelize.define(alias, columnas, configuracion);
 Product.associate = function(models){
     Product.belongsTo(models.Category,{
-        as: "relCategoryProduct", 
-        through: "categoryproduct",
-        foreignKey: "idCategories",
-        otherKey: "idProduct",
-
+        as: "category", 
+        foreignKey: "idCategory",
+        
     })
 };
 
-    const Product = sequelize.define(alias, columnas, configuracion);
+   
     return Product
 };
