@@ -14,14 +14,11 @@
                 primaryKey:true,
                 autoIncrement:true
             },
-            userName: DataTypes.STRING,
+            nombre: DataTypes.STRING,
+            apellido: DataTypes.STRING,
             email: DataTypes.STRING,
-            userPassword: DataTypes.STRING,
-            adress: DataTypes.STRING,
-            postCode: DataTypes.STRING,
-            country: DataTypes.STRING,
-            phone: DataTypes.STRING,
-            birthdate: DataTypes.DATE
+            password: DataTypes.STRING,
+            image: DataTypes.STRING
         }, {
            
         });
