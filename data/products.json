@@ -52,5 +52,23 @@
     "id": 19,
     "image": "image-1650057178826.jpg",
     "discount": null
+  },
+  {
+    "pdtName": "Rig Minero x6 3070ti",
+    "pdtDescription": "Rig Mineria Ethereum X6 3070ti 360 Mh/s",
+    "pdtCategori": "1",
+    "pdtPrice": 1650000,
+    "id": 20,
+    "image": "image-1650638501945.jpg",
+    "discount": null
+  },
+  {
+    "pdtName": "Memoria SSD 2tb",
+    "pdtDescription": "Memoria de 2tb marca samsung  SSD",
+    "pdtCategori": "3",
+    "pdtPrice": 25000,
+    "id": 21,
+    "image": "image-1650638601906.jpg",
+    "discount": null
   }
 ]

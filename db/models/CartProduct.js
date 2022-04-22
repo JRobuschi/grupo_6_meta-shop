@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
 
 
 
-    /*CartProduct.associate = function (models) 
+    CartProduct.associate = function (models) 
     { 
         CartProduct.belongsTo(models.Product, {
             as: "relCartproductProduct",
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
             as: "relCartproductCart",
             foreignKey: "cartId"
         })
-    };*/
+    };
 
     return CartProduct;
     

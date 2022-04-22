@@ -9,7 +9,7 @@ const sequelize = db.sequelize;
 const filePath = path.join(__dirname,'../data/products.json');
 
 //Lectura del archivo JSON y parseado a array
-//const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
 //lista de productos
 const controllers = {

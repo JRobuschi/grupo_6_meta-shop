@@ -30,6 +30,10 @@ Product.associate = function(models){
         foreignKey: "idCategory",
         
     })
+    Product.hasMany(models.CartProduct,{
+        as: "",
+        foreignKey:"",
+    })
 };
 
    
