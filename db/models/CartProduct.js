@@ -2,13 +2,18 @@ module.exports = (sequelize, DataTypes) => {
 
     const CartProduct = sequelize.define("CartProduct",
         {
+            idCartProduct: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                allowNull: false,
+            },
             productPrice: DataTypes.DECIMAL(18, 2),
             quantity: DataTypes.INTEGER,
-            //idProduct: DataTypes.INTEGER,
-           // idCart: DataTypes.INTEGER
+            idProduct: DataTypes.INTEGER,
+            idCart: DataTypes.INTEGER
         }, {
             
-            tableName:"cartproduct",
+            tableName:"cartProduct",
            
         
             
