@@ -1,10 +1,8 @@
 /**
- * 
  * @param {import('sequelize').Sequelize}sequelize
  * @param {import('sequelize/dist').DataTypes}DataTypes
- * 
  */
-
+ 
  module.exports = (sequelize, DataTypes) => {
 
     const User = sequelize.define("User",
@@ -19,8 +17,12 @@
             email: DataTypes.STRING,
             password: DataTypes.STRING,
             image: DataTypes.STRING
-        }, {
-           
+        }, 
+        {
+            
+            timestamps: false,
+            tableName: 'users'
+            
         });
 
         User.associate = function (models) {

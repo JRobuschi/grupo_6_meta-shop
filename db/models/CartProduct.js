@@ -1,3 +1,11 @@
+const sequelize = require('sequelize');
+
+const alias = 'CartProduct';
+
+
+
+
+
 module.exports = (sequelize, DataTypes) => {
 
     const CartProduct = sequelize.define("CartProduct",
@@ -14,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         }, {
             
             tableName:"cartProduct",
-           
+            timestamps: false,
         
             
         });
