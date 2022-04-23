@@ -2,7 +2,7 @@ const fs = require ('fs');
 const path = require ('path');
 
 //Sequalize
-const db = require("../db/models/index");
+const db = require("../db/models");
 const sequelize = db.sequelize;
 
 //Ubicación del archivo JSON
@@ -30,10 +30,12 @@ const controllers = {
         //return res.render ('detail', {product})
     },
 
+    
+    
     create: async (req, res) => {
         try {
-            let categories = await db.Category.findAll({});
-            return res.render("products/newProducts", { categories });
+            let categories = await db.Product.findAll();
+            return res.render("products/newProducts", { categories: categories });
         }
         catch (error) {
             console.log(error);
