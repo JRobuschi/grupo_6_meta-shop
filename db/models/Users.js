@@ -18,11 +18,9 @@
             password: DataTypes.STRING,
             image: DataTypes.STRING
         }, 
-        {
-            
+        {           
             timestamps: false,
-            tableName: 'users'
-            
+            tableName: 'users'            
         });
 
         User.associate = function (models) {

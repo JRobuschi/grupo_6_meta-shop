@@ -20,19 +20,19 @@ module.exports = (sequelize, DataTypes) => {
     },
      idCategory: DataTypes.INTEGER,
      pdtPrice: DataTypes.INTEGER,
-     pdtName: DataTypes.STRING
-    
+     pdtName: DataTypes.STRING      
 }
+
  const Product = sequelize.define(alias, columnas, configuracion);
-Product.associate = function(models){
+ Product.associate = function(models){
     Product.belongsTo(models.Category,{
         as: "category", 
-        foreignKey: "idCategory",
+        foreignKey: "id",
         
     })
     Product.hasMany(models.CartProduct,{
-        as: "",
-        foreignKey:"",
+        as: "productCart",
+        foreignKey:"idCartProduct",
     })
 };
 

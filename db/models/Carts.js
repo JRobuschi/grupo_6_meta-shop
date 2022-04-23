@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
             },
             idUser: DataTypes.INTEGER
         }, {
-            
+            tableName: "carts",
+            timestamps: false
         });
 
 
@@ -24,8 +25,6 @@ module.exports = (sequelize, DataTypes) => {
             as: "relCartProduct", 
             through: "cartproduct",
             foreignKey: "idCart",
-            otherKey: "idProduct",
-
         })
     };
 

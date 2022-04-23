@@ -3,9 +3,6 @@ const sequelize = require('sequelize');
 const alias = 'CartProduct';
 
 
-
-
-
 module.exports = (sequelize, DataTypes) => {
 
     const CartProduct = sequelize.define("CartProduct",
@@ -19,12 +16,10 @@ module.exports = (sequelize, DataTypes) => {
             quantity: DataTypes.INTEGER,
             idProduct: DataTypes.INTEGER,
             idCart: DataTypes.INTEGER
-        }, {
-            
+        }, 
+        {          
             tableName:"cartProduct",
-            timestamps: false,
-        
-            
+            timestamps: false,          
         });
 
 
@@ -33,14 +28,14 @@ module.exports = (sequelize, DataTypes) => {
     { 
         CartProduct.belongsTo(models.Product, {
             as: "relCartproductProduct",
-            foreignKey: "productId"
+            foreignKey: "id"
         })
     };
     CartProduct.associate = function (models) 
     { 
         CartProduct.belongsTo(models.Cart, {
             as: "relCartproductCart",
-            foreignKey: "cartId"
+            foreignKey: "idCart"
         })
     };
 
