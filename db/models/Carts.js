@@ -25,6 +25,8 @@ module.exports = (sequelize, DataTypes) => {
             as: "relCartProduct", 
             through: "cartproduct",
             foreignKey: "idCart",
+            otherKey: "idUser",
+            timestamps: false
         })
     };
 
