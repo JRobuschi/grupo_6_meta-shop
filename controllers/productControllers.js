@@ -35,9 +35,11 @@ const controllers = {
     
     
     create: async (req, res) => {
-        try {
-            let categories = await db.Product.findAll();
-            return res.render("products/newProducts", { categories: categories });
+        try {            
+            let products = await db.Product.findAll();
+           
+
+            return res.render("products/newProducts", { products });
         }
         catch (error) {
             console.log(error);
