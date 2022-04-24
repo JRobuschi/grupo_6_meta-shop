@@ -48,6 +48,14 @@ const controllers = {
             console.log(error);
         }
     },
+    //PARTE A PROBAR
+    //create: function(req, res){
+        //const datos = req.body;
+        //db.product.create(req.body)
+           
+    //}
+
+    //PARTE VIEJA
     //create: (req, res) => {
     //    const idToFind = req.params.id
     //    const product = productsArray.find (p => p.id == idToFind)
