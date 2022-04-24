@@ -37,10 +37,10 @@ const controllers = {
 
     
     
-    create: async (req, res) => {
+    create: async (req, res) => { //es una promesa, es un codigo asincronico
         try {            
-            let products = await db.Product.findAll();
-           
+            let products = await db.Product.findAll(); //await espera q se complete la promesa
+           //then realiza todo al mismo tiempo
 
             return res.render("products/newProducts", { products });
         }
@@ -113,7 +113,16 @@ const controllers = {
         controllers.dbReWrite()
 
         return res.redirect('/products')
-
+        //sequalize a ver 2horas 6 minutos manipulacion de datos
+        //async function (req, res){
+        //const idToFind(producto a editar) = req.params.id;
+        //await Product.update(
+               // req.body,{
+               //    where: {
+                //       id: idToFind
+                //   }
+              // })
+             //  return res.send ('producto actualizado')
 
        // return res.render('/products/editProducts'); //'products/editProducts/' + productId
     },
