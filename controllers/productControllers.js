@@ -23,6 +23,9 @@ const controllers = {
          })
     },
 
+    
+	
+
     detail: (req, res) => {
         const idToFind = req.params.id
         const product = productsArray.find (p => p.id == idToFind)
@@ -130,7 +133,7 @@ const controllers = {
 		} else {
 			newProduct.discount = Number(newProduct.discount)
 		}
-	},
+	},   
 	asignIdToProduct: function () {
 		return productsArray[productsArray.length -1].id +1;
 	}
