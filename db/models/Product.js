@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     },
      idCategory: DataTypes.INTEGER,
      pdtPrice: DataTypes.INTEGER,
-     pdtName: DataTypes.STRING      
+     pdtName: DataTypes.STRING,
+     image: DataTypes.BLOB,   
 }
 
  const Product = sequelize.define(alias, columnas, configuracion);
