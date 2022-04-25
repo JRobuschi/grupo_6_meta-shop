@@ -10,10 +10,16 @@ const filePath = path.join(__dirname,'../data/products.json');
 
 //Lectura del archivo JSON y parseado a array
 //const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+const productsArray = db.Product.findAll({
+    include:["category"]
+})
+.then(data => data);
+
 
 //lista de productos
 const controllers = {
     index: (req,res) => {
+        
         db.Product.findAll({
             include:["category"]
         })
@@ -22,9 +28,6 @@ const controllers = {
              res.send(err)
          })
     },
-
-    
-	
 
     detail: (req, res) => {
         const idToFind = req.params.id
@@ -93,24 +96,24 @@ const controllers = {
         return res.render ('products/editProducts', {product})
     },
     
-    update: (req, res) => {
+    update: async (req, res) => {
         const idToFind = req.params.id
-        const productIndex = products.findIndex(product => product.id == idToFind)
+        const productToEdit = await db.Product.findByPk(idToFind);
         const editedProduct = req.body;
 
-        productsArray[productIndex].pdtName = editedProduct.pdtName;
-        productsArray[productIndex].pdtDescription = editedProduct.pdtDescription;
-        productsArray[productIndex].pdtPrice = Number(editedProduct).pdtPrice;
-        if (req.body.pdtCategori == ''){
-            productsArray[productIndex].pdtCategori = products[productIndex].pdtCategori;
-        }else{
-            productsArray[productIndex].pdtCategori = editedProduct.pdtCategori
-        }
-        productsArray[productIndex].pdtDescription = editedProduct.pdtDescription
+        productToEdit.pdtName = editedProduct.pdtName;
+        productToEdit.pdtDescription = editedProduct.pdtDescription;
+        productToEdit.pdtPrice = Number(editedProduct).pdtPrice;
+        //if (req.body.pdtCategori == ''){
+         //   productToEdit.pdtCategori = products[productIndex].pdtCategori;
+        //}else{
+        //   productToEdit.pdtCategori = editedProduct.pdtCategori
+        //}
+        productToEdit.pdtDescription = editedProduct.pdtDescription
         if(req.file) {
-            productsArray[productIndex].pdtImg = req.file.filename;
+            productToEdit.image = req.file.filename;
         }
-        controllers.dbReWrite()
+        await productToEdit.save();
 
         return res.redirect('/products')
         //sequalize a ver 2horas 6 minutos manipulacion de datos
@@ -150,10 +153,10 @@ const controllers = {
 		} else {
 			newProduct.discount = Number(newProduct.discount)
 		}
-	},   
-	asignIdToProduct: function () {
-		return productsArray[productsArray.length -1].id +1;
-	}
+	}   
+	//asignIdToProduct: function () {
+	//	return productsArray[productsArray.length -1].id +1;
+	//}
 };
 
 module.exports = controllers;
