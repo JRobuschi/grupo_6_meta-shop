@@ -9,11 +9,7 @@ const sequelize = db.sequelize;
 const filePath = path.join(__dirname,'../data/products.json');
 
 //Lectura del archivo JSON y parseado a array
-//const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-const productsArray = db.Product.findAll({
-    include:["category"]
-})
-.then(data => data);
+//const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'))
 
 
 //lista de productos
@@ -29,12 +25,15 @@ const controllers = {
          })
     },
 
-    detail: (req, res) => {
-        const idToFind = req.params.id
-        const product = productsArray.find (p => p.id == idToFind)
-        const discounted = Math.round(product.ptdPrice - (product.ptdPrice * product.dicount) / 100)
+    detail: async (req, res) => {
+        const idToFind = req.params.id;
+        db.Product.findByPk(idToFind)
+        .then(function (producto){
+            res.render('products/detalleProducto', {producto: producto})
+        })
+        //const productDetail = await db.Product.findByPk(idToFind);
 
-        return res.render ('products/detalleProducto', {product, discounted})
+        //return res.render ('products/detalleProducto', {productDetail})
         //return res.render ('detail', {product})
     },
 
@@ -69,26 +68,35 @@ const controllers = {
     //    db.Product.create()
     //    .then()
     
-    store: (req, res) => {
+    store: async (req, res) => {
         const newProduct =  req.body;
-		const newProductImage = req.file;
-	
-		if (req.file && newProductImage.size < 3145728) {
+		//const newProductImage = req.file;
+
+        const productCreated = await db.Product.create({
+            pdtName: newProduct.pdtName,
+            pdtPrice: newProduct.pdtPrice,
+            pdtDescription: newProduct.pdtDescription,
+            image: "/images/products/" + req.file.filename
+        })
+
+
+
+		//if (req.file && newProductImage.size < 3145728) {
 			
-		controllers.createNewProduct(newProduct,newProductImage)	
+		//controllers.createNewProduct(newProduct,newProductImage)	
 		
-		productsArray.push (newProduct)
+		//productsArray.push (newProduct)
 
-		controllers.dbReWrite()
+		//controllers.dbReWrite()
 
-		res.redirect ('/products')
+		res.redirect ('/products/' + productCreated.id) 
 
-	} else if (req.file && newProductImage.size > 3145729) {
-		res.send('El archivo es demasiado pesado')
-	} else {
-		res.send ('No adjuntaste ninguna imagen')
-	}
-    },
+	}, //else if (req.file && newProductImage.size > 3145729) {
+		//res.send('El archivo es demasiado pesado')
+	//} else {
+		//res.send ('No adjuntaste ninguna imagen')
+	//}
+    
     edit: (req, res) => {
         const idToFind = req.params.id
         const product = db.find (p => p.id == idToFind)
@@ -137,23 +145,23 @@ const controllers = {
 
         fs.writeFileSync(filePath, JSON.stringify(deletedProducts, null, 2))
         return res.redirect('/products')
-    },
+    }
 
-    dbReWrite() { 
-		fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
-	},
-	createNewProduct: function (newProduct,newProductImage) {
+    //dbReWrite() { 
+	//	fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
+	//},
+	// createNewProduct: function (newProduct,newProductImage) {
 
-		newProduct.id = controllers.asignIdToProduct();
-		newProduct.pdtPrice = Number(newProduct.pdtPrice);
-		newProduct.image = newProductImage.filename;
+	// 	//newProduct.id = controllers.asignIdToProduct();
+	// 	newProduct.pdtPrice = Number(newProduct.pdtPrice);
+	// 	newProduct.image = newProductImage.filename;
 		
-		if (newProduct.discount == '') {
-			newProduct.discount = 0
-		} else {
-			newProduct.discount = Number(newProduct.discount)
-		}
-	}   
+	// 	if (newProduct.discount == '') {
+	// 		newProduct.discount = 0
+	// 	} else {
+	// 		newProduct.discount = Number(newProduct.discount)
+	// 	}
+	// }   
 	//asignIdToProduct: function () {
 	//	return productsArray[productsArray.length -1].id +1;
 	//}

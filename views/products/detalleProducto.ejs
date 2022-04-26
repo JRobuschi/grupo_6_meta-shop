@@ -13,23 +13,23 @@
 <br>
 <br>
 <div class="col-12">
-	<h2 class="products-title">Detalle del producto: <%= product.pdtName %> </h2> 
+	<h2 class="products-title">Detalle del producto: <%= producto.pdtName %> </h2> 
 </div>
 <div class="cart-item-pr">
-	<a href="/productDetail">
+	
 	<form action="">
 		<div class="cart-product-pr">
 			<div class="">
-				<div><img class="imgProd" src="/images/products/<%=product.image %>" alt="product image"></div>
+				<div><img class="imgProd" src="<%=producto.image %>" alt="product image"></div>
 			</div>
 			<div class="cart-product-info-pr">
 				<p class="product-detail-description">
-					<%= product.pdtDescription %>
+					<%= producto.pdtDescription %>
 				</p>
 				<p class="product-detail-price small">
-					<span>$<%= product.pdtPrice%></span>
+					<span>$<%= producto.pdtPrice%></span>
 					
-					<b><%= product.discount%></b>
+					<b><%= producto.discount%></b>
 				</p>
 			</div>
 		</div>
@@ -52,13 +52,10 @@
 						
 						
 			<p class="product-detail-price small">
-				<span>$<%= product.pdtPrice%></span>
+				<span>$<%= producto.pdtPrice%></span>
 				
-				<b><%= product.discount%></b>
 			</p>
-			<p class="product-detail-price">
-				$<%= discounted%>
-			</p>
+			
 			
 		
 		<ul class="actions-list">
@@ -75,16 +72,16 @@
 		
 		<hr>
 		
-		<!--a href="/products/<%= product.id %>" class="action-button edit">EDITAR PRODUCTO</a-->
-		<form action="/products/<%= product.id %>/edit" method="GET" style="display: inline-flex">
+		<!--a href="/products/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a-->
+		<form action="/products/<%= producto.id %>/edit" method="GET" style="display: inline-flex">
 			<button type="submit" class="action-button edit">EDITAR PRODUCTO</button>
 		</form>
-			<form action="/products/<%=product.id%>/delete" method="POST" style="display: inline-flex">
+			<form action="/products/<%=producto.id%>/delete" method="POST" style="display: inline-flex">
 			<button type="submit" class="action-button delete">ELIMINAR</button>
 		</form>
 		</article>
 	</form>
-</a>
+
 </div>
 
 

@@ -17,11 +17,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
+        autoIncrement: true,
     },
+    pdtDescription: DataTypes.STRING,
      idCategory: DataTypes.INTEGER,
      pdtPrice: DataTypes.INTEGER,
      pdtName: DataTypes.STRING,
-     image: DataTypes.BLOB,   
+     image: DataTypes.STRING,   
 }
 
  const Product = sequelize.define(alias, columnas, configuracion);
