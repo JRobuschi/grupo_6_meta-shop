@@ -1,5 +1,6 @@
 const fs = require ('fs');
 const path = require ('path');
+const { CLIENT_RENEG_LIMIT } = require('tls');
 
 //Sequalize
 const db = require("../db/models");
@@ -26,6 +27,7 @@ const controllers = {
     },
 
     detail: async (req, res) => {
+        console.log("Estoy en detailllllll")
         const idToFind = req.params.id;
         db.Product.findByPk(idToFind)
         .then(function (producto){
@@ -97,12 +99,26 @@ const controllers = {
 		//res.send ('No adjuntaste ninguna imagen')
 	//}
     
-    edit: (req, res) => {
-        const idToFind = req.params.id
-        const product = db.find (p => p.id == idToFind)
+    edit: async(req, res) => {
+        console.log('HOLAAAAAAAAAAAAAAAAAAAA')
+        console.log(req.params);
+        let products = await db.Product.findByPk(req.params.id, {
+            include: {
+                all: true
+            }
+        });    
         
-        return res.render ('products/editProducts', {product})
-    },
+        let categories = await db.Category.findAll();
+
+        if (products) {
+            
+            return res.render('editProducts', {products: products, categories: categories});
+        }
+        else {
+            res.redirect('/products')
+        }
+    },    
+    
     
     update: async (req, res) => {
         const idToFind = req.params.id
@@ -137,15 +153,27 @@ const controllers = {
 
        // return res.render('/products/editProducts'); //'products/editProducts/' + productId
     },
-    destroy: (req, res) => {
     
-        const productId = req.params.id
-        const deletedProducts = db.filter (p => p.id != productId)
-        
 
-        fs.writeFileSync(filePath, JSON.stringify(deletedProducts, null, 2))
-        return res.redirect('/products')
-    }
+    destroy: async (req, res) => {
+        const productToDelete = await db.Product.findByPk(req.params.id, {
+            include: { all: true }
+        })
+        
+        productToDelete.removerelCartproductProduct(productToDelete.relCartproductProduct);
+        productToDelete.removerelCategoriesProduct(productToDelete.relCategoriesProduct);
+        
+        
+        const result = await productToDelete.destroy();
+        return res.redirect("/products");
+    },
+
+
+
+
+
+
+
 
     //dbReWrite() { 
 	//	fs.writeFileSync(filePath, JSON.stringify(productsArray, null, 2))
