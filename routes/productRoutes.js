@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const upload = require ("../middlewares/multer");
-const authMiddleware = require("../middlewares/authMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware");
 
 //Sequelize
 // const db = require ('../db/models');
@@ -24,12 +24,12 @@ router.get('/', productsController.index);
 router.get('/create', authMiddleware, productsController.create);
 router.post('/', upload.single('image'), productsController.store);
 
-//EDIT//
-router.get('/edit/:id', productsController.edit);
-router.put('/:id', upload.single('image'), productsController.update);
-
 //GET// 
 router.get('/:id/', productsController.detail);
+
+//EDIT//
+router.get('/:id/edit', productsController.edit);
+router.put('/:id', upload.single('image'), productsController.update);
 
 //DELETE//
 router.post('/:id/delete', productsController.destroy);
