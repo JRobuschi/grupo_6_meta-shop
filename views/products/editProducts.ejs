@@ -11,21 +11,21 @@
 <main>
     
 
-    <form method="POST" action="/product/:id/edit?_method=PUT" enctype="multipart/form-data">
+    <form method="POST" action="/product/edit/<%=producto.id%>" method="PUT" enctype="multipart/form-data">
       <div class="newProducts">  
         <h4 class="page-banner-add">Editar un Producto</h4>
         
           <div class="parts">     
             <label>Nombre del Producto</label>
-            <input type="text" name="pdtName" id="pdtName" value="<%=product.pdtName %>" required>
+            <input type="text" name="pdtName" id="pdtName" value="<%=producto.pdtName %>" required>
         </div> 
         <div class="parts"> 
             <label>Descripcion</label>
-            <input type="text" name="pdtDescription" id="pdtDescription" value="<%=product.pdtDescription%>" required>
+            <input type="text" name="pdtDescription" id="pdtDescription" value="<%=producto.pdtDescription%>" required>
         </div> 
         <div class="categori" class="parts"> 
             <label>Categoria</label>
-             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" value="<%=product.pdtCategori%>" required>
+             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" value="<%=producto.pdtCategori%>" required>
             <option value="1">Seleccionar categoria</option> 
             <option value="2">Mineria</option> 
             <option value="3">Almacenamiento</option>
@@ -38,7 +38,7 @@
        
         <div class="parts"> 
             <label>Precio</label>
-            <input type="text" name="pdtPrice" id="pdtPrice" value="<%=product.pdtPrice%>" required>
+            <input type="text" name="pdtPrice" id="pdtPrice" value="<%=producto.pdtPrice%>" required>
         </div> 
 
         <div class="parts"> <!--multer image archivo-->

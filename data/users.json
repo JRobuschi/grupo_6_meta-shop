@@ -22,5 +22,21 @@
   "email": "juan@juan.com",
   "password": "$2a$10$C.StEwPuWYGlbcft0vQCkOeJxHzZKhroszuCVXDzSvI8ZCR/rSLF6",
   "avatar": "1649802780933_img.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": " juan",
+  "apellido": " juan",
+  "email": "juan@juan.com",
+  "password": "$2a$10$okemfOSd.0qI9hPQmiprx.8wKJr64CLITIMpReLyG92V1DSH6NxgW",
+  "avatar": "1651003594194_img.jpeg"
+ },
+ {
+  "id": 5,
+  "nombre": "juan ",
+  "apellido": "juan",
+  "email": "juan@juan.com",
+  "password": "$2a$10$ygAsEqwXGcUMTWeyq5auS.0tV3Mvbzbik4LZEXEkCo5i.rj/BPYLe",
+  "avatar": "1651003642733_img.jpg"
  }
 ]
