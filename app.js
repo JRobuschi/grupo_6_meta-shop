@@ -28,7 +28,7 @@ const publicPath = path.resolve(__dirname, './public');
 app.use( express.static(publicPath) );
 
 app.listen(3080, () => {
-    console.log("Servidor haciendo un wireframe")
+    console.log("Servidor cobrando $1000 pesitos")
 });
 
 
