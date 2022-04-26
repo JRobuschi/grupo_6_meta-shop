@@ -34,21 +34,21 @@ const usuariosControllers = {
 
         let userInDB = User.findByField('email', req.body.email);//buscaen la base el mail para no dejarte registrar 2 veces el mismo mail
 
-        if (userInDB) {
+        if (userInDB) { //si el usuario esta en base de datos error
             res.render('./users/register', {
             errors: {
                 email: {
                     msg: 'este mail ya esta registrado'
                 }
             },
-            oldData: req.body
+            oldData: req.body// info q viaja e en el body para eldata mantiene la informacion q esta correcta en el formulario
         });
 
         }
 
         
         let userToCreate = {
-            ...req.body,
+            ...req.body, //spreadoperator "todo lo q traiga el body"
             password: bcryptjs.hashSync(req.body.password, 10), //encirptador del pas
             avatar: req.file.filename //renombra la imagen
         }
@@ -68,14 +68,14 @@ const usuariosControllers = {
     processLogin: (req, res) => {
         
         
-        //return res.send(req.body);mostrame en response de send el request del body
+        
         let userToLogin = User.findByField('email', req.body.email);
         //busca en el modelo si esta registrado el email
         if (userToLogin){
-            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //el metodo modulo bycript y el metodo comparesyn para validar el
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //el metodo modulo bycript y el metodo comparesyn para validar el password q viene del body en el request en texto plano
             if(isOkThePassword) {
-                delete userToLogin.password; //saca el password de las recurrencias en vistas de session
-            if  (req.session){
+                delete userToLogin.password; //saca el password de las recurrencias en vistas de session para q no el pass no este llendo x todos lados
+            if  (req.session){ //toda la informacion de session es lo q esta dando ok en userlogged
                 req.session.userLogged = userToLogin}
 
             if (req.body.remember_user){//si en el request del body vino remember user
