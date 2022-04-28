@@ -17,7 +17,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 //CONTROLADOR//
 const productsController = require('../controllers/productControllers');
 
-//TODOS LOS PRODUCOTS//
+//TODOS LOS PRODUCTOS//
 router.get('/', productsController.index);
 
 //CREATE//
@@ -28,11 +28,11 @@ router.post('/', upload.single('image'), productsController.store);
 router.get('/:id/', productsController.detail);
 
 //EDIT//
-router.get('/:id/edit', productsController.edit);
+router.get('/edit/:id', productsController.edit);
 router.put('/:id', upload.single('image'), productsController.update);
 
 //DELETE//
-router.post('/:id/delete', productsController.destroy);
+router.post('/delete/:id', productsController.destroy);
 
 
 module.exports = router;
