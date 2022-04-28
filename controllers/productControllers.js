@@ -100,7 +100,7 @@ const controllers = {
 	//}
     
     edit: async(req, res) => {
-        console.log('HOLAAAAAAAAAAAAAAAAAAAA')
+        
         console.log(req.params);
         let products = await db.Product.findByPk(req.params.id, {
             include: {
@@ -112,7 +112,7 @@ const controllers = {
 
         if (products) {
             
-            return res.render('editProducts', {products: products, categories: categories});
+            return res.render('/editProducts', {products: products, categories: categories});
         }
         else {
             res.redirect('/products')
@@ -160,7 +160,7 @@ const controllers = {
             include: { all: true }
         })
         
-        productToDelete.removerelCartproductProduct(productToDelete.relCartproductProduct);
+        productToDelete.removerelCartProductProduct(productToDelete.relCartproductProduct);
         productToDelete.removerelCategoriesProduct(productToDelete.relCategoriesProduct);
         
         
