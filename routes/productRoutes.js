@@ -24,15 +24,15 @@ router.get('/', productsController.index);
 router.get('/create', authMiddleware, productsController.create);
 router.post('/', upload.single('image'), productsController.store);
 
-//GET// 
-router.get('/:id/', productsController.detail);
+//DELETE//
+router.post('/delete/:id', productsController.destroy);
 
 //EDIT//
 router.get('/edit/:id', productsController.edit);
 router.put('/:id', upload.single('image'), productsController.update);
 
-//DELETE//
-router.post('/delete/:id', productsController.destroy);
 
 
+//GET// 
+router.get('/:id/', productsController.detail);
 module.exports = router;
