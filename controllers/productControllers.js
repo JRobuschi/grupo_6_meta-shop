@@ -102,7 +102,7 @@ const controllers = {
     edit: async(req, res) => {
         
         console.log(req.params);
-        let products = await db.Product.findByPk(req.params.id, {
+        let product = await db.Product.findByPk(req.params.id, {
             include: {
                 all: true
             }
@@ -110,9 +110,9 @@ const controllers = {
         
         let categories = await db.Category.findAll();
 
-        if (products) {
+        if (product) {
             
-            return res.render('/editProducts', {products: products, categories: categories});
+            return res.render('products/editProducts', {producto: product, categories: categories});
         }
         else {
             res.redirect('/products')
@@ -160,11 +160,9 @@ const controllers = {
             include: { all: true }
         })
         
-        productToDelete.removerelCartProductProduct(productToDelete.relCartproductProduct);
-        productToDelete.removerelCategoriesProduct(productToDelete.relCategoriesProduct);
+        await productToDelete.destroy();
         
-        
-        const result = await productToDelete.destroy();
+               
         return res.redirect("/products");
     },
 
