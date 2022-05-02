@@ -10,4 +10,3 @@ module.exports = guestMiddleware;
 
 //este middleware evita q te puedas registrar o loguear nuevamente una vez ya logueado
 
-//este midleware evita q veas la vista de login y registger una vez q te logueaste

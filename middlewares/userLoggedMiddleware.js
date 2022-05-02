@@ -2,7 +2,7 @@ const User = require('../models/User'); //tengo que traer la base de datos para 
 
 function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = false;
-
+//si esto da falso no se muestra informacion de usuario en la navbar, en el form se muestra el uso del midleware
     let emailInCookie = req.cookies.userEmail;
     let userFromCookie = User.findByField('email', emailInCookie)
 
@@ -15,7 +15,7 @@ if (userFromCookie) {// si tengo el usuario de la cookie quiero ese usuario en s
 //locals dice q esta variable se comparte en toda la aplicacion.
     if (req.session && req.session.userLogged) { //tengo alguien en session?
         res.locals.isLogged = true; //si, entonces alguien esta loggueado
-        res.locals.userLogged = req.session.userLogged;//entonces puedo loguear a alguien automatico
+        res.locals.userLogged = req.session.userLogged;//entonces puedo mostrar la info del user en el perfil automatico
 
     }
     
