@@ -46,7 +46,7 @@ const controllers = {
             let products = await db.Product.findAll(); //await espera q se complete la promesa
            //then realiza todo al mismo tiempo
 
-            return res.render("products/newProducts", { products });
+            return res.render("products/formularioCreacionProd", { products });
         }
         catch (error) {
             console.log(error);

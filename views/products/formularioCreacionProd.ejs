@@ -1,59 +1,73 @@
 <!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
-<%- include('partials/head', {title: 'Formulario de creación'}) %>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+    <%- include('../partials/addProductcss.ejs') %>
+</head>
+
 <body>
-	<!-- Header -->
-	<%- include('partials/headerNavbar') %>
-	<!-- /Header -->
+    <header>
+        <section>
+    <%- include('../partials/headerNavbar.ejs') %>
+</section>
+</header>
+<main class="main">
+    
 
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Formulario de creación de productos</h2>
-			</div>
-		</div>
-		<div class="col-12">
-			<form action="/products/" method="POST" enctype="multipart/form-data">
-				<div class="row product-detail">
-					<div class="col-12 col-md-6">
-						<label for="image" class="form-label">Subir Imagen del Producto</label>
-						<input type="file" id="image" name="image"  class="form-input">
-					</div>
-					<div class="col-12 col-md-6">
-						<label for="name" class="form-label">Nombre del producto:</label>
-						<input type="text" id="pdtName" name="pdtName" placeholder="Ej: Zapatillas Reebok" class="form-input">
-					</div>
-					<div class="col-12 col-md-6">
-						<label for="price" class="form-label">Precio del producto:</label>
-						<input type="text" id="pdtPrice" name="pdtPrice" placeholder="Ej: 5678" class="form-input">
-					</div>					
-					<div class="col-12 col-md-6">
-						<label for="category" class="form-label">Categoría:</label>
-						<select name="idCategory" id="idCategory" class="form-input">
-							<option value="">Elegí</option>
-							<option value="in-sale">En oferta</option>
-							<option value="visited">Últimos agregados</option>
-						</select>
-					</div>
-					<div class="col-12">
-						<label for="description" class="form-label">Descipción:</label>
-						<textarea name="pdtDescription" id="pdtDescription" class="form-input"></textarea>
-					</div>
-					<div class="col-12">
-						<form action="/products/" method="POST">
-						<button type="submit" class="buy-now-button">Guardar producto</button>
-					</form>
-					</div>
-				</div>
-			</form>
-		</div>
+    <form method="POST" action="/products" enctype="multipart/form-data" class="productCreate">
+     <div class="newProducts">
+        <h4 class="page-banner-add">Agregar un Producto</h4>
+        <br>
+        <div class="parts">     
+            <label>Nombre del Producto</label>
+            <input type="text" name="pdtName" id="pdtName" class="form-input-name" required>
+        </div> 
+        <div class="parts"> 
+            <label>Descripcion</label>
+            <input type="text" name="pdtDescription" id="pdtDescription" class="form-input-description" required>
+        </div> 
+        <div class="categori" class="parts"> 
+            <label>Categoria</label>
+             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" required>
+            <option value="1">Seleccionar categoria</option> 
+            <option value="2">Mineria</option> 
+            <option value="3">Almacenamiento</option>
+            <option value="4">Monitores</option> 
+            <option value="5">Metaverso</option>
+            
+         </select>
+        </div> 
+       
+       
+        <div class="parts"> 
+            <label>Precio</label>
+            <input type="text" name="pdtPrice" id="pdtPrice" required>
+        </div> 
 
-	</div>
-	<!-- /todos los productos -->
+        <div class="parts"> <!--multer image archivo-->
+            <label for="image">Imagen del Producto</label>
+             <input  type="file" name="image" id="image" placeholder="Buscar" required>
+        </div>
 
-	<!-- footer -->
-	<%- include('partials/footer') %>
-	<!-- /footer -->
-</body>	
+        
+
+        <div class="col-12">
+            <form action="/products/" method="POST">
+            <button type="submit" class="buy-now-button">Guardar producto</button>
+            </form>
+        </div>
+     </div>
+	 
+    </form>
+	<script src="/public/js/jsFrontCreatePdt.js"></script>
+</main>
+
+
+
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
 </html>

@@ -38,5 +38,13 @@
   "email": "juan@juan.com",
   "password": "$2a$10$ygAsEqwXGcUMTWeyq5auS.0tV3Mvbzbik4LZEXEkCo5i.rj/BPYLe",
   "avatar": "1651003642733_img.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": " 123",
+  "apellido": " ",
+  "email": "",
+  "password": "$2a$10$lTs36rD.WYDAp0rtlQ4x2ek7Sq1iCLxXKqLriab1E/UsuEQ6guT7q",
+  "avatar": "1651783627538_img.jpeg"
  }
 ]
