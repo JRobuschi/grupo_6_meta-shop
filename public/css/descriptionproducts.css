@@ -30,7 +30,7 @@
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: rgba(65,2,106,1);
+    background-color: #f08080;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -41,8 +41,8 @@
 
 body {
     font-family: 'roboto';
-    background: rgb(175,70,74);
-    background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
+    background: #dddddb;
+    
     align-items: center;
 }
 
