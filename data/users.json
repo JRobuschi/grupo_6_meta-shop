@@ -94,5 +94,29 @@
   "email": "1@ss2.com",
   "password": "$2a$10$93dL/wsBLyDLLeyd5uywZeVkDT/2HV/zj5cTbcSsy9403nzihf7da",
   "avatar": "1651889628077_img.jpg"
+ },
+ {
+  "id": 13,
+  "nombre": " ddd",
+  "apellido": " daa",
+  "email": "aaaad@1.com",
+  "password": "$2a$10$YLApuDCdoKFM0zLqzJTYbO/IjzEUHEq8fKhXKtPc2q.qrwQucUBAK",
+  "avatar": "1651943220599_img.jpg"
+ },
+ {
+  "id": 14,
+  "nombre": " dsa",
+  "apellido": " ssa",
+  "email": "2222s@2.com",
+  "password": "$2a$10$QziN2VZpL.uzmjao0/3QhOL4citFQZFE4vt3ds2oy6C/3cwPlT9Ve",
+  "avatar": "1651944539232_img.jpg"
+ },
+ {
+  "id": 15,
+  "nombre": "",
+  "apellido": " ",
+  "email": "ssaa@c.cc",
+  "password": "$2a$10$gPxTpar1wHDj/noXsf1mfOjvCSh8Bs0IwiNZ.voFNOrPa9QolFG5y",
+  "avatar": "1651944575358_img.jpg"
  }
 ]

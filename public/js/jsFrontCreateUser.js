@@ -1,20 +1,14 @@
-// window.addEventListener("load", function(){
-//     let formulario = this.document.querySelector("form.userRegister");
+/*window.addEventListener("click", function() {
+    this.alert('cuidado con lo q haces funciona todo perfecto no rompas nada');
+})*/
 
-//     formulario.addEventListener("submit", function(e){
-//         e.preventDefault();
-// //tag nombre tag apellido tagemail
-//         let campoNombre = document.querySelector("input.name")
-
-//     })
-// })
 window.addEventListener("load", function(){
-    let formulario = this.document.querySelector("form.userRegister");
+    let form =    document.querySelector("form.userRegister");
 
-    formulario.addEventListener("submit", function(e){
+    form.addEventListener("submit", function(e){
         
 
-        let errores = [];
+        let errores = []; 
 
 
         let campoNombre = document.querySelector("input.tagNombre")
