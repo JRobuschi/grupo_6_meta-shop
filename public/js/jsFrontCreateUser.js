@@ -31,8 +31,7 @@ window.addEventListener("load", function(){
 
         if(campoEmail.value == ""){
             errores.push('El campo de email tiene que estar completo');         
-        } else if (campoEmail.value.length < 20) {
-            errores.push('El campo de descripción debe tener al menos 20 caracteres')
+        
         }   
     
         if (errores.length > 0){

@@ -118,5 +118,13 @@
   "email": "ssaa@c.cc",
   "password": "$2a$10$gPxTpar1wHDj/noXsf1mfOjvCSh8Bs0IwiNZ.voFNOrPa9QolFG5y",
   "avatar": "1651944575358_img.jpg"
+ },
+ {
+  "id": 16,
+  "nombre": "gdgdfgdfgd ",
+  "apellido": " dfgdfgdfgdfg",
+  "email": "gdfgdfgdf@c.com",
+  "password": "$2a$10$Xl20JGRlkUNZXcX.jimAUefkRLa/GQNkEbyZgKnvQDU3SAbEpFbBa",
+  "avatar": "1651953781959_img.jpg"
  }
 ]
