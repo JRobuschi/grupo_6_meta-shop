@@ -97,10 +97,34 @@
  },
  {
   "id": 13,
+<<<<<<< HEAD
   "nombre": " lala",
   "apellido": " lala",
   "email": "lala@lala.com",
   "password": "$2a$10$WzpqbiMw2y8Udi.EwILJYuo69BT2C6LOyq0A21MzKTIPnMOS.uP/q",
   "avatar": "1651937092285_img.jpg"
+=======
+  "nombre": " ddd",
+  "apellido": " daa",
+  "email": "aaaad@1.com",
+  "password": "$2a$10$YLApuDCdoKFM0zLqzJTYbO/IjzEUHEq8fKhXKtPc2q.qrwQucUBAK",
+  "avatar": "1651943220599_img.jpg"
+ },
+ {
+  "id": 14,
+  "nombre": " dsa",
+  "apellido": " ssa",
+  "email": "2222s@2.com",
+  "password": "$2a$10$QziN2VZpL.uzmjao0/3QhOL4citFQZFE4vt3ds2oy6C/3cwPlT9Ve",
+  "avatar": "1651944539232_img.jpg"
+ },
+ {
+  "id": 15,
+  "nombre": "",
+  "apellido": " ",
+  "email": "ssaa@c.cc",
+  "password": "$2a$10$gPxTpar1wHDj/noXsf1mfOjvCSh8Bs0IwiNZ.voFNOrPa9QolFG5y",
+  "avatar": "1651944575358_img.jpg"
+>>>>>>> 24933869e8a48c20acc34f3b2901c3319e41ce60
  }
 ]
