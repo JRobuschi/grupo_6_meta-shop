@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+div.errors {
+  color: red;
+}
+
 * {
   box-sizing: border-box;
   font-family: Montserrat;
