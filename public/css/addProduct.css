@@ -1,16 +1,10 @@
 main{
-    background: rgb(175,70,74);
-    background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
+    background: #dddddb;
     color: white;
     font-family: 'roboto';
     padding: 40px;
 }
 
-
-main {
-    background: rgb(175,70,74);
-    background: linear-gradient(90deg, rgb(139, 32, 160) 0%, rgba(65,2,106,1) 100%);
-}
 
 h4{
     
