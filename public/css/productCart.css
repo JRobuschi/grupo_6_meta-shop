@@ -7,8 +7,7 @@
   
 }
 main{
-  background: rgb(175,70,74);
-    background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
+  background: #cfcdcd; 
 }
 a{
   text-decoration: none;
@@ -141,15 +140,19 @@ a{
   background-color: #cfcdcd;
   margin: 2px 20px;
   text-decoration: none;
+  border: solid 1px black;
 }
 .btn-main-pr {
-  background-color: rgba(65,2,106,1);
+  background-color: #f08080;
   color: white;
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   margin: 2px 20px;
   border:solid 1px black;
+}
+.action-button-edit {
+  color: #020100;
 }
 
 @media (min-width: 481px) {
