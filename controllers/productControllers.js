@@ -81,23 +81,9 @@ const controllers = {
             image: "/images/products/" + req.file.filename
         })
 
-
-
-		//if (req.file && newProductImage.size < 3145728) {
-			
-		//controllers.createNewProduct(newProduct,newProductImage)	
-		
-		//productsArray.push (newProduct)
-
-		//controllers.dbReWrite()
-
 		res.redirect ('/products/' + productCreated.id) 
 
-	}, //else if (req.file && newProductImage.size > 3145729) {
-		//res.send('El archivo es demasiado pesado')
-	//} else {
-		//res.send ('No adjuntaste ninguna imagen')
-	//}
+	}, 
     
     edit: async(req, res) => {
         

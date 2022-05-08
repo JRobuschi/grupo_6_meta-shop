@@ -19,12 +19,25 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         autoIncrement: true,
     },
-    pdtDescription: DataTypes.STRING,
-     idCategory: DataTypes.INTEGER,
-     pdtPrice: DataTypes.INTEGER,
-     pdtName: DataTypes.STRING,
-     image: DataTypes.STRING,   
-}
+    pdtDescription: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+     idCategory: {
+         type: DataTypes.INTEGER,
+         allowNull: true
+     },
+
+     pdtPrice: {
+         allowNull: true,
+         type: DataTypes.INTEGER
+     },
+     pdtName: {
+         type: DataTypes.STRING,
+         allowNull: true
+     },
+     image: DataTypes.STRING  
+     }
 
  const Product = sequelize.define(alias, columnas, configuracion);
  Product.associate = function(models){

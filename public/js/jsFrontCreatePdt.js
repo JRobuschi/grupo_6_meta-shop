@@ -1,7 +1,12 @@
+/*window.addEventListener("click", function() {
+    this.alert('cuidado con lo q haces funciona todo perfecto no rompas nada');
+     })*/
+     
 window.addEventListener("load", function(){
-    let formulario = this.document.querySelector("form.productCreate");
+   
+    let form = document.querySelector("form.productCreate");
 
-    formulario.addEventListener("submit", function(e){
+    form.addEventListener("submit", function(e){
         
 
         let errores = [];
@@ -33,6 +38,7 @@ window.addEventListener("load", function(){
 
         if(campoPrice.value == ""){
             errores.push('El campo del precio tiene que estar completo');    
+        
         }    
 
         if (errores.length > 0){
