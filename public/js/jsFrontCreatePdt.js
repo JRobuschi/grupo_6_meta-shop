@@ -12,7 +12,7 @@ window.addEventListener("load", function(){
         let errores = [];
 
 
-        let campoNombre = document.querySelector("input.form-input-name")
+        let campoNombre = document.querySelector("input.formName")
 
         if(campoNombre.value == ""){
             errores.push('El campo de nombre tiene que estar completo');
@@ -20,7 +20,7 @@ window.addEventListener("load", function(){
             errores.push('El campo de nombre debe tener al menos 5 caracteres')
         }
 
-        let campoPrice = document.querySelector("input.form-input-price")
+        let campoPrice = document.querySelector("input.formPrice")
 
         if(campoPrice.value == "" ){
             errores.push('El campo del precio tiene que estar completo');
@@ -28,7 +28,7 @@ window.addEventListener("load", function(){
             errores.push('El campo del precio tiene que ser mayor a cero')
         }
 
-        let campoDescription = document.querySelector("input.form-input-description")
+        let campoDescription = document.querySelector("input.formDescription")
 
         if(campoDescription.value == ""){
             errores.push('El campo de descripción tiene que estar completo');         
