@@ -1,11 +1,13 @@
-const fs = require('fs');
+
+// const filePath = path.join(__dirname,'../data/users.json');
+// const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
+// const fs = require('fs');
 const path = require('path');
-const filePath = path.join(__dirname,'../data/users.json');
-const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
 const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
-const User = require ('../models/User');
+const db = require('../db/models');
+const User = db.User;
 
 const usuariosControllers = {
     index: (req,res) => {
@@ -17,10 +19,52 @@ const usuariosControllers = {
     },
 
     register: (req, res) => {
-       // res.cookie('testing', 'hola mundo', { maxAge: 1000* 30}) metodo del response para guardar algo en el navegador
+        
         return res.render ('users/register');
     },
+    create: async (req,res) => {
+        console.log(req.body)
+        const data = {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: req.body.password,
+            image: req.body.image
+        };
+        console.log(data)
+        try{
+            await User.create(data)
+            return res.send('Usuario creado...')
+        } catch(err) {
+            return res.send(err)
+        }
+        
+    },
+    edit: async (req, res) => {
+        const idUser = req.params.id;
 
+        const userToEdit = await User.findByPk(idUser);
+
+        const datosParaVista = {
+            User: userToEdit
+        }
+
+        res.render('users/userProfile', datosParaVista);
+    },
+    update: async (req,res) => {
+
+        const idUser = req.params.id;
+
+        console.log(req.body);
+        
+        await User.update(req.body, {
+            where: {
+                id: idUser
+            }
+        })
+        return res.send('Pelicula actualizada...')
+        
+    }, 
     processRegister: (req, res) => {
        const resultValidation = validationResult(req);
         
@@ -57,18 +101,8 @@ const usuariosControllers = {
         let userCreated = User.create(userToCreate); //crea y redirije a login
         return res.redirect('/users/login')
     },
-
-
-    login: (req, res) => {//formulario de login
-        //console.log(req.cookies);
-        //console.log(req.cookies.testing) del request llegan cookies, yo quiero la testing
-        return res.render('users/login');
-    },
-
     processLogin: (req, res) => {
-        
-        
-        
+
         let userToLogin = User.findByField('email', req.body.email);
         //busca en el modelo si esta registrado el email
         if (userToLogin){
@@ -107,10 +141,6 @@ const usuariosControllers = {
         })
     
     },
-
-
-    
-
     
     profile: (req,res) =>{
         //console.log(req.cookies.userEmail);
@@ -140,10 +170,7 @@ const usuariosControllers = {
 	}
        
         
-
-       
-
-        
+  
     },
 
     edit: (req,res) =>{

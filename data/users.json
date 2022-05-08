@@ -38,5 +38,13 @@
   "email": "juan@juan.com",
   "password": "$2a$10$ygAsEqwXGcUMTWeyq5auS.0tV3Mvbzbik4LZEXEkCo5i.rj/BPYLe",
   "avatar": "1651003642733_img.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Juan",
+  "apellido": "Mantegazza",
+  "email": "juampi.mantegazza@gmail.com",
+  "password": "$2a$10$7l3qb8PCc9ib2lRWdzylGeo964DNweDRIijlyy6i.d0mhz5/sO/Fu",
+  "avatar": "1651350268866_img.jpg"
  }
 ]
