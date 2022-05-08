@@ -5,16 +5,16 @@ const path = require('path');
 const multer = require('multer')
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const { body } = require ('express-validator');// la variable body de validator en otros videos se llama check
+const { body } = require ('express-validator');//{destructuring de la prop body}funcion body de validator, nos permite validar los cargos del formulario y elegir que queremos validar // la variable body de validator en otros videos se llama check
 //campos a validar y metodo de validacion// estos formularios no pueden estar vacios
 const usuariosControllers = require('../controllers/usuariosControllers');
 
 
- 
-const validations = [ 
-    body ('email').notEmpty().withMessage('debe ingresar un mail').bail().isEmail().withMessage('debe ser fromato email'),
+ //validador
+const validations = [  //este array es el validador X Q SON MUCHAS VALIDACIONES
+    body ('email').notEmpty().withMessage('debe ingresar un mail').bail().isEmail().withMessage('debe ser fromato email'),//notEmpty... son metodos .iseemail debe ser un email
     body ('password').notEmpty().withMessage('debe ingresar un password'),
-    body ('usuarios').custom((value, { req })=> {
+    body ('usuarios').custom((value, { req })=> { //nombre de los campos del formulario que queremos validar y que tipo de validacion implementar
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
         
@@ -61,7 +61,7 @@ router.get('/', usuariosControllers.index);
 
 router.get('/register', guestMiddleware, usuariosControllers.register); // no te deja re registrrar cuando ya te logueaste
 
-router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.processRegister) //min 21:19
+router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.processRegister)  //aca esta el validator de multer
 
 
 router.get('/login', guestMiddleware, usuariosControllers.login);

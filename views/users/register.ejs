@@ -26,7 +26,7 @@
           <label for="Nombre"></label>
           <input type="text" placeholder="Ingrese su nombre aquí" name="nombre"
             class="tagNombre <%= locals.errors && errors.nombre ? 'is-invalid': null %>"
-            value="<%= locals.oldData ? oldData.nombre : null %> ">
+            value="<%= locals.oldData ? oldData.nombre : null %> "> <!--aca se carga la data de errores para locals y oldata-->
           <% if (locals.errors && errors.nombre) { %>
             <div class="text-danger">
               <%= errors.nombre.msg %>
