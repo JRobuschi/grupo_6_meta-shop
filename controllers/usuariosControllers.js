@@ -5,8 +5,8 @@ const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
 const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
-const User = require ('../models/User');
-
+const User = require ('../models/User'); //de aca saca donde esta la base datos.
+//la parte de los errores es un quilombo
 const usuariosControllers = {
     index: (req,res) => {
         return res.render('users/iniciarSesion');  	
@@ -20,17 +20,17 @@ const usuariosControllers = {
        // res.cookie('testing', 'hola mundo', { maxAge: 1000* 30}) metodo del response para guardar algo en el navegador
         return res.render ('users/register');
     },
-
+//aca comienza validador
     processRegister: (req, res) => { //valida la informacion antes de crear el usuario
        const resultValidation = validationResult(req);
         
        if (resultValidation.errors.length > 0 ) {
              res.render('./users/register', { //nombre de la vista de registro
-                errors: resultValidation.mapped(), //mapped es un for de arrays
-                oldData: req.body
+                errors: resultValidation.mapped(), //a la variable errors, aca llegan todos los errores del formulario, mapped es un iterador de arrays 
+                oldData: req.body //los datos viejos
             });
             
-        }
+        } //aca hay que guiar hacia la base de datos
         //antes  de crear el usuario busca que el email no este registrado en la base de datos
         let userInDB = User.findByField('email', req.body.email);//buscaen la base el mail para no dejarte registrar 2 veces el mismo mail
 
