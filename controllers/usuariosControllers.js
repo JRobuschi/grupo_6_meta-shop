@@ -6,14 +6,9 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
-<<<<<<< HEAD
-const db = require('../db/models');
-const User = db.User;
-
-=======
-const User = require ('../models/User'); //de aca saca donde esta la base datos.
+const db = require ('../db/models');
+const User = db.Users; //de aca saca donde esta la base datos.
 //la parte de los errores es un quilombo
->>>>>>> 9100abd864e34d9517914842c724510888ff43b5
 const usuariosControllers = {
     index: (req,res) => {
         return res.render('users/iniciarSesion');  	
@@ -27,7 +22,6 @@ const usuariosControllers = {
         
         return res.render ('users/register');
     },
-<<<<<<< HEAD
     create: async (req,res) => {
         console.log(req.body)
         const data = {
@@ -71,11 +65,7 @@ const usuariosControllers = {
         return res.send('Pelicula actualizada...')
         
     }, 
-    processRegister: (req, res) => {
-=======
-//aca comienza validador
     processRegister: (req, res) => { //valida la informacion antes de crear el usuario
->>>>>>> 9100abd864e34d9517914842c724510888ff43b5
        const resultValidation = validationResult(req);
         
        if (resultValidation.errors.length > 0 ) {
@@ -111,25 +101,9 @@ const usuariosControllers = {
         let userCreated = User.create(userToCreate); //crea y redirije a login
         return res.redirect('/users/login')
     },
-<<<<<<< HEAD
     processLogin: (req, res) => {
 
         let userToLogin = User.findByField('email', req.body.email);
-=======
-///aca finaliza el proceso de registro
-
-
-    login: (req, res) => {//formulario de login
-        
-        return res.render('users/login');
-    },
-
-    processLogin: (req, res) => {
-        
-        //buscame al usuario
-        
-        let userToLogin = User.findByField('email', req.body.email);//buscar x email
->>>>>>> 9100abd864e34d9517914842c724510888ff43b5
         //busca en el modelo si esta registrado el email
         if (userToLogin){//comparesync valida el password que ya esta hasheado
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //el metodo modulo bycript y el metodo comparesyn para validar el password q viene del body en el request en texto plano

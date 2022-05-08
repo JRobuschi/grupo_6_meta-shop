@@ -40,8 +40,8 @@ app.listen(3080, () => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-app.use(userLoggedMiddleware);
+// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+// app.use(userLoggedMiddleware);
 
 const homeRoutes = require("./routes/homeRoutes");
 app.use("/", homeRoutes);
