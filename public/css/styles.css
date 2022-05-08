@@ -102,7 +102,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgba(65,2,106,1);
+    background-color: #f08080;
     color: white;
     text-align: center;
     display: flex;
@@ -113,7 +113,7 @@
   }
 /*lins visitados*/
   a:visited {
-    color: rgb(255, 153, 0);
+    color: white;
     text-decoration: none;
   }
   a:link {
@@ -177,7 +177,7 @@
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: rgba(65,2,106,1);
+    background-color: #f08080;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -218,7 +218,7 @@
     z-index: 1;
     top: 0;
     right: 0;
-    background: rgba(65,2,106,1);
+    background: #f08080;
     width: 55px;
     height: 55px;
     line-height: 55px;
@@ -240,7 +240,7 @@
   }
   section{
     background: #dddddb;
-   /* background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);*/
+   
   }
 
   .contImagen {

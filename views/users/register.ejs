@@ -9,20 +9,24 @@
 </head>
 
 <body>
+  <script src="/js/jsFrontCreateUser.js"></script>
+
   <div class="volver">
     <a href="/"><strong>Volver</strong></a>
   </div>
 
   <div class="container">
     <div class="signUp">
-      <form action="/users/register" method="POST" enctype="multipart/form-data">
+      <form action="/users/register" method="POST" enctype="multipart/form-data" class="userRegister">
         <h1>Crear cuenta</h1>
-
+        <div class="errores">
+          <ul></ul>
+      </div>
         <div style="text-align: center;">
           <label for="Nombre"></label>
           <input type="text" placeholder="Ingrese su nombre aquí" name="nombre"
-            class="form-control <%= locals.errors && errors.nombre ? 'is-invalid': null %>"
-            value="<%= locals.oldData ? oldData.nombre : null %> ">
+            class="tagNombre <%= locals.errors && errors.nombre ? 'is-invalid': null %>"
+            value="<%= locals.oldData ? oldData.nombre : null %> "> <!--aca se carga la data de errores para locals y oldata-->
           <% if (locals.errors && errors.nombre) { %>
             <div class="text-danger">
               <%= errors.nombre.msg %>
@@ -33,45 +37,45 @@
         <div style="text-align: center;">
           <label for="apellido"></label>
           <input type="text" placeholder="Ingrese su apellido aquí" name="apellido"
-            class="form-control <%= locals.apellido && errors.apellido ? 'is-invalid': null %>"
+            class="tagApellido <%= locals.apellido && errors.apellido ? 'is-invalid': null %>"
             value="<%= locals.oldData ? oldData.apellido : null %> ">
-          <% if (locals.errors && errors.apellido) { %>
+          <!-- <% if (locals.errors && errors.apellido) { %>
             <div class="text-danger">
               <%= errors.apellido.msg %>
             </div>
-            <% } %>
+            <% } %> -->
         </div>
 
         <div style="text-align: center;">
           <label for="email"></label>
           <input type="email" placeholder="Ingrese su mail aquí" name="email"
-            class="form-control <%= locals.errors && errors.email ? 'is-invalid': null %>"
+            class="tagEmail <%= locals.errors && errors.email ? 'is-invalid': null %>"
             value="<%= locals.oldData ? oldData.email : null %> ">
-          <% if (locals.errors && errors.email) { %>
+          <!-- <% if (locals.errors && errors.email) { %>
             <div class="text-danger">
               <%= errors.email.msg %>
             </div>
-            <% } %>
+            <% } %> -->
         </div>
 
         <div style="text-align: center;">
           <label for="password"></label>
           <% if (locals.errors && errors.password) { %>
             <div class="text-danger">
-              <%= errors.password.msg %>
+              <!-- <%= errors.password.msg %>
             </div>
-            <% } %>
+            <% } %> -->
               <input class="form-control" type="password" name="password" placeholder="Ingrese su contraseña aquí"><br>
         </div>
 
         <div class="parts">
           <label for="image">Subi tu imagen</label>
           <input type="file" placeholder="image" id="image" class="form-control" name="usuarios" required>
-          <% if (locals.errors && errors.usuarios) { %>
+          <!-- <% if (locals.errors && errors.usuarios) { %>
             <div class="text-danger">
               <%= errors.usuarios.msg %>
             </div>
-            <% } %>
+            <% } %> -->
         </div>
 
         <div style="text-align: center;">

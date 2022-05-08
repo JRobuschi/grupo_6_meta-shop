@@ -6,9 +6,14 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
+<<<<<<< HEAD
 const db = require('../db/models');
 const User = db.User;
 
+=======
+const User = require ('../models/User'); //de aca saca donde esta la base datos.
+//la parte de los errores es un quilombo
+>>>>>>> 9100abd864e34d9517914842c724510888ff43b5
 const usuariosControllers = {
     index: (req,res) => {
         return res.render('users/iniciarSesion');  	
@@ -22,6 +27,7 @@ const usuariosControllers = {
         
         return res.render ('users/register');
     },
+<<<<<<< HEAD
     create: async (req,res) => {
         console.log(req.body)
         const data = {
@@ -66,34 +72,38 @@ const usuariosControllers = {
         
     }, 
     processRegister: (req, res) => {
+=======
+//aca comienza validador
+    processRegister: (req, res) => { //valida la informacion antes de crear el usuario
+>>>>>>> 9100abd864e34d9517914842c724510888ff43b5
        const resultValidation = validationResult(req);
         
        if (resultValidation.errors.length > 0 ) {
              res.render('./users/register', { //nombre de la vista de registro
-                errors: resultValidation.mapped(),
-                oldData: req.body
+                errors: resultValidation.mapped(), //a la variable errors, aca llegan todos los errores del formulario, mapped es un iterador de arrays 
+                oldData: req.body //los datos viejos
             });
             
-        }
-
+        } //aca hay que guiar hacia la base de datos
+        //antes  de crear el usuario busca que el email no este registrado en la base de datos
         let userInDB = User.findByField('email', req.body.email);//buscaen la base el mail para no dejarte registrar 2 veces el mismo mail
 
-        if (userInDB) { //si el usuario esta en base de datos error
+        if (userInDB) { //si el usuario esta en base de datos retorname error
             res.render('./users/register', {
-            errors: {
+            errors: {//objeto literal que tiene otro objeto literal desde expressvalidator y el mensaje si ya esta registrado es:
                 email: {
                     msg: 'este mail ya esta registrado'
                 }
             },
-            oldData: req.body// info q viaja e en el body para eldata mantiene la informacion q esta correcta en el formulario
+            oldData: req.body// info q viaja e en el body para manttener la informacion q esta correcta en el formulario
         });
 
         }
 
-        
+        //crea el usuario
         let userToCreate = {
             ...req.body, //spreadoperator "todo lo q traiga el body"
-            password: bcryptjs.hashSync(req.body.password, 10), //encirptador del pas
+            password: bcryptjs.hashSync(req.body.password, 10), //encirptador del pass y comparador del password y pisa al password para q no sea visible
             avatar: req.file.filename //renombra la imagen
         }
 
@@ -101,30 +111,46 @@ const usuariosControllers = {
         let userCreated = User.create(userToCreate); //crea y redirije a login
         return res.redirect('/users/login')
     },
+<<<<<<< HEAD
     processLogin: (req, res) => {
 
         let userToLogin = User.findByField('email', req.body.email);
+=======
+///aca finaliza el proceso de registro
+
+
+    login: (req, res) => {//formulario de login
+        
+        return res.render('users/login');
+    },
+
+    processLogin: (req, res) => {
+        
+        //buscame al usuario
+        
+        let userToLogin = User.findByField('email', req.body.email);//buscar x email
+>>>>>>> 9100abd864e34d9517914842c724510888ff43b5
         //busca en el modelo si esta registrado el email
-        if (userToLogin){
+        if (userToLogin){//comparesync valida el password que ya esta hasheado
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //el metodo modulo bycript y el metodo comparesyn para validar el password q viene del body en el request en texto plano
             if(isOkThePassword) {
                 delete userToLogin.password; //saca el password de las recurrencias en vistas de session para q no el pass no este llendo x todos lados
-            if  (req.session){ //toda la informacion de session es lo q esta dando ok en userlogged
-                req.session.userLogged = userToLogin}
-
+            if  (req.session){ // se crea en session a userlogged a partir de toda la informacion de session q esta dando ok
+                req.session.userLogged = userToLogin} //requiere instalarese el modulo session desde el app.
+                    //la session se destruye cuando cerras el navegador
             if (req.body.remember_user){//si en el request del body vino remember user
                 res.cookie('userEmail', req.body.email, {maxAge: (1000* 60)*2})
                 //en el response voy a setear una cookie q se llama userEmail y guarda el valor de lo que viene en el body del request la propiedad email y esa cookie dura 1 segundo x 1 minuto x 2 minutos
             }  
                 
-            
+            //cuando esta todo bien vas al profile
             return res.redirect ('profile');
                
             //};
                 
             }//desde el IF en caso q el email no se encuentre
             return res.render('users/login', {
-                errors: {
+                errors: { //los errores vienen de los ejs del formulario
                     email:{
                         msg: 'los datos son incorrectos'
                     }
@@ -143,7 +169,7 @@ const usuariosControllers = {
     },
     
     profile: (req,res) =>{
-        //console.log(req.cookies.userEmail);
+        //en la vista imprimi la info que te llega del userloggued, session se comparte en toda la app
        return res.render ('users/userProfile', {
             user: req.session.userLogged
         });
@@ -202,8 +228,8 @@ const usuariosControllers = {
     },*/
     logout: (req,res) =>{
         res.clearCookie('userEmail');//si no destruis la cookie quedas logueado por el tiempo de ejecucion de maxage
-        req.session.destroy();
-        return res.redirect("/")
+        req.session.destroy();// borra todos los datos de session
+        return res.redirect("/") // y te redirije al home
     },
 
     dbReWrite() { 
