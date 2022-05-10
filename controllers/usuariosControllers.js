@@ -7,7 +7,7 @@ const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
 const db = require ('../db/models');
-const User = db.Users; //de aca saca donde esta la base datos.
+const User = db.User; //de aca saca donde esta la base datos.
 //la parte de los errores es un quilombo
 const usuariosControllers = {
     index: (req,res) => {
