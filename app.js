@@ -3,7 +3,12 @@ const path = require('path');
 const session = require ('express-session');
 const app = express();
 const cookies = require('cookie-parser');
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const methodOverride = require ('method-override');
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+
+
 
 
 app.use(session({
@@ -14,14 +19,14 @@ app.use(session({
 
 app.use(cookies());
 
-app.use(userLoggedMiddleware);
+
 
 
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
 app.use(express.json());
+app.use(methodOverride('_method'));
 
- //el video 1hr 4 minutos dice q va todo false, pravata dice q va true
 
 
 const publicPath = path.resolve(__dirname, './public');
@@ -32,13 +37,11 @@ app.listen(3080, () => {
 });
 
 
-
-
-
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+// app.use(userLoggedMiddleware);
 
 const homeRoutes = require("./routes/homeRoutes");
 app.use("/", homeRoutes);
@@ -67,9 +70,6 @@ app.use("/foot", footRoutes);
 const userRoutes = require("./routes/users");
 app.use("/users", userRoutes);
 
-
-
-
 //const newProductsRoutes = require ("./routes/newProductsRoutes");
 //app.use("/newProducts", newProductsRoutes);
 
@@ -78,16 +78,9 @@ app.use("/users", userRoutes);
 
 //midelwere de aplicacion 
 
-
-
-
-
 //404//
 app.use((req, res, next) => {
     res.status(404).render('404-page');
     next();
 });
 // method-Override //
-const methodOverride = require ('method-override');
-const exp = require('constants');
-app.use(methodOverride('_method'));

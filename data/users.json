@@ -41,6 +41,13 @@
  },
  {
   "id": 6,
+<<<<<<< HEAD
+  "nombre": "Juan",
+  "apellido": "Mantegazza",
+  "email": "juampi.mantegazza@gmail.com",
+  "password": "$2a$10$7l3qb8PCc9ib2lRWdzylGeo964DNweDRIijlyy6i.d0mhz5/sO/Fu",
+  "avatar": "1651350268866_img.jpg"
+=======
   "nombre": " 123",
   "apellido": " ",
   "email": "",
@@ -94,6 +101,7 @@
   "email": "1@ss2.com",
   "password": "$2a$10$93dL/wsBLyDLLeyd5uywZeVkDT/2HV/zj5cTbcSsy9403nzihf7da",
   "avatar": "1651889628077_img.jpg"
+<<<<<<< HEAD
  },
  {
   "id": 13,
@@ -102,5 +110,8 @@
   "email": "lala@lala.com",
   "password": "$2a$10$SaCu.D9t5QpRX2d6bCL70u3cyHCtRupv4ebBj6toFEP2CiOLUCtNO",
   "avatar": "1652191949643_img.jpg"
+=======
+>>>>>>> 9100abd864e34d9517914842c724510888ff43b5
+>>>>>>> 04c870917a4260a90ea7b6e00376c828d336de57
  }
 ]

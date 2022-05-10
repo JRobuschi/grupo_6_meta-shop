@@ -40,7 +40,7 @@ const storage = multer.diskStorage({
 }
 }) 
 
-const uploadFile = multer ({ storage});
+const uploadFile = multer ({ storage });
 
 
 
@@ -59,10 +59,15 @@ const uploadFile = multer ({ storage});
 /* GET users listing. */
 router.get('/', usuariosControllers.index);
 
-router.get('/register', guestMiddleware, usuariosControllers.register); // no te deja re registrrar cuando ya te logueaste
+// router.get('/register', guestMiddleware, usuariosControllers.register); // no te deja re registrrar cuando ya te logueaste
+router.get('/register', usuariosControllers.register);
 
-router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.processRegister)  //aca esta el validator de multer
+router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.create) //min 21:19 aca esta el validator de multer
+// router.post('/register',guestMiddleware, usuariosControllers.create);
 
+router.get('/edit/:id', usuariosControllers.edit);
+
+router.post('/update', usuariosControllers.update);
 
 router.get('/login', guestMiddleware, usuariosControllers.login);
 router.post('/login', [
@@ -93,8 +98,8 @@ router.post('/login', [
 
 
 //EDIT
-//router.get('/:id/edit', usuariosControllers.edit);
-//router.put('/:id', usuariosControllers.update);
+
+// router.put('/:id', usuariosControllers.update);
 
 //LOGOUT(hay que configurarlo con cookies)
 

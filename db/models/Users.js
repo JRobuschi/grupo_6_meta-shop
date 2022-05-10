@@ -1,7 +1,7 @@
-/**
- * @param {import('sequelize').Sequelize}sequelize
- * @param {import('sequelize/dist').DataTypes}DataTypes
- */
+// /**
+//  * @param {import('sequelize').Sequelize}sequelize
+//  * @param {import('sequelize/dist').DataTypes}DataTypes
+//  */
  
  module.exports = (sequelize, DataTypes) => {
 

@@ -1,11 +1,13 @@
-const fs = require('fs');
+
+// const filePath = path.join(__dirname,'../data/users.json');
+// const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
+// const fs = require('fs');
 const path = require('path');
-const filePath = path.join(__dirname,'../data/users.json');
-const users = JSON.parse(fs.readFileSync(filePath, {encoding: 'utf8'}))
 const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
-const User = require ('../models/User'); //de aca saca donde esta la base datos.
+const db = require ('../db/models');
+const User = db.User; //de aca saca donde esta la base datos.
 //la parte de los errores es un quilombo
 const usuariosControllers = {
     index: (req,res) => {
@@ -17,10 +19,52 @@ const usuariosControllers = {
     },
 
     register: (req, res) => {
-       // res.cookie('testing', 'hola mundo', { maxAge: 1000* 30}) metodo del response para guardar algo en el navegador
+        
         return res.render ('users/register');
     },
-//aca comienza validador
+    create: async (req,res) => {
+        console.log(req.body)
+        const data = {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            email: req.body.email,
+            password: req.body.password,
+            image: req.body.image
+        };
+        console.log(data)
+        try{
+            await User.create(data)
+            return res.send('Usuario creado...')
+        } catch(err) {
+            return res.send(err)
+        }
+        
+    },
+    edit: async (req, res) => {
+        const idUser = req.params.id;
+
+        const userToEdit = await User.findByPk(idUser);
+
+        const datosParaVista = {
+            User: userToEdit
+        }
+
+        res.render('users/userProfile', datosParaVista);
+    },
+    update: async (req,res) => {
+
+        const idUser = req.params.id;
+
+        console.log(req.body);
+        
+        await User.update(req.body, {
+            where: {
+                id: idUser
+            }
+        })
+        return res.send('Pelicula actualizada...')
+        
+    }, 
     processRegister: (req, res) => { //valida la informacion antes de crear el usuario
        const resultValidation = validationResult(req);
         
@@ -57,19 +101,9 @@ const usuariosControllers = {
         let userCreated = User.create(userToCreate); //crea y redirije a login
         return res.redirect('/users/login')
     },
-///aca finaliza el proceso de registro
-
-
-    login: (req, res) => {//formulario de login
-        
-        return res.render('users/login');
-    },
-
     processLogin: (req, res) => {
-        
-        //buscame al usuario
-        
-        let userToLogin = User.findByField('email', req.body.email);//buscar x email
+
+        let userToLogin = User.findByField('email', req.body.email);
         //busca en el modelo si esta registrado el email
         if (userToLogin){//comparesync valida el password que ya esta hasheado
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //el metodo modulo bycript y el metodo comparesyn para validar el password q viene del body en el request en texto plano
@@ -107,10 +141,6 @@ const usuariosControllers = {
         })
     
     },
-
-
-    
-
     
     profile: (req,res) =>{
         //en la vista imprimi la info que te llega del userloggued, session se comparte en toda la app
@@ -140,10 +170,7 @@ const usuariosControllers = {
 	}
        
         
-
-       
-
-        
+  
     },
 
     edit: (req,res) =>{
