@@ -2,7 +2,7 @@ Sprint 1)
 1,2)
 # Proyecto Integrador Digital House
 
-Pagina de Ecommerce de productos tecnologicos con hincapie en criptomonedas y mineria.
+Pagina de Ecommerce de productos tecnologicos con hincapie en el metaverso y mineria.
 
 ## Grupo 6
 
