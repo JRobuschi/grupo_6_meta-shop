@@ -94,5 +94,13 @@
   "email": "1@ss2.com",
   "password": "$2a$10$93dL/wsBLyDLLeyd5uywZeVkDT/2HV/zj5cTbcSsy9403nzihf7da",
   "avatar": "1651889628077_img.jpg"
+ },
+ {
+  "id": 13,
+  "nombre": " lala",
+  "apellido": " lala",
+  "email": "lala@lala.com",
+  "password": "$2a$10$SaCu.D9t5QpRX2d6bCL70u3cyHCtRupv4ebBj6toFEP2CiOLUCtNO",
+  "avatar": "1652191949643_img.jpg"
  }
- ]
+]
