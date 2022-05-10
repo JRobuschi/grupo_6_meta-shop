@@ -25,7 +25,7 @@
         <div style="text-align: center;">
           <label for="Nombre"></label>
           <input type="text" placeholder="Ingrese su nombre aquí" name="nombre"
-            class="tagNombre <%= locals.errors && errors.nombre ? 'is-invalid': null %>"
+            class="tagNombre"
             value="<%= locals.oldData ? oldData.nombre : null %> "> <!--aca se carga la data de errores para locals y oldata-->
           <% if (locals.errors && errors.nombre) { %>
             <div class="text-danger">
@@ -37,7 +37,7 @@
         <div style="text-align: center;">
           <label for="apellido"></label>
           <input type="text" placeholder="Ingrese su apellido aquí" name="apellido"
-            class="tagApellido <%= locals.apellido && errors.apellido ? 'is-invalid': null %>"
+            class="tagApellido"
             value="<%= locals.oldData ? oldData.apellido : null %> ">
           <!-- <% if (locals.errors && errors.apellido) { %>
             <div class="text-danger">
@@ -49,7 +49,7 @@
         <div style="text-align: center;">
           <label for="email"></label>
           <input type="email" placeholder="Ingrese su mail aquí" name="email"
-            class="tagEmail <%= locals.errors && errors.email ? 'is-invalid': null %>"
+            class="tagEmail"
             value="<%= locals.oldData ? oldData.email : null %> ">
           <!-- <% if (locals.errors && errors.email) { %>
             <div class="text-danger">

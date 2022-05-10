@@ -7,7 +7,7 @@ const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
 const check = require('express-validator').check;
 const db = require ('../db/models');
-const User = db.Users; //de aca saca donde esta la base datos.
+const User = db.User; //de aca saca donde esta la base datos.
 //la parte de los errores es un quilombo
 const usuariosControllers = {
     index: (req,res) => {
@@ -34,7 +34,7 @@ const usuariosControllers = {
         console.log(data)
         try{
             await User.create(data)
-            return res.send('Usuario creado...')
+            return res.render('users/register')
         } catch(err) {
             return res.send(err)
         }
@@ -54,15 +54,21 @@ const usuariosControllers = {
     update: async (req,res) => {
 
         const idUser = req.params.id;
-
-        console.log(req.body);
         
         await User.update(req.body, {
             where: {
-                id: idUser
+                idUser: idUser
             }
         })
-        return res.send('Pelicula actualizada...')
+        const usuarioActualizado = await User.findByPk(idUser);
+        // console.log(req.body);
+        // console.log(userToEdit);
+
+        // const datosParaVista = {
+        //     User: userToEdit
+        // }
+
+        res.render('users/userProfile', {User: usuarioActualizado});
         
     }, 
     processRegister: (req, res) => { //valida la informacion antes de crear el usuario

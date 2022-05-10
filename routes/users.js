@@ -67,7 +67,7 @@ router.post('/register', uploadFile.single('usuarios'), validations, usuariosCon
 
 router.get('/edit/:id', usuariosControllers.edit);
 
-router.post('/update', usuariosControllers.update);
+router.post('/:id', usuariosControllers.update);
 
 router.get('/login', guestMiddleware, usuariosControllers.login);
 router.post('/login', [
