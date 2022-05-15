@@ -6,10 +6,10 @@ module.exports = {
     
     DB.User //consulta sobre el usuario dentro del modelo
     .findAll()
-    .then(apiUsers => {
+    .then(users => {
       return res.status(200).json({ //jsn para genera un endpoint
-      total: apiUsers.length,
-      data: apiUsers,
+      total: users.length,
+      data: users,
       status: 200
     })
   })
@@ -18,9 +18,9 @@ module.exports = {
   show: (req, res) => {
     DB.User //consulta sobre el usuario dentro del modelo
     .findByPk(req.params.id)
-    .then(idUser => { //1 solo user
+    .then(users => { //1 solo user
       return res.status(200).json({ //jsn para genera un endpoint
-      data: idUser, //1 solo user
+      data: users, //1 solo user
       status: 200
     })
   })
