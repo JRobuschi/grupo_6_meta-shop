@@ -1,5 +1,4 @@
-Sprint 1)
-1,2)
+
 # Proyecto Integrador Digital House
 
 Pagina de Ecommerce de productos tecnologicos con hincapie en el metaverso y mineria.
@@ -21,9 +20,7 @@ https://www.aorus.com/es-ar
 https://www.samsung.com/ar/
 
 
-# metashopRama2
 
-Sprint 2)
 https://trello.com/b/Rd9i5jia/scrum-board
 
 https://github.com/JRobuschi/grupo_6_meta-shop
