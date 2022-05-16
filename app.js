@@ -70,11 +70,9 @@ app.use("/foot", footRoutes);
 const userRoutes = require("./routes/users");
 app.use("/users", userRoutes);
 
-//const newProductsRoutes = require ("./routes/newProductsRoutes");
-//app.use("/newProducts", newProductsRoutes);
-
-//const editProductsRoutes = require ("./routes/editProductsRoutes");
-//rsapp.use("/editProducts", editProductsRoutes);
+//API
+const apiRouter = require('./routes/api/api');
+app.use("/api", apiRouter);
 
 //midelwere de aplicacion 
 
@@ -84,3 +82,5 @@ app.use((req, res, next) => {
     next();
 });
 // method-Override //
+
+
