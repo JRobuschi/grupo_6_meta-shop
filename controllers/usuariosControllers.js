@@ -23,13 +23,13 @@ const usuariosControllers = {
         return res.render ('users/register');
     },
     create: async (req,res) => {
-        console.log(req.body)
+        console.log(req)
         const data = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
-            password: req.body.password,
-            image: req.body.image
+            password: bcryptjs.hashSync(req.body.password, 10),
+            image: req.file.originalname
         };
         console.log(data)
         try{
@@ -61,8 +61,9 @@ const usuariosControllers = {
             }
         })
         const usuarioActualizado = await User.findByPk(idUser);
-        // console.log(req.body);
-        // console.log(userToEdit);
+        
+        res.send(usuarioActualizado);
+        
 
         // const datosParaVista = {
         //     User: userToEdit
@@ -107,28 +108,35 @@ const usuariosControllers = {
         let userCreated = User.create(userToCreate); //crea y redirije a login
         return res.redirect('/users/login')
     },
-    processLogin: (req, res) => {
+    processLogin: async (req, res) => {
 
-        let userToLogin = User.findByField('email', req.body.email);
+        let userToLogin = await User.findOne({
+            where: {
+                email: req.body.email
+ 
+            }
+        });
         //busca en el modelo si esta registrado el email
         if (userToLogin){//comparesync valida el password que ya esta hasheado
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //el metodo modulo bycript y el metodo comparesyn para validar el password q viene del body en el request en texto plano
-            if(isOkThePassword) {
-                delete userToLogin.password; //saca el password de las recurrencias en vistas de session para q no el pass no este llendo x todos lados
-            if  (req.session){ // se crea en session a userlogged a partir de toda la informacion de session q esta dando ok
-                req.session.userLogged = userToLogin} //requiere instalarese el modulo session desde el app.
-                    //la session se destruye cuando cerras el navegador
-            if (req.body.remember_user){//si en el request del body vino remember user
-                res.cookie('userEmail', req.body.email, {maxAge: (1000* 60)*2})
-                //en el response voy a setear una cookie q se llama userEmail y guarda el valor de lo que viene en el body del request la propiedad email y esa cookie dura 1 segundo x 1 minuto x 2 minutos
-            }  
+            // if(isOkThePassword) {
+            //     delete userToLogin.password; //saca el password de las recurrencias en vistas de session para q no el pass no este yendo x todos lados
+            // if  (req.session){ // se crea en session a userlogged a partir de toda la informacion de session q esta dando ok
+            //     req.session.userLogged = userToLogin} //requiere instalarese el modulo session desde el app.
+            //         //la session se destruye cuando cerras el navegador
+            // if (req.body.remember_user){//si en el request del body vino remember user
+            //     res.cookie('userEmail', req.body.email, {maxAge: (1000* 60)*2})
+            //     //en el response voy a setear una cookie q se llama userEmail y guarda el valor de lo que viene en el body del request la propiedad email y esa cookie dura 1 segundo x 1 minuto x 2 minutos
+            // }  
                 
-            //cuando esta todo bien vas al profile
-            return res.redirect ('profile');
+            // //cuando esta todo bien vas al profile
+            
+            return res.render('users/userProfile', {User: userToLogin});
                
-            //};
+            // //};
                 
-            }//desde el IF en caso q el email no se encuentre
+            // }//desde el IF en caso q el email no se encuentre
+            // return res.send(userToLogin);
             return res.render('users/login', {
                 errors: { //los errores vienen de los ejs del formulario
                     email:{
@@ -145,15 +153,16 @@ const usuariosControllers = {
                 }
             }
         })
+        return res.send(userToLogin);
     
     },
     
-    profile: (req,res) =>{
-        //en la vista imprimi la info que te llega del userloggued, session se comparte en toda la app
-       return res.render ('users/userProfile', {
-            user: req.session.userLogged
-        });
-    },
+    // profile: (req,res) =>{
+    //     //en la vista imprimi la info que te llega del userloggued, session se comparte en toda la app
+    //    return res.render ('users/userProfile', {
+    //         user: req.session.userLogged
+    //     });
+    // },
 /*
     create: (req,res) => {
         const newUser =  req.body;

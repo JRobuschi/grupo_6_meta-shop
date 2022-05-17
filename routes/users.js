@@ -65,15 +65,14 @@ router.get('/register', usuariosControllers.register);
 router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.create) //min 21:19 aca esta el validator de multer
 // router.post('/register',guestMiddleware, usuariosControllers.create);
 
+router.get('/login', usuariosControllers.login);
+router.post('/login', usuariosControllers.processLogin);
+
 router.get('/edit/:id', usuariosControllers.edit);
 
 router.post('/:id', usuariosControllers.update);
 
-router.get('/login', guestMiddleware, usuariosControllers.login);
-router.post('/login', [
-    body('email').isEmail().withMessage('Email invalido'),
-    body('password').isLength({min: 4}).withMessage('minimo 4 digitos')
-], usuariosControllers.processLogin);
+
 
 
 
@@ -107,7 +106,7 @@ router.post('/login', [
 //GET
 //router.put('/:id', upload.single('image'), usuariosControllers.update);
 
-router.get('/profile', authMiddleware, usuariosControllers.profile); //1:01 en la hora y 1 minuto saca el id y dice q no lo necesita
+// router.get('/profile', authMiddleware, usuariosControllers.profile); //1:01 en la hora y 1 minuto saca el id y dice q no lo necesita
 //si hay alguien en session sigue hacia profile
 router.get('/logout', usuariosControllers.logout);
 
