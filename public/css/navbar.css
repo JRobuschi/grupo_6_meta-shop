@@ -6,7 +6,7 @@
 }
 
 .topnav {
-    background-color: #f08080;
+    background-color: #7383ED;
     overflow: hidden;
   }
   
@@ -14,7 +14,7 @@
   .topnav a {
     float: left;
     display: block;
-    color: #ffdab9;
+    color: #69D9FB;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -23,13 +23,13 @@
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #f8ad9d;
+    background-color: #5968E8;
     color: white;
   }
   
   /* Add an active class to highlight the current page */
   .topnav a.active {
-    background-color: #f8ad9d;
+    background-color: #5968E8;
     color: white;
   }
   

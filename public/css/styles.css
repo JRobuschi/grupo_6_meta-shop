@@ -102,7 +102,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #f08080;
+    background-color: #CC88FA;
     color: white;
     text-align: center;
     display: flex;
@@ -149,7 +149,7 @@
     margin: 15px;
     text-align: center;
     /*font-family: arial;*/
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px #69D9FB;
     padding: 20px;
     border-radius: 20px;
     color: rgb(204, 136, 250);
@@ -177,7 +177,7 @@
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #f08080;
+    background-color: #CC88FA;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -218,7 +218,7 @@
     z-index: 1;
     top: 0;
     right: 0;
-    background: #f08080;
+    background: #CC88FA;
     width: 55px;
     height: 55px;
     line-height: 55px;
