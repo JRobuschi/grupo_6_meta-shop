@@ -5,7 +5,7 @@ const ComponenteInicial = () => {
     return (
         <div className="componente">
             
-            <h3> Hola {nombre} </h3>
+            <h3> Best Friends Forever  {nombre} </h3>
 
         </div>
     )
