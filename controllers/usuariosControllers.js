@@ -23,7 +23,9 @@ const usuariosControllers = {
         return res.render ('users/register');
     },
     create: async (req,res) => {
-        console.log(req)
+        console.log(req.body)
+        const passwordHashed = bcryptjs.hashSync(req.body.password, 10);
+        console.log(bcryptjs.compareSync(req.body.password, passwordHashed));
         const data = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
@@ -43,11 +45,22 @@ const usuariosControllers = {
     edit: async (req, res) => {
         const idUser = req.params.id;
 
+        const productos = await db.Product.findAll({
+            include: ["category"]
+        })
+        return res.send(productos)
+        // const users = await User.findAll({
+        //     include: ['relUserCart']
+        // })
+
+        // return res.send(users);
+
         const userToEdit = await User.findByPk(idUser);
 
         const datosParaVista = {
             User: userToEdit
         }
+
 
         res.render('users/userProfile', datosParaVista);
     },
@@ -72,7 +85,7 @@ const usuariosControllers = {
         res.render('users/userProfile', {User: usuarioActualizado});
         
     }, 
-    processRegister: (req, res) => { //valida la informacion antes de crear el usuario
+    processRegister: async (req, res) => { //valida la informacion antes de crear el usuario
        const resultValidation = validationResult(req);
         
        if (resultValidation.errors.length > 0 ) {
@@ -83,7 +96,11 @@ const usuariosControllers = {
             
         } //aca hay que guiar hacia la base de datos
         //antes  de crear el usuario busca que el email no este registrado en la base de datos
-        let userInDB = User.findByField('email', req.body.email);//buscaen la base el mail para no dejarte registrar 2 veces el mismo mail
+        let userInDB = await User.findOne({
+            where: {
+                email: req.body.email
+            }
+        });//busca en la base el mail para no dejarte registrar 2 veces el mismo mail
 
         if (userInDB) { //si el usuario esta en base de datos retorname error
             res.render('./users/register', {
@@ -105,7 +122,8 @@ const usuariosControllers = {
         }
 
         
-        let userCreated = User.create(userToCreate); //crea y redirije a login
+        let userCreated = User.create(userToCreate);
+        console.log(userCreated); //crea y redirije a login
         return res.redirect('/users/login')
     },
     processLogin: async (req, res) => {
@@ -115,21 +133,25 @@ const usuariosControllers = {
                 email: req.body.email
  
             }
-        });
+        }
+        
+        );
         //busca en el modelo si esta registrado el email
         if (userToLogin){//comparesync valida el password que ya esta hasheado
-            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //el metodo modulo bycript y el metodo comparesyn para validar el password q viene del body en el request en texto plano
-            // if(isOkThePassword) {
-            //     delete userToLogin.password; //saca el password de las recurrencias en vistas de session para q no el pass no este yendo x todos lados
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+            //el metodo modulo bycript y el metodo comparesyn para validar el password q viene del body en el request en texto plano
+            if(isOkThePassword) {
+                delete userToLogin.password; //saca el password de las recurrencias en vistas de session para q no el pass no este yendo x todos lados
             // if  (req.session){ // se crea en session a userlogged a partir de toda la informacion de session q esta dando ok
-            //     req.session.userLogged = userToLogin} //requiere instalarese el modulo session desde el app.
-            //         //la session se destruye cuando cerras el navegador
+                // req.session.userLogged = userToLogin} //requiere instalarese el modulo session desde el app.
+                    //la session se destruye cuando cerras el navegador
             // if (req.body.remember_user){//si en el request del body vino remember user
-            //     res.cookie('userEmail', req.body.email, {maxAge: (1000* 60)*2})
-            //     //en el response voy a setear una cookie q se llama userEmail y guarda el valor de lo que viene en el body del request la propiedad email y esa cookie dura 1 segundo x 1 minuto x 2 minutos
-            // }  
+                res.cookie('userEmail', req.body.email, {maxAge: (1000* 60)*2})
+                //en el response voy a setear una cookie q se llama userEmail y guarda el valor de lo que viene en el body del request la propiedad email y esa cookie dura 1 segundo x 1 minuto x 2 minutos
+            // }
+        }  
                 
-            // //cuando esta todo bien vas al profile
+            //cuando esta todo bien vas al profile
             
             return res.render('users/userProfile', {User: userToLogin});
                
@@ -157,12 +179,12 @@ const usuariosControllers = {
     
     },
     
-    // profile: (req,res) =>{
-    //     //en la vista imprimi la info que te llega del userloggued, session se comparte en toda la app
-    //    return res.render ('users/userProfile', {
-    //         user: req.session.userLogged
-    //     });
-    // },
+    profile: (req,res) =>{
+        //en la vista imprimi la info que te llega del userloggued, session se comparte en toda la app
+       return res.render ('users/userProfile', {
+            user: req.session.userLogged
+        });
+    },
 /*
     create: (req,res) => {
         const newUser =  req.body;

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const upload = require ("../middlewares/multer");
 const authMiddleware = require("../middlewares/authMiddleware");
+const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 
 //Sequelize
 // const db = require ('../db/models');
@@ -21,7 +22,7 @@ const productsController = require('../controllers/productControllers');
 router.get('/', productsController.index);
 
 //CREATE//
-router.get('/create', authMiddleware, productsController.create);
+router.get('/create', userLoggedMiddleware, productsController.create);
 router.post('/', upload.single('image'), productsController.store);
 
 //DELETE//
