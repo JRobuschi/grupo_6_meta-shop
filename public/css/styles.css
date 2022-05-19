@@ -102,8 +102,8 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #f08080;
-    color: white;
+    background-color: rgb(27, 42, 59);
+    color: #69D9FB;
     text-align: center;
     display: flex;
     align-content: flex-end;
@@ -113,7 +113,7 @@
   }
 /*lins visitados*/
   a:visited {
-    color: white;
+    color: #6AD4F8;
     text-decoration: none;
   }
   a:link {
@@ -149,11 +149,11 @@
     margin: 15px;
     text-align: center;
     /*font-family: arial;*/
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px #69D9FB;
     padding: 20px;
     border-radius: 20px;
-    color: rgb(204, 136, 250);
-    text-shadow:1px 1px 1px  rgb(59, 1, 61);
+    color: #6AD4F8;
+    
     font-weight: 400;
     position: relative;
     top: 35px;
@@ -167,22 +167,22 @@
 
   .price {
     font-family:'roboto';
-    color: rgba(65,2,106,1);
+    color: #6AD4F8;
     font-size: 3em;
     font-weight: 600;
   }
   
   .cards button {
-    border: solid 2px gold;
+    border: solid 2px rgb(64, 201, 144);
     outline: 0;
     padding: 12px;
-    color: white;
-    background-color: #f08080;
+    color: #69D9FB;
+    background-color: rgb(27, 42, 59);
     text-align: center;
     cursor: pointer;
     width: 100%;
     font-size: 20px;
-    text-shadow:1px 1px 1px  red;
+    text-shadow:rgb(64, 201, 144);
     
   }
   
@@ -218,7 +218,7 @@
     z-index: 1;
     top: 0;
     right: 0;
-    background: #f08080;
+    background: #CC88FA;
     width: 55px;
     height: 55px;
     line-height: 55px;

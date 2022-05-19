@@ -1,12 +1,11 @@
 const DB = require('../../db/models');
-const Op = DB.Sequelize.Op;
+const sequelize = DB.sequelize;
 
 module.exports = {
     list: (req, res) => {
-        DB.Product
-        .findAll()
+        DB.Product.findAll()
         .then(products => {
-            return res.status(200).json({
+            res.status(200).json({
                 total: products.length,
                 data: products,
                 status: 200
@@ -15,11 +14,11 @@ module.exports = {
     
     },
     show: (req, res) => {
-        DB.Product
-        .findByPk(req.params.id)
+        DB.Product.findByPk(req.params.id)
         .then(product => {
-            return res.status(200).json({         
+            res.status(200).json({         
                 data: product,
+                url: req.originalUrl,
                 status: 200
             })
         })
