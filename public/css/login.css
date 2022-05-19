@@ -25,8 +25,8 @@ body {
 
 .socials a{
 text-decoration: none;
-color: white;
-border: 1px solid #DDDDDD;
+color: #6AD4F8;
+border: 1px solid #6AD4F8;
 border-radius: 50%;
 display: inline-flex;
 justify-content: center;
@@ -44,16 +44,29 @@ width: 40px;
 
 
 .container {
-    height: 50%;
+    height: 70%;
     display: flex;
     flex-wrap: nowrap;
     position: absolute;
     right: 50px;
-    top: 9rem;
-    margin: 20px;
+    top: 4rem;
+    margin: 15px;
     background-color: rgba(0,0,0,0.3);
     border-radius: 1em;
-    box-shadow: 18px 18px 18px 18px rgb(0 0 0 / 90%);
+    box-shadow: 0px 0px 10px #69D9FB;
+}
+.container1 {
+  height: 95%;
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  right: 50px;
+  top: 0rem;
+  text-align: center;
+  margin: auto;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 1em;
+  box-shadow:  0px 0px 10px #69D9FB;
 }
 
 input[type=text], input[type=password], input[type=email], input[type=file] {
@@ -82,7 +95,7 @@ input[type=text], input[type=password], input[type=email], input[type=file] {
 
 h1{
     text-align: center;
-    color: white;
+    color: #6AD4F8;
     
 
 }
@@ -94,17 +107,17 @@ h1{
     border: none;
     cursor: pointer;
     border-radius: 1em;
-    margin-top: 50px;
+    margin-top: 10px;
     box-shadow: inset 0 0 0 0 rgb(85, 24, 37);
     transition: ease-out 0.3s;
   }
   
   .btn1:hover {
-    box-shadow: inset 172px 0 0 0 rgb(255, 3, 57);
+    box-shadow: inset 172px 0 0 0 #6AD4F8;
   }
 
   .btn2:hover {
-    box-shadow: inset 172px 0 0 0 rgb(249, 2, 2);
+    box-shadow: inset 172px 0 0 0 #6AD4F8;
   }
   .btn2{
     color: rgb(0, 0, 0);
@@ -139,26 +152,26 @@ h1{
   height: 100%;
   text-align: center;
   padding: 0px 50px;
-  background-color: rgb(141, 38, 60);
+  background-color: #1B2A3B;
   
 }
 
 .signUp{
-  height: 100%;
+  height: 80%;
   width: 80%;
 }
 .volver a{
     font-size: 22px;
     text-decoration: none;
     display: flex;
-    color: white;
+    color: #6AD4F8;
     width: 50px;
     padding: 20px 20px;
-    background-color: rgb(141, 38, 60);
+    background-color: #1B2A3B;
 
 }    
 
-.footer {
+/*.footer {
   position: fixed;
   left: 0;
   bottom: 0;
@@ -171,4 +184,4 @@ h1{
   justify-content: space-around;
   font-family:'roboto';
   font-weight: 400;
-}
+}*/
