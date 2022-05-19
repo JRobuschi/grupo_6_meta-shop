@@ -18,9 +18,9 @@ a{
 }
 .page-banner-pr {
   font-size: 20px;
-  color: #444444;
+  color: #6AD4F8;
   font-weight: bold;
-  background-color: #cfcdcd;
+  background-color: #1a1829;
   padding: 46px;
   margin: 0%;
 }
@@ -40,8 +40,9 @@ a{
   grid-template-columns: 80px auto;
   grid-gap: 0px 20px;
   padding: 16px 16px;
-  border-bottom: 1px solid #cfcdcd;
-  background-color: white;
+  border: 1px solid #6AD4F8;
+  color: #6AD4F8;
+  background-color: #1B2A3B;
 }
 .cover-img-pr {
   height: 100px;
@@ -102,11 +103,11 @@ a{
 .cart-product-name-pr {
 
   font-weight: bold;
-  color: black;
+  color: #6AD4F8;
   margin-bottom: 5px;
 }
 .cart-price-pr {
-  color: black;
+  color: #6AD4F8;
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -121,6 +122,7 @@ a{
 .cart-total-pr p {
   font-weight: bold;
   font-size: 25px;
+  color: #6AD4F8;
 }
 .cart-action-button-pr a {
   display: block;
@@ -134,22 +136,22 @@ a{
   padding: 0%, 20%, 0%, 20%;
 }
 .cart-action-button-pr a:first-child {
-  color: white;
+  color: #6AD4F8;
   font-size: 20px;
   font-weight: bold;
-  background-color: #cfcdcd;
+  background-color: #1B2A3B;
   margin: 2px 20px;
   text-decoration: none;
-  border: solid 1px black;
+  border: solid 1px #40C990;
 }
 .btn-main-pr {
-  background-color: #CC88FA;
+  background-color: #1B2A3B;
   color: white;
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   margin: 2px 20px;
-  border:solid 1px black;
+  border:solid 1px #40C990;
 }
 .action-button-edit {
   color: #020100;
