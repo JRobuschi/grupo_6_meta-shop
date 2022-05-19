@@ -6,7 +6,7 @@
 }
 
 .topnav {
-    background-color: #7383ED;
+    background-color: rgb(27, 42, 59);
     overflow: hidden;
   }
   
@@ -23,14 +23,14 @@
   
   /* Change the color of links on hover */
   .topnav a:hover {
-    background-color: #5968E8;
-    color: white;
+    background-color: rgb(27, 42, 59);
+    color: #69D9FB;
   }
   
   /* Add an active class to highlight the current page */
   .topnav a.active {
-    background-color: #5968E8;
-    color: white;
+    background-color: rgb(27, 42, 59);
+    color: #69D9FB;
   }
   
   /* Hide the link that should open and close the topnav on small screens */

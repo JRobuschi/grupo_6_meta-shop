@@ -26,23 +26,22 @@
 
 }
 .card button {
-    border: solid 2px gold;
+    border: solid 2px rgb(64, 201, 144);
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #CC88FA;
+    background-color: rgb(27, 42, 59);
     text-align: center;
     cursor: pointer;
     width: 100%;
     font-size: 20px;
-    text-shadow:1px 1px 1px  red;
+    
     
   }
 
 body {
     font-family: 'roboto';
-    background: #dddddb;
-    
+    background: #1A1829; 
     align-items: center;
 }
 
