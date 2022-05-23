@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 //const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 //app.use(userLoggedMiddleware);
 
+app.use(methodOverride('_method'));
 
 app.use(session({
     secret: 'secret word!',
@@ -26,7 +27,7 @@ app.use(cookies());
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
 app.use(express.json());
-app.use(methodOverride('_method'));
+
 
 
 
