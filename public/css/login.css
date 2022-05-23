@@ -56,17 +56,25 @@ width: 40px;
     box-shadow: 0px 0px 10px #69D9FB;
 }
 .container1 {
-  height: 95%;
+  margin-top: 50px;
+  height: 68%;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: column;
   position: absolute;
+  flex-direction:column;
+  align-items: center;
   right: 50px;
   top: 0rem;
   text-align: center;
-  margin: auto;
   background-color: rgba(0,0,0,0.3);
   border-radius: 1em;
   box-shadow:  0px 0px 10px #69D9FB;
+}
+
+@media (max-width: 769px) {
+  .container1 {
+    height: 51%;
+  }
 }
 
 input[type=text], input[type=password], input[type=email], input[type=file] {

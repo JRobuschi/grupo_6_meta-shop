@@ -63,6 +63,8 @@ a{
   text-align: center;
   padding: 5%;
 }
+
+
 .cart-controls-pr {
   display: flex;
   justify-content: space-between;
@@ -154,7 +156,8 @@ a{
   border:solid 1px #40C990;
 }
 .action-button-edit {
-  color: #020100;
+  border: solid 1px #40C990;
+  background-color: #1B2A3B;
 }
 
 @media (min-width: 481px) {
