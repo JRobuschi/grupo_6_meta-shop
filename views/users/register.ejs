@@ -61,14 +61,16 @@
           <label for="password"></label>
           <% if (locals.errors && errors.password) { %>
             <div class="text-danger">
-              <!-- <%= errors.password.msg %>
-            </div>
-            <% } %> -->
-              <input class="form-control" type="password" name="password" placeholder="Ingrese su contraseña aquí"><br>
+               <%= errors.password.msg %>
+            
+            <% } %> 
+              <input class="form-control" type="password" name="password" placeholder="Ingrese su contraseña aquí">
         </div>
 
+       
+        
         <div class="parts">
-          <label for="image">Subi tu imagen</label>
+          <label for="image"></label>
           <input type="file" placeholder="image" id="image" class="form-control" name="usuarios">
           <!-- <% if (locals.errors && errors.usuarios) { %>
             <div class="text-danger">
