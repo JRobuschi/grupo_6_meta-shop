@@ -8,7 +8,8 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
-
+//const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+//app.use(userLoggedMiddleware);
 
 
 app.use(session({
@@ -40,8 +41,7 @@ app.listen(3080, () => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-// app.use(userLoggedMiddleware);
+
 
 const homeRoutes = require("./routes/homeRoutes");
 app.use("/", homeRoutes);
