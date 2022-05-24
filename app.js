@@ -5,7 +5,7 @@ const app = express();
 const cookies = require('cookie-parser');
 const methodOverride = require ('method-override');
 const bodyParser = require('body-parser');
-
+const setLocalsMiddleware = require('./middlewares/setLocalsMiddleware');
 app.use(bodyParser.json());
 
 
@@ -19,7 +19,7 @@ app.use(session({
 
 app.use(cookies());
 
-
+app.use(setLocalsMiddleware);
 
 
 // Setup del req.body (deja disponible el contenido de los formularios)
@@ -40,8 +40,8 @@ app.listen(3080, () => {
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-// app.use(userLoggedMiddleware);
+
+
 
 const homeRoutes = require("./routes/homeRoutes");
 app.use("/", homeRoutes);

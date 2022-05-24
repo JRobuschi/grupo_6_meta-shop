@@ -26,11 +26,11 @@ router.get('/create', userLoggedMiddleware, productsController.create);
 router.post('/', upload.single('image'), productsController.store);
 
 //DELETE//
-router.post('/delete/:id', productsController.destroy);
+router.post('/delete/:id', authMiddleware, productsController.destroy);
 
 //EDIT//
-router.get('/edit/:id', productsController.edit);
-router.put('/:id', upload.single('image'), productsController.update);
+router.get('/edit/:id', authMiddleware, productsController.edit);
+router.put('/edit/:id', authMiddleware, upload.single('image'), productsController.update);
 
 //GET// 
 router.get('/:id/', productsController.detail);

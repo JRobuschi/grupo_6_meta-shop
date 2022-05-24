@@ -6,8 +6,9 @@ const { CLIENT_RENEG_LIMIT } = require('tls');
 const db = require("../db/models");
 const sequelize = db.sequelize;
 
+const Product = db.Product
 //Ubicación del archivo JSON
-const filePath = path.join(__dirname,'../data/products.json');
+// const filePath = path.join(__dirname,'../data/products.json');
 
 //Lectura del archivo JSON y parseado a array
 //const productsArray = JSON.parse(fs.readFileSync(filePath, 'utf8'))
@@ -45,8 +46,8 @@ const controllers = {
         try {            
             let products = await db.Product.findAll(); //await espera q se complete la promesa
            //then realiza todo al mismo tiempo
-
-            return res.render("products/formularioCreacionProd", { products });
+            let categories = await db.Category.findAll();
+            return res.render("products/formularioCreacionProd", { products, categories});
         }
         catch (error) {
             console.log(error);
@@ -87,7 +88,7 @@ const controllers = {
     
     edit: async(req, res) => {
         
-        console.log(req.params);
+        // console.log(req.params);
         let product = await db.Product.findByPk(req.params.id, {
             include: {
                 all: true
@@ -108,12 +109,12 @@ const controllers = {
     
     update: async (req, res) => {
         const idToFind = req.params.id
-        const productToEdit = await db.Product.findByPk(idToFind);
         const editedProduct = req.body;
+        const productToEdit = await db.Product.findByPk(idToFind);
 
         productToEdit.pdtName = editedProduct.pdtName;
         productToEdit.pdtDescription = editedProduct.pdtDescription;
-        productToEdit.pdtPrice = Number(editedProduct).pdtPrice;
+        productToEdit.pdtPrice = Number(editedProduct.pdtPrice);
         //if (req.body.pdtCategori == ''){
          //   productToEdit.pdtCategori = products[productIndex].pdtCategori;
         //}else{
@@ -121,23 +122,23 @@ const controllers = {
         //}
         productToEdit.pdtDescription = editedProduct.pdtDescription
         if(req.file) {
-            productToEdit.image = req.file.filename;
+            productToEdit.image = "/images/products/" + req.file.filename;
         }
         await productToEdit.save();
 
-        return res.redirect('/products')
+        // return res.redirect('/products')
         //sequalize a ver 2horas 6 minutos manipulacion de datos
         //async function (req, res){
         //const idToFind(producto a editar) = req.params.id;
-        //await Product.update(
-               // req.body,{
-               //    where: {
-                //       id: idToFind
-                //   }
-              // })
-             //  return res.send ('producto actualizado')
+        // await Product.update(
+        //        req.body,{
+        //           where: {
+        //               id: idToFind
+        //           }
+        //       })
+            //   return res.send ('producto actualizado')
 
-       // return res.render('/products/editProducts'); //'products/editProducts/' + productId
+       return res.render('products/editProducts', {producto: productToEdit}); //'products/editProducts/' + productId
     },
     
 

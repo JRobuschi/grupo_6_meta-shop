@@ -45,10 +45,10 @@ const usuariosControllers = {
     edit: async (req, res) => {
         const idUser = req.params.id;
 
-        const productos = await db.Product.findAll({
-            include: ["category"]
-        })
-        return res.send(productos)
+        // const productos = await db.Product.findAll({
+        //     include: ["category"]
+        // })
+        // return res.send(productos)
         // const users = await User.findAll({
         //     include: ['relUserCart']
         // })
@@ -75,7 +75,7 @@ const usuariosControllers = {
         })
         const usuarioActualizado = await User.findByPk(idUser);
         
-        res.send(usuarioActualizado);
+        // res.send(usuarioActualizado);
         
 
         // const datosParaVista = {
@@ -153,7 +153,7 @@ const usuariosControllers = {
                 
             //cuando esta todo bien vas al profile
             
-            return res.render('users/userProfile', {User: userToLogin});
+            return res.redirect('/users/profile');
                
             // //};
                 
@@ -182,7 +182,7 @@ const usuariosControllers = {
     profile: (req,res) =>{
         //en la vista imprimi la info que te llega del userloggued, session se comparte en toda la app
        return res.render ('users/userProfile', {
-            user: req.session.userLogged
+            User: req.session.userLogged
         });
     },
 /*

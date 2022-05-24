@@ -60,7 +60,7 @@ const uploadFile = multer ({ storage });
 router.get('/', usuariosControllers.index);
 
 // router.get('/register', guestMiddleware, usuariosControllers.register); // no te deja re registrrar cuando ya te logueaste
-router.get('/register', usuariosControllers.register);
+router.get('/register', guestMiddleware, usuariosControllers.register);
 
 router.post('/register', uploadFile.single('usuarios'), validations, usuariosControllers.create) //min 21:19 aca esta el validator de multer
 // router.post('/register',guestMiddleware, usuariosControllers.create);
