@@ -11,7 +11,7 @@
 <main>
     
 
-    <form method="POST" action="/products/edit/<%=producto.id%>?_method=PUT"  enctype="multipart/form-data">
+    <form method="POST" action="/products/edit/<%=producto.id%>?_method=PUT" enctype="multipart/form-data">
       <div class="newProducts">  
         <h4 class="page-banner-add">Editar un Producto</h4>
         
@@ -25,9 +25,10 @@
         </div> 
         <div class="categori" class="parts"> 
             <label>Categoria</label>
-             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" value="<%=categories.name%>" required>
+             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" value="<%=producto.pdtCategorie%>" required>
+            <% if(producto.pdtCategorie)%>
             <option value="1">Seleccionar categoria</option> 
-            <option value="2">Mineria</option> 
+            <option value="2" selected>Mineria</option> 
             <option value="3">Almacenamiento</option>
             <option value="4">Monitores</option> 
             <option value="5">Metaverso</option>
@@ -44,6 +45,7 @@
         <div class="parts"> <!--multer image archivo-->
             <label for="image">Imagen del Producto</label>
              <input  type="file" name="image" id="image" placeholder="Buscar" value="<%=producto.image%>" required>
+             <img src="<%= producto.image %>" alt="">
         </div> 
 
         <div class="buttons">

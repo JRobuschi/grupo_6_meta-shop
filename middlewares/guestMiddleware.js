@@ -1,6 +1,6 @@
 function guestMiddleware(req, res, next) {
-if( req.session && req.session.userLogged)  {//si hay alguien en sesion?
-    return res.redirect('/users/userProfile');
+if(req.session.userLogged)  {//si hay alguien en sesion?
+    return res.redirect('/users/profile');
 } //mandalo al perfil
 next();//si no hay nadie en sesion continua normalmente las peticiones
 //If req session & & req session user logged

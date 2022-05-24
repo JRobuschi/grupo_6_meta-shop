@@ -5,11 +5,11 @@ const app = express();
 const cookies = require('cookie-parser');
 const methodOverride = require ('method-override');
 const bodyParser = require('body-parser');
+const setLocalsMiddleware = require('./middlewares/setLocalsMiddleware');
+app.use(bodyParser.json());
 const cors = require('cors');
 
 app.use(cors());
-app.use(bodyParser.json());
-
 //const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 //app.use(userLoggedMiddleware);
 
@@ -23,7 +23,7 @@ app.use(session({
 
 app.use(cookies());
 
-
+app.use(setLocalsMiddleware);
 
 
 // Setup del req.body (deja disponible el contenido de los formularios)
