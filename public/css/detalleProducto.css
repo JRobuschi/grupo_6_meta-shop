@@ -1,12 +1,10 @@
 * {
   box-sizing: border-box;
   font-family: "roboto", sans-serif;
-  color: #ff009d;
+  color: #6AD4F8;
+  background-color: #1a1829;
 }
-.body{
-  background: rgb(175,70,74);
-    background: linear-gradient(90deg, rgba(175,70,74,1) 0%, rgba(65,2,106,1) 100%);
- }
+
 a{
   text-decoration: none;
   color: inherit;
@@ -28,7 +26,7 @@ a{
 .cart-item-pr form {
   display: grid;
   grid-template-columns: 100%;
-  border: 1px solid #444444;
+  border: 1px solid #40C990;
 }
 
 .imgProd  {
@@ -50,9 +48,9 @@ a{
   grid-gap: 0px 30px;
   padding: 16px 16px;
   border-bottom: 1px solid #cfcdcd;
-  background:  rgba(65,2,106,1);
-
-
+  background:  #1a1829;
+  align-items: center;
+  
 }
 /*.cover-img-pr {
   height: 100px;
@@ -72,7 +70,7 @@ a{
   grid-gap: 0px 20px;
   text-align: center;
   padding: 10%;
-  font-size: 10px;
+  font-size: 16px;
 }
 .cart-controls-pr {
   display: flex;
@@ -219,16 +217,15 @@ a{
 }
 
 .buy-now-button {
-    border: solid 2px gold;
+    border: solid 2px #40C990;
     outline: 0;
     padding: 12px;
-    color: white;
-    background-color: rgba(65,2,106,1);
+    color: #6AD4F8;
+    background-color: #1B2A3B;
     text-align: center;
     cursor: pointer;
     width: 100%;
     font-size: 20px;
-    text-shadow:1px 1px 1px  red;
 }
 
 .remove-pr {

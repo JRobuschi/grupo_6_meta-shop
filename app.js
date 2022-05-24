@@ -8,8 +8,10 @@ const bodyParser = require('body-parser');
 const setLocalsMiddleware = require('./middlewares/setLocalsMiddleware');
 app.use(bodyParser.json());
 
+//const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+//app.use(userLoggedMiddleware);
 
-
+app.use(methodOverride('_method'));
 
 app.use(session({
     secret: 'secret word!',
@@ -25,7 +27,7 @@ app.use(setLocalsMiddleware);
 // Setup del req.body (deja disponible el contenido de los formularios)
 app.use(express.urlencoded({ extended: false })); //session dice q va false, estaba true
 app.use(express.json());
-app.use(methodOverride('_method'));
+
 
 
 
@@ -39,7 +41,6 @@ app.listen(3080, () => {
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
 
 
 

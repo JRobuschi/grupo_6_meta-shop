@@ -4,6 +4,7 @@
 <head>
     <%- include('../partials/head.ejs') %>
     <%- include('../partials/productCartcss.ejs') %>
+    <script src="/js/jsCart.js"></script>
 </head>
 
 <body>
@@ -33,9 +34,9 @@
                             <button class="btn-remove-pr"> Remover </button>
                         </div>
                         <div class="cart-quantity-controls-pr">
-                            <button>-</button>
+                            <button class="buttonMinus">-</button>
                             <input type="number" value="1" readonly>
-                            <button>+</button>
+                            <button class="buttonPlus">+</button>
                         </div>
                     </div>
                 </form>
