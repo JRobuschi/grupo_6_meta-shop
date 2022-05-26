@@ -3,6 +3,7 @@
     <head>
     <%- include('./partials/head.ejs') %>
     <%- include('./partials/descriptionproductscss.ejs') %>
+	<script src="/js/jsCartOk.js"></script>
 </head>
 <body>
 	<!-- Header -->
@@ -23,7 +24,7 @@
 			<div class="title"><a href="/products/create">AGREGAR PRODUCTO</a></div>
 			</div>
 	
-	
+	<main id="contenedorProductos"></main>
 </div>
 <div class="row">
 	<%  productsArray.forEach(product => { %>
