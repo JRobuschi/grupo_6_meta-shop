@@ -36,7 +36,7 @@ const usuariosControllers = {
         console.log(data)
         try{
             await User.create(data)
-            return res.render('users/register')
+            return res.render('users/login')
         } catch(err) {
             return res.send(err)
         }
@@ -146,7 +146,7 @@ const usuariosControllers = {
                 // req.session.userLogged = userToLogin} //requiere instalarese el modulo session desde el app.
                     //la session se destruye cuando cerras el navegador
             // if (req.body.remember_user){//si en el request del body vino remember user
-                res.cookie('userEmail', req.body.email, {maxAge: (1000* 60)*2})
+                res.cookie('userEmail', req.body.email, {maxAge: (1000* 60)*100})
                 //en el response voy a setear una cookie q se llama userEmail y guarda el valor de lo que viene en el body del request la propiedad email y esa cookie dura 1 segundo x 1 minuto x 2 minutos
             // }
         }  

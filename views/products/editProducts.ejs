@@ -8,10 +8,11 @@
 
 <body>
     <%- include('../partials/headerNavbar.ejs') %>
+    <script src="/js/jsFrontEditProduct"></script>
 <main>
     
 
-    <form method="POST" action="/products/edit/<%=producto.id%>?_method=PUT" enctype="multipart/form-data">
+    <form method="POST" action="/products/edit/<%=producto.id%>?_method=PUT" enctype="multipart/form-data" class="productEdit">
       <div class="newProducts">  
         <h4 class="page-banner-add">Editar un Producto</h4>
         

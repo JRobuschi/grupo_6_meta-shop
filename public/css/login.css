@@ -54,6 +54,7 @@ width: 40px;
     background-color: rgba(0,0,0,0.3);
     border-radius: 1em;
     box-shadow: 0px 0px 10px #69D9FB;
+    color: #6AD4F8;
 }
 .container1 {
   margin-top: 50px;
@@ -69,6 +70,7 @@ width: 40px;
   background-color: rgba(0,0,0,0.3);
   border-radius: 1em;
   box-shadow:  0px 0px 10px #69D9FB;
+  color: #6AD4F8;
 }
 
 @media (max-width: 769px) {

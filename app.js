@@ -7,7 +7,9 @@ const methodOverride = require ('method-override');
 const bodyParser = require('body-parser');
 const setLocalsMiddleware = require('./middlewares/setLocalsMiddleware');
 app.use(bodyParser.json());
+const cors = require('cors');
 
+app.use(cors());
 //const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 //app.use(userLoggedMiddleware);
 
