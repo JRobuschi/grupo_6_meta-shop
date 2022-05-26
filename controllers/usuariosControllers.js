@@ -5,17 +5,17 @@
 const path = require('path');
 const bcryptjs = require('bcryptjs');
 const { validationResult, body } = require('express-validator');
-const check = require('express-validator').check;
+// const check = require('express-validator').check;
 const db = require ('../db/models');
-const User = db.User; //de aca saca donde esta la base datos.
-//la parte de los errores es un quilombo
+const User = db.User; 
+
 const usuariosControllers = {
     index: (req,res) => {
         return res.render('users/iniciarSesion');  	
     },
 
     login: (req, res) => {
-       return res.render ('users/login'); //vista del login
+       return res.render ('users/login'); 
     },
 
     register: (req, res) => {
@@ -23,15 +23,15 @@ const usuariosControllers = {
         return res.render ('users/register');
     },
     create: async (req,res) => {
-        console.log(req.body)
-        const passwordHashed = bcryptjs.hashSync(req.body.password, 10);
-        console.log(bcryptjs.compareSync(req.body.password, passwordHashed));
+        // console.log(req.body)
+        // const passwordHashed = bcryptjs.hashSync(req.body.password, 10);
+        // console.log(bcryptjs.compareSync(req.body.password, passwordHashed));
         const data = {
             nombre: req.body.nombre,
             apellido: req.body.apellido,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
-            image: req.file.originalname
+            image: "/images/usuarios/" + req.file.filename
         };
         console.log(data)
         try{
