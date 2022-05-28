@@ -7,8 +7,14 @@
 </head>
 
 <body>
-    <%- include('../partials/headerNavbar.ejs') %>
-    <script src="/js/jsFrontEditProduct"></script>
+    <script src="/js/jsFrontEditProduct.js"></script>
+    <header>
+        <section>
+            <%- include('../partials/headerNavbar.ejs') %>
+        </section>
+
+    </header>
+    
 <main>
     
 
@@ -16,17 +22,20 @@
       <div class="newProducts">  
         <h4 class="page-banner-add">Editar un Producto</h4>
         
+        <div class="errores">
+            <ul></ul>
+        </div>
           <div class="parts">     
             <label>Nombre del Producto</label>
-            <input type="text" name="pdtName" id="pdtName" value="<%=producto.pdtName %>" required>
+            <input type="text" name="pdtName" id="pdtName" value="<%=producto.pdtName %>" class="formName" >
         </div> 
         <div class="parts"> 
             <label>Descripcion</label>
-            <input type="text" name="pdtDescription" id="pdtDescription" value="<%=producto.pdtDescription%>" required>
+            <input type="text" name="pdtDescription" id="pdtDescription" value="<%=producto.pdtDescription%>" class="formDescription" >
         </div> 
         <div class="categori" class="parts"> 
             <label>Categoria</label>
-             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" value="<%=producto.idCategory%>" required>
+             <select name="pdtCategori" class="categoriOptions" id="pdtCategori" value="<%=producto.idCategory%>">
             <option value="1">Seleccionar categoria</option> 
             <option value="2">Mineria</option> 
             <option value="3">Almacenamiento</option>
@@ -39,12 +48,12 @@
        
         <div class="parts"> 
             <label>Precio</label>
-            <input type="text" name="pdtPrice" id="pdtPrice" value="<%=producto.pdtPrice%>" required>
+            <input type="text" name="pdtPrice" id="pdtPrice" value="<%=producto.pdtPrice%>" >
         </div> 
 
         <div class="parts"> <!--multer image archivo-->
             <label for="image">Imagen del Producto</label>
-             <input  type="file" name="image" id="image" placeholder="Buscar" value="<%=producto.image%>" required>
+             <input  type="file" name="image" id="image" placeholder="Buscar" value="<%=producto.image%>" class="formPrice" >
              <img src="<%= producto.image %>" alt="">
         </div> 
 
