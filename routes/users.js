@@ -13,7 +13,7 @@ const usuariosControllers = require('../controllers/usuariosControllers');
 const validations = [  //este array es el validador X Q SON MUCHAS VALIDACIONES
     body ('email').notEmpty().withMessage('debe ingresar un mail').bail().isEmail().withMessage('debe ser fromato email'),//notEmpty... son metodos .iseemail debe ser un email
     body ('password').notEmpty().withMessage('debe ingresar un password'),
-    body ('usuarios').custom((value, { req })=> { //nombre de los campos del formulario que queremos validar y que tipo de validacion implementar
+    body ('image').custom((value, { req })=> { //nombre de los campos del formulario que queremos validar y que tipo de validacion implementar
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
         
@@ -43,7 +43,7 @@ router.post('/login', usuariosControllers.processLogin);
 
 //EDIT USER//
 router.get('/edit/:id', authMiddleware, usuariosControllers.edit);
-router.post('/edit/:id',     authMiddleware, uploadUser.single('image'), usuariosControllers.update);
+router.post('/:id',     authMiddleware, uploadUser.single('image'), usuariosControllers.update);
 
 //DETAIL USER//
 router.get('/profile', authMiddleware, usuariosControllers.profile); //1:01 en la hora y 1 minuto saca el id y dice q no lo necesita

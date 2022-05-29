@@ -30,9 +30,6 @@ const usuariosControllers = {
     return res.render("users/register");
   },
   create: async (req, res) => {
-    // console.log(req.body)
-    // const passwordHashed = bcryptjs.hashSync(req.body.password, 10);
-    // console.log(bcryptjs.compareSync(req.body.password, passwordHashed));
     const data = {
       nombre: req.body.nombre,
       apellido: req.body.apellido,
@@ -50,7 +47,7 @@ const usuariosControllers = {
   },
   edit: async (req, res) => {
     const idUser = req.params.id;
-
+    
     const userToEdit = await User.findByPk(idUser,{
         include: {
             all: true
@@ -58,27 +55,35 @@ const usuariosControllers = {
     });
 
     const datosParaVista = {
-      User: userToEdit,
+      User: userToEdit
     }
-
+    
     res.render("users/userProfile", datosParaVista);
   },
   update: async (req, res) => {
     const idUser = req.params.id;
+    const editedUser = req.body;
+    const userToEdit = await User.findByPk(idUser);
 
-    await User.update(req.body, {
-      where: {
-        idUser: idUser
-      }
-    });
+    //FILE 
+    console.log("file->",req.file);
+    //FILE
 
+    userToEdit.nombre = editedUser.nombre;
+    userToEdit.apellido = editedUser.apellido;
+    userToEdit.email = editedUser.email;
+
+    if(req.file) {
+        userToEdit.image = "/images/usuarios/" + req.file.filename;
+    }
+    
+    await userToEdit.save();
+    // await User.update(req.body, {
+    //   where: {
+    //     idUser: idUser
+    //   }
+    // });
     const usuarioActualizado = await User.findByPk(idUser);
-
-    // res.send(usuarioActualizado);
-
-    // const datosParaVista = {
-    //     User: userToEdit
-    // }
 
     res.render("users/userProfile", { User: usuarioActualizado });
   },
@@ -179,9 +184,12 @@ const usuariosControllers = {
 
   profile: (req, res) => {
     //en la vista imprimi la info que te llega del userloggued, session se comparte en toda la app
-    return res.render("users/userProfile", {
+    
+    res.render("users/userProfile", {
       User: req.session.userLogged,
     });
+    console.log(req.session.userLogged)
+    
   },
   /*
     create: (req,res) => {

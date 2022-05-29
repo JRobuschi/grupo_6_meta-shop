@@ -40,15 +40,12 @@ a{
 }
 .cart-item-pr {
   margin: 4%;
+  box-shadow: 0px 0px 10px #69d9fb;
 }
 .cart-product-pr {
   /*border: solid 5px gold;*/
-  display: grid;
-  grid-template-columns: 80px auto;
-  grid-gap: 0px 30px;
+  display: flex;
   padding: 16px 16px;
-  border-bottom: 1px solid #cfcdcd;
-  background:  #1a1829;
   align-items: center;
   
 }

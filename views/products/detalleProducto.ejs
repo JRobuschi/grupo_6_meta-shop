@@ -19,9 +19,7 @@
 	
 	
 		<div class="cart-product-pr">
-			<div class="">
-				<div><img class="imgProd" src="<%=producto.image %>" alt="product image"></div>
-			</div>
+				<img class="imgProd" src="<%=producto.image %>" alt="product image">
 			<div class="cart-product-info-pr">
 				<p class="product-detail-description">
 					<%= producto.pdtDescription %>
@@ -63,13 +61,14 @@
 		
 		
 		
-		
+		<% if (locals.isLogged) { %>
 
 		<a href="/products/edit/<%= producto.id %>" class="action-button-edit" style="border: 1px solid #40C990;">EDITAR PRODUCTO</a>
 		
 			<form action="/products/delete/<%=producto.id%>" method="POST" style="display: inline-flex">
 			<button type="submit" class="action-button delete">ELIMINAR</button>
 		   </form>
+		<% } %>
 		</article>
 	
 
