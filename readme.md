@@ -1,7 +1,7 @@
 
 # Proyecto Integrador Digital House
 
-Pagina de Ecommerce de productos tecnologicos con hincapie en el metaverso y mineria.
+Ecommerce de productos tecnologicos.
 
 ## Grupo 6
 
@@ -10,7 +10,7 @@ Pagina de Ecommerce de productos tecnologicos con hincapie en el metaverso y min
  Araira Meza<br>
  Alfonso Garcia<br>
 
-3)
+
 https://ar.steelseries.com/
 https://compragamer.com/
 https://www.logitechstore.com.ar/
