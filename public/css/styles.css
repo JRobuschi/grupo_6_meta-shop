@@ -98,18 +98,15 @@
 }
 
 .footer {
-    /*position: fixed;*/
+    position: fixed;
+    display: flex;
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: rgb(27, 42, 59);
     color: #69D9FB;
     text-align: center;
-    display: flex;
-    align-content: flex-end;
     justify-content: space-around;
-    font-family:'roboto';
-    font-weight: 400;
   }
 /*lins visitados*/
   a:visited {
@@ -168,8 +165,6 @@
   .price {
     font-family:'roboto';
     color: #6AD4F8;
-    font-size: 3em;
-    font-weight: 600;
   }
   
   .cards button {
