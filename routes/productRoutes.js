@@ -3,7 +3,7 @@ const router = express.Router();
 const upload = require ("../middlewares/multer");
 const authMiddleware = require("../middlewares/authMiddleware");
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
-
+const productsController = require('../controllers/productControllers');
 //Sequelize
 // const db = require ('../db/models');
 
@@ -14,9 +14,6 @@ const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
 //    return res.send(producto);
 // })
 
-
-//CONTROLADOR//
-const productsController = require('../controllers/productControllers');
 
 //TODOS LOS PRODUCTOS//
 router.get('/', productsController.index);
