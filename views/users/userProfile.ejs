@@ -24,11 +24,10 @@
                     <br>
                     <div class="alert alert-success">
                         <%= User.email %>
-                    </div>
                 </div>
             </div>
 
-            <form method="POST" action="/users/<%= User.idUser %>">
+            <form method="POST" action="/users/<%= User.idUser %>" enctype="multipart/form-data">
                 <div class="user">
                     <h4 class="page-banner-add">Editar Usuario</h4>
                     <br>
@@ -49,7 +48,8 @@
                     <div class="parts">
                         <!--multer image archivo-->
                         <label for="image">Imagen de Perfil</label>
-                        <input type="file" name="image" id="image" placeholder="Buscar" value="<%= User.image %>">
+                        <input type="file" name="image" id="image" placeholder="Buscar">
+                        
                     </div>
 
                     <div class="buttons">

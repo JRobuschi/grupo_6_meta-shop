@@ -3,47 +3,73 @@
     padding: 30px;
 }
 
+body {
+    font-family: 'roboto';
+    background: rgb(26, 24, 41);
+}
+
+.fa{
+background: rgb(27, 42, 59);
+padding: 10px;
+border-radius: 250px;
+font-size: 25px;
+margin-left: 10px;
+}
+.fa:hover{
+    color:blue;
+}
+
+.container{
+    padding: 30px;
+    background-color: rgb(26, 24, 41);
+    margin: 25px;
+    border: 20px;
+}
 .card{
-    display: flex;
-    flex-direction: column;
     font-family:'roboto';
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    
-    margin: 15px;
-    text-align: center;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    margin: 30px;
+    background: rgb(27, 42, 59);
     padding: 20px;
-    border-radius: 20px;
-    color: rgb(204, 136, 250);
-    text-shadow:1px 1px 1px  rgb(59, 1, 61);
-    font-weight: 400;
+    border-radius: 10px;
     
-    top: 35px;
 }
 .infoPdt{
     display: flex;
-    
 
+}
+.imagenDeProducto{
+    padding: 20px;
+    margin: auto;
+    border-bottom: 1px solid;
+}
+.infoDeProducto{
+    padding: 20px;
+    margin: auto;
+}
+
+.row {
+    width: fit-content;
+    margin: auto;
+    padding: 25px;
 }
 .card button {
-    border: solid 2px rgb(64, 201, 144);
-    outline: 0;
+    border: none;
     padding: 12px;
     color: white;
-    background-color: rgb(27, 42, 59);
+    background-color: rgb(26, 24, 41);
     text-align: center;
     cursor: pointer;
-    width: 100%;
     font-size: 20px;
-    
-    
+    border-radius: 5px;
+    transition: ease-out 0.3s;
   }
 
-body {
-    font-family: 'roboto';
-    background: #1A1829; 
-    align-items: center;
-}
+  .card button:hover {
+    box-shadow: inset 172px 0 0 0 #6AD4F8;
+  }
+
+
 
 .categorias {
     flex-wrap: wrap;
@@ -51,21 +77,16 @@ body {
     background-position: center;
     justify-content: space-around;
     margin: auto;
-    
     flex-direction: row;
     color: white;
     font-size: 18px;
     margin: 15px;
     text-align: center;
-
-
 }
 
 img {
-   
     max-height: 300px;
     max-width: 300px;
-    border-radius: 20px;
     align-items: center;
 }
 
