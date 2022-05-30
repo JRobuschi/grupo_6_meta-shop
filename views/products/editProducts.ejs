@@ -15,10 +15,8 @@
 
     </header>
     
-<main>
-    
-
-    <form method="POST" action="/products/edit/<%=producto.id%>?_method=PUT" enctype="multipart/form-data" class="productEdit">
+<main class="productDetail">
+    <form method="POST" action="/products/edit/<%=producto.id%>?_method=PUT" enctype="multipart/form-data" class="productCreate">
       <div class="newProducts">  
         <h4 class="page-banner-add">Editar un Producto</h4>
         
@@ -48,7 +46,7 @@
        
         <div class="parts"> 
             <label>Precio</label>
-            <input type="text" name="pdtPrice" id="pdtPrice" value="<%=producto.pdtPrice%>" >
+            <input type="text" name="pdtPrice" id="pdtPrice" value="<%=producto.pdtPrice%>" class="formPrice">
         </div> 
 
         <div class="parts"> <!--multer image archivo-->
@@ -59,7 +57,7 @@
 
         <div class="buttons">
    
-            <button class="submit" type="submit"> Enviar</button>
+            <button class="submit" type="submit" style="color:#69D9FB;"> ENVIAR</button>
             
                        
         </div>

@@ -5,6 +5,17 @@
   background-color: #1a1829;
 }
 
+.actions-list i{
+  padding-right: 5px;
+}
+
+.actions-list{
+margin: 25px 0px;
+border-bottom: 1px solid;
+border-top: 1px solid;
+}
+
+
 a{
   text-decoration: none;
   color: inherit;
@@ -24,49 +35,45 @@ a{
   margin-top: 16px;
 }
 .cart-item-pr form {
-  display: grid;
-  grid-template-columns: 100%;
-  border: 1px solid #40C990;
+  border: none;
+  background-color: none;
+  
 }
 
 .imgProd  {
-  border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 5px;
-  width: 150%;
-  height: auto;
-
-
+  width: 40vw;
+  padding-right: 2vw;
 }
+
+.description{
+  padding: 20px;
+}
+
 .cart-item-pr {
-  margin: 4%;
+  display: flex;
+  margin: 4% auto;
   box-shadow: 0px 0px 10px #69d9fb;
+  width: fit-content;
+  padding-right: 20px;
+  align-items: flex-start;
+  
 }
 .cart-product-pr {
-  /*border: solid 5px gold;*/
+  
   display: flex;
   padding: 16px 16px;
   align-items: center;
   
 }
-/*.cover-img-pr {
-  height: 100px;
-  border-radius: 10px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  
-}*/
+
 .cart-quantity-pr,
 .cart-product-total-pr {
   display: none;
   margin-left: 30px;
 }
 .cart-product-info-pr {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  grid-gap: 0px 20px;
-  text-align: center;
-  padding: 10%;
+  text-align: left;
   font-size: 16px;
 }
 .cart-controls-pr {
@@ -99,13 +106,7 @@ a{
   color: #020100;
   background-color: white;
 }
-/*.cover-img-pr :hover {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
-}*/
-/*.cover-img-pr :hover {
-  overflow: hidden;
-}*/
+
 .cart-product-name-pr {
 
   font-weight: bold;
@@ -169,10 +170,6 @@ a{
     justify-content: end;
 }
   }
-  /*.cart-item-pr :hover {
-    font-size: 25px;
-    transition: 500ms;
-  }*/
 
 
 @media (min-width: 769px) {
@@ -194,35 +191,34 @@ a{
   * {
     box-sizing: border-box;
   }
+  
   .cart-quantity-pr,
   .cart-product-name-pr,
   .cart-product-total-pr {
     display: flex;
+  }  
+}
+
+@media(max-width: 1000px) {
+  .cart-item-pr{
+    display: block;
   }
-  /*.cart-item-pr :hover {
-    font-size: 25px;
-    transition: 500ms;
-  }*/
 }
 
 .product-detail-info {
     text-align: justify;
-    display: grid;
-    grid-template-columns: 50% 50%;
-
-    
 }
 
 .buy-now-button {
-    border: solid 2px #40C990;
-    outline: 0;
+    display: inline-block;
+    width: auto;
     padding: 12px;
-    color: #6AD4F8;
     background-color: #1B2A3B;
     text-align: center;
     cursor: pointer;
-    width: 100%;
     font-size: 20px;
+    border: none;
+    transition: ease-out 0.3s;
 }
 
 .remove-pr {

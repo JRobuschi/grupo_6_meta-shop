@@ -115,12 +115,15 @@ const controllers = {
         productToEdit.pdtName = editedProduct.pdtName;
         productToEdit.pdtDescription = editedProduct.pdtDescription;
         productToEdit.pdtPrice = Number(editedProduct.pdtPrice);
+        productToEdit.pdtCategori = editedProduct.pdtCategori;
         //if (req.body.pdtCategori == ''){
          //   productToEdit.pdtCategori = products[productIndex].pdtCategori;
         //}else{
         //   productToEdit.pdtCategori = editedProduct.pdtCategori
         //}
         productToEdit.pdtDescription = editedProduct.pdtDescription
+
+        console.log(editedProduct.pdtCategori);
         if(req.file) {
             productToEdit.image = "/images/products/" + req.file.filename;
         }
