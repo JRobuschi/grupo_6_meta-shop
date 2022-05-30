@@ -8,6 +8,8 @@
 .topnav {
     background-color: rgb(27, 42, 59);
     overflow: hidden;
+    padding: 25px;
+    
   }
   
   /* Style the links inside the navigation bar */

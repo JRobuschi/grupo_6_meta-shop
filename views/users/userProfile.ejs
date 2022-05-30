@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head.ejs') %>
-        <%- include('../partials/addProductcss.ejs') %>
+    <%- include('../partials/addProductcss.ejs') %>
 </head>
 
 <body>
@@ -13,23 +13,17 @@
         </section>
     </header>
     <main class="main">
-
-        <div class="container" style="margin-top: 40px;">
-            <div class="row">
-                <div class="col-md-3">
-                    <h2>hola <%= User.nombre %>
-                    </h2>
-                    <img src='<%= User.image %>' style="width:400px">
-                    <br>
-                    <br>
-                    <div class="alert alert-success">
-                        <%= User.email %>
+                <div class="div-user">
+                    <img src='<%= User.image %>' style="width: 10vw; aspect-ratio: 1;object-fit: cover;border-radius: 999px;">
+                    <div class="userMail">
+                        <h2 style="margin: 0;"><%= User.nombre %></h2>
+                        <h3 style="margin: 0;"><%= User.email %></h2>
+                    </div>
                 </div>
-            </div>
-
-            <form method="POST" action="/users/<%= User.idUser %>" enctype="multipart/form-data">
+            
+            <form method="POST" action="/users/<%= User.idUser %>" class="formulario-perfil" enctype="multipart/form-data">
                 <div class="user">
-                    <h4 class="page-banner-add">Editar Usuario</h4>
+                    <h4 style="display: inline-block; padding: 20px;">Editar Usuario</h4>
                     <br>
                     <div class="parts">
                         <label>Nombre</label>
@@ -48,17 +42,14 @@
                     <div class="parts">
                         <!--multer image archivo-->
                         <label for="image">Imagen de Perfil</label>
-                        <input type="file" name="image" id="image" placeholder="Buscar">
+                        <input type="file" name="image" id="image" placeholder="Buscar" >
                         
                     </div>
 
                     <div class="buttons">
-                        
-                            <button class="submit" type="submit"> Enviar</button>
-                        
-
-
+                        <button class="submit" type="submit"> Enviar</button>
                     </div>
+
                 </div>
             </form>
 

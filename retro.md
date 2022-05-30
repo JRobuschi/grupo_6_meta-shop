@@ -12,4 +12,4 @@ Sprint 6) el Sr. Juan Pablo Mantegazza se puso la 10 y reaparecio cuan Fenix a r
 
 Sprint 7) Se realizaron las validaciones Back-End en Express Validator y Front-End via JavaScript, nuevamente Juan Robuschi y Alfonso Garcia se pusieron de acuerdo, dividieron el trabajo y terminaron a tiempo el 7mo sprint.
 
-Sprint 8) La Final: Apis + React, al dia de la fecha 15/5/2022 se realizo el trabajo de API's de Usuarios (Alfonso Garcia) y Productos (Juan Robuschi) y quedamos a la espera del "Fenix" Mategazza para nos de una mano con React y asi finalizar con exito este camino que hemos emprendido hace unos meses, esperemos, con gran exito y que nos permite prontamente comenzar una nueva vida y etapa laboral en alguno de los mas grandes proyectos que este mundo haya visto.
+Sprint 8) La Final: Apis + React, se realizo el trabajo de API's de Usuarios (Alfonso Garcia) y Productos (Juan Robuschi), logramos finalizar el Sprint, trayendo los usuarios y los productos al Dashboard y con esto damos por finalizado el proyecto.

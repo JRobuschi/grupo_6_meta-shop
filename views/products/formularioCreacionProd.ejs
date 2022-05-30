@@ -3,66 +3,69 @@
 
 <head>
     <%- include('../partials/head.ejs') %>
-    <%- include('../partials/addProductcss.ejs') %>
+        <%- include('../partials/addProductcss.ejs') %>
 </head>
 
 <body>
     <script src="/js/jsFrontCreatePdt.js"></script>
     <header>
         <section>
-    <%- include('../partials/headerNavbar.ejs') %>
+            <%- include('../partials/headerNavbar.ejs') %>
         </section>
     </header>
-<main class="main">
-    
+    <main class="productDetail">
 
-    <form method="POST" action="/products" enctype="multipart/form-data" class="productCreate">
-     <div class="newProducts">
-        <h4 class="page-banner-add">Agregar un Producto</h4>
-        <br>
-        <div class="errores">
-            <ul></ul>
-        </div>
-        <div class="parts">     
-            <label>Nombre del Producto</label>
-            <input type="text" name="pdtName" id="pdtName" class="formName" >
-        </div> 
-        <div class="parts"> 
-            <label>Descripcion</label>
-            <input type="text" name="pdtDescription" id="pdtDescription" class="formDescription" >
-        </div> 
-        <div class="categori" class="parts"> 
-            <label>Categoria</label>
-             <select name="idCategory" class="categoriOptions" id="pdtCategori" >
-            <% for(let categorie of categories) { %>
-            <option value="<%= categorie.idCategory%>"><%= categorie.name %></option> 
-            <% } %>
-         </select>
-        </div> 
-       
-       
-        <div class="parts"> 
-            <label>Precio</label>
-            <input type="text" name="pdtPrice" id="pdtPrice" class="formPrice" >
-        </div> 
 
-        <div class="parts"> <!--multer image archivo-->
-            <label for="image">Imagen del Producto</label>
-             <input  type="file" name="image" id="image" placeholder="Buscar" required>
-        </div>
+        <form method="POST" action="/products" enctype="multipart/form-data" class="productCreate">
+            <div class="newProducts">
+                <h4 class="add-title">Agregar un Producto</h4>
+                <br>
+                <div class="errores">
+                    <ul></ul>
+                </div>
+                <div class="parts">
+                    <label>Nombre del Producto</label>
+                    <input type="text" name="pdtName" id="pdtName" class="formName">
+                </div>
+                <div class="parts">
+                    <label>Descripcion</label>
+                    <input type="text" name="pdtDescription" id="pdtDescription" class="formDescription">
+                </div>
+                <div class="categori" class="parts">
+                    <label>Categoria</label>
+                    <select name="idCategory" class="categoriOptions" id="pdtCategori">
+                        <% for(let categorie of categories) { %>
+                            <option value="<%= categorie.idCategory%>">
+                                <%= categorie.name %>
+                            </option>
+                            <% } %>
+                    </select>
+                </div>
 
-        
 
-        <div class="col-12">
-            <form action="/products/" method="POST">
-            <button type="submit" class="buy-now-button">Guardar producto</button>
-            </form>
-        </div>
-     </div>
-	 
-    </form>
-	
-</main>
+                <div class="parts">
+                    <label>Precio</label>
+                    <input type="text" name="pdtPrice" id="pdtPrice" class="formPrice">
+                </div>
+
+                <div class="parts">
+                    <!--multer image archivo-->
+                    <label for="image">Imagen del Producto</label>
+                    <input type="file" name="image" id="image" placeholder="Buscar" required>
+                </div>
+
+
+
+                <div>
+                    <form action="/products/" method="POST">
+                        <button type="submit" class="buy-now-button" style="color:#69D9FB;">Guardar producto</button>
+                    </form>
+                </div>
+            </div>
+
+        </form>
+
+    </main>
 
 
 

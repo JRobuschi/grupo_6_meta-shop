@@ -11,20 +11,12 @@
 	<!-- /Header -->
 
 	<!-- todos los productos -->
-	<div>
-<br>
-<br>
-<br>
-<br>
-       
+	<div class="container">
 		<!-- product detail -->
 		<div class="categorias">
-			<div>
-			<img src="/images/cloud-storage.jpg" alt="ALMACENAMIENTO" itemprop="image">
-			<div class="title"><a href="/products/create">AGREGAR PRODUCTO</a></div>
+			<div class="title">
+				<a href="/products/create">AGREGAR PRODUCTO<i class="fa fa-plus" aria-hidden="true"></i></a>
 			</div>
-	
-	<main id="contenedorProductos"></main>
 </div>
 <div class="row">
 	<%  productsArray.forEach(product => { %>
@@ -35,10 +27,10 @@
 			<img src="<%= product.image %>" alt="imagen de producto" style="width:100%">
 		  </figure>
 		  <article class="infoDeProducto">
-			<h1><%= product.pdtName %></h1>
-			<h2 class="price">$<%= product.pdtPrice %> </h2>
+			<h3><%= product.pdtName %></h3>
+			<h3 class="price">$<%= product.pdtPrice %> </h3>
 		</div>
-			 <p><button>COMPRAR</button></p>
+			 <button>COMPRAR</button>
 		</article>
 		</div>
 	  <% }) %>

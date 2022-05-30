@@ -5,71 +5,46 @@
 	<%- include('../partials/detalleProducto.ejs') %>
 </head>
 <body>
-	
 	<%- include('../partials/headerNavbar.ejs') %>
-	
-	  
-<br>
-<br>
-<br>
-<div class="col-12">
-	<h2 class="products-title" style="margin-left: 25px;">Detalle del producto: <%= producto.pdtName %> </h2> 
-</div>
+
+
 <div class="cart-item-pr">
-	
-	
 		<div class="cart-product-pr">
-				<img class="imgProd" src="<%=producto.image %>" alt="product image">
-			<div class="cart-product-info-pr">
+			<img class="imgProd" src="<%=producto.image %>" alt="product image">
+		</div>
+		<div class="cart-product-info-pr">
+			<div class="description">
 				<p class="product-detail-description">
 					<%= producto.pdtDescription %>
 				</p>
 				<p class="product-detail-price small">
-					<span>$<%= producto.pdtPrice%></span>
-										
+					<span>$<%= producto.pdtPrice%></span>				
 				</p>
+				<a href="#" class="buy-now-button">COMPRAR AHORA</a>
 			</div>
-		</div>
-		<div class="cart-product-total-pr">
-			
-		</div>
-		<div class="cart-controls-pr">
-			<a href="#" class="buy-now-button">COMPRAR AHORA</a>
-			
-		</div>
-		<article class="product-detail-info">
+				<article class="product-detail-info">
 						
-						
-			<p class="product-detail-price small">
-				<span>$<%= producto.pdtPrice%></span>
-				
-			</p>
-			
-			
+					<ul class="actions-list">
+						<li>
+							<p><i class="fas fa-credit-card"></i> Pagá en 12 cuotas sin interes</p>
+						</li>
+						<li>
+							<p><i class="fas fa-store"></i> Retiro gratis en locales del vendedor</p>
+						</li>
+					</ul>
+					
+					<% if (locals.isLogged) { %>
+					
+					<a href="/products/edit/<%= producto.id %>" class="buy-now-button">EDITAR</a>
+					
+						<form action="/products/delete/<%=producto.id%>" method="POST" style="display: inline-flex">
+						<button type="submit" class="buy-now-button">ELIMINAR</button>
+					   </form>
+					<% } %>
+					</article>
+		</div>
+	
 		
-		<ul class="actions-list">
-			<li>
-				<i class="fas fa-credit-card"></i>
-				<p>Pagá en 12 cuotas sin interes</p>
-			</li>
-			<li>
-				<i class="fas fa-store"></i>
-				<p>Retiro gratis en locales del vendedor</p>
-			</li>
-		</ul>
-		
-		
-		
-		
-		<% if (locals.isLogged) { %>
-
-		<a href="/products/edit/<%= producto.id %>" class="action-button-edit" style="border: 1px solid #40C990;">EDITAR PRODUCTO</a>
-		
-			<form action="/products/delete/<%=producto.id%>" method="POST" style="display: inline-flex">
-			<button type="submit" class="action-button delete">ELIMINAR</button>
-		   </form>
-		<% } %>
-		</article>
 	
 
 </div>
