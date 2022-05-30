@@ -13,4 +13,4 @@ Sprint 6) El equipo se junta de forma diaria, 2 o 3 veces al dia incluso para ac
 
 Sprint 7) Este pareceria ser el Sprint mas facil que nos toco o como dije en el sprint anterior, el equipo se ha conformado de forma solida y las pautas se cumplen a raja tabla, por lo que una vez nos ponemos de acuerdo el trabajo se hace, igualmente nos reunimos diariamente aunque sea unos minutos para ponernos de acuerdo en como seguir y actualizar la informacion de lo hecho.
 
-Sprint 8)
+Sprint 8) Dividimos las tareas y trabajamos a la par para finalizarlo mas rapido, concientes de que la entrega del proyecto estaba cerca pusimos manos a la obra y lo terminamos la primer semana para de esta forma dedicarnos los ultimos dias a testear la app a full y solucionar los 1000 y 1 detalles del proyecto integrador, hoy, a pocas horas de entregar damos por finalizado el trabajo y estamos muy satisfechos con la tarea realizada. 
